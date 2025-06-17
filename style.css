@@ -451,6 +451,10 @@ footer {
   animation: float 6s ease-in-out infinite;
 }
 
+body[data-theme="dark"] .shape {
+  border-color: white;
+}
+
 .shape-1 {
   width: 8rem;
   height: 8rem;
