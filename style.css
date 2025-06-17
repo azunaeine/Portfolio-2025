@@ -454,6 +454,9 @@ footer {
 body[data-theme="dark"] .shape {
   border-color: white;
 }
+body[data-theme="dark"] .fa-envelope::before {
+  color: white;
+}
 
 .shape-1 {
   width: 8rem;
