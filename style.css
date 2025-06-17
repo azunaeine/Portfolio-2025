@@ -265,6 +265,10 @@ a.hamburger-menu-nav-item {
   font-weight: 700;
 }
 
+body[data-theme="dark"] .intro {
+  color: white;
+}
+
 .header {
   display: flex;
   flex-direction: column;
