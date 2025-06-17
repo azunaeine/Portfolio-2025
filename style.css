@@ -51,6 +51,10 @@
   transform: scale(1.1);
 }
 
+body[data-theme="dark"] .logo {
+  filter: invert(1);
+}
+
 @media (min-width: 768px) {
   .nav-item {
     display: inline-block;
@@ -131,6 +135,9 @@ body.fade-in .panel-fade-in {
 body {
   padding: 1em;
   overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .s-icon {
@@ -148,8 +155,8 @@ body {
 
 .fa-solid {
   font-size: 1.563rem;
-  color: white;
-  background: black;
+  color: var(--icon-text);
+  background: var(--icon-bg);
   width: 2.813rem;
   border-radius: 0.875rem;
   text-align: center;
@@ -172,8 +179,8 @@ body.menu-is-open {
   right: 0;
   left: 0;
   bottom: 0;
-  background: white;
-  color: black;
+  background: var(--bg-color);
+  color: var(--text-color);
   /* display: none; */
   display: flex;
   flex-direction: column;
@@ -193,15 +200,16 @@ body.menu-is-open {
 }
 
 a.nav-item {
-  color: black;
+  color: var(--text-color);
 }
 
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 a.hamburger-menu-nav-item {
-  color: #000000;
+  color: var(--text-color);
 }
 
 /* when the hamburger menu is not visible, the menu items are offset a little bit from their positions */
@@ -271,11 +279,11 @@ a.hamburger-menu-nav-item {
 .main-b {
   padding: 1.75rem 2.8125rem 1.8125rem;
   border-radius: 0.75rem;
-  background-color: black;
+  background-color: var(--button-bg);
   box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.5);
   -webkit-transition: box-shadow 350ms, -webkit-transform 350ms;
   transition: box-shadow 350ms, transform 350ms, -webkit-transform 350ms;
-  color: #fff;
+  color: var(--button-text);
   font-size: 1.125rem;
   line-height: 1em;
   font-weight: 400;
@@ -306,12 +314,28 @@ a.hamburger-menu-nav-item {
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
+  --icon-bg: #000000;
+  --icon-text: #ffffff;
+  --square-bg: #ffffff;
+  --square-border: #000000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
+  --footer-bg: #000000;
+  --footer-text: #ffffff;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body[data-theme="dark"] {
-  --bg-color: #000000;
+  --bg-color: #121212;
   --text-color: #ffffff;
+  --icon-bg: #ffffff;
+  --icon-text: #000000;
+  --square-bg: #1e1e1e;
+  --square-border: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --footer-bg: #1e1e1e;
+  --footer-text: #ffffff;
 }
 
 .theme-toggle {
@@ -346,9 +370,9 @@ body[data-theme="dark"] .theme-toggle::before {
   position: relative;
   width: 17.5rem;
   height: 31rem;
-  background-color: white;
+  background-color: var(--square-bg);
   z-index: 2;
-  border: black solid 0.25rem;
+  border: 0.25rem solid var(--square-border);
   border-radius: 1rem;
   padding: 1.2rem;
   text-align: left;
@@ -359,22 +383,23 @@ body[data-theme="dark"] .theme-toggle::before {
 }
 
 .square:hover {
-  border-color: #000000;
-  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #a7f0e0;
+  border-color: var(--square-border);
+  box-shadow: inset 0 0 0 4px var(--square-border), -5px 5px 0 0 #a7f0e0;
   transform: translate(5px, -5px);
 }
 
 .green:hover {
-  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #dcf1aa;
+  box-shadow: inset 0 0 0 4px var(--square-border), -5px 5px 0 0 #dcf1aa;
 }
 
 .blue:hover {
-  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #5aa0d7;
+  box-shadow: inset 0 0 0 4px var(--square-border), -5px 5px 0 0 #5aa0d7;
 }
 
 .purple:hover {
-  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #e9e2ff;
+  box-shadow: inset 0 0 0 4px var(--square-border), -5px 5px 0 0 #e9e2ff;
 }
+
 .brief {
   display: flex;
   flex-direction: column;
@@ -392,7 +417,7 @@ footer {
   position: absolute;
   left: 0;
   transform: translateY(0.5rem);
-  background-color: black;
+  background-color: var(--footer-bg);
   width: 100vw;
   height: auto;
   margin: auto;
@@ -400,7 +425,7 @@ footer {
   gap: 1.25rem;
   padding: 0.7rem 1rem;
   margin-top: 2rem;
-  color: white;
+  color: var(--footer-text);
 }
 
 .hero-visual {
@@ -471,7 +496,7 @@ footer {
 }
 
 .icon {
-  color: white;
+  color: var(--footer-text);
 }
 
 .land {
@@ -687,9 +712,9 @@ footer {
   .square {
     height: 31rem;
     width: 44rem;
-    background-color: white;
+    background-color: var(--square-bg);
     z-index: 2;
-    border: 0.25rem solid black;
+    border: 0.25rem solid var(--square-border);
     border-radius: 2.125rem;
     padding: 1.2rem;
     text-align: left;
@@ -760,11 +785,11 @@ footer {
     max-width: 100%;
     padding: 1.75rem 2.8125rem 1.8125rem;
     border-radius: 0.75rem;
-    background-color: black;
+    background-color: var(--button-bg);
     box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.5);
     -webkit-transition: box-shadow 350ms, -webkit-transform 350ms;
     transition: box-shadow 350ms, transform 350ms, -webkit-transform 350ms;
-    color: #fff;
+    color: var(--button-text);
     font-size: 1.125rem;
     line-height: 1em;
     font-weight: 400;
@@ -897,9 +922,9 @@ footer {
     position: relative;
     width: 77.5rem;
     height: 46rem;
-    background-color: white;
+    background-color: var(--square-bg);
     z-index: 2;
-    border: 0.25rem solid black;
+    border: 0.25rem solid var(--square-border);
     border-radius: 2rem;
     padding: 1.5rem;
     text-align: left;
@@ -934,7 +959,7 @@ footer {
     position: absolute;
     left: 0;
     transform: translateY(0.5rem);
-    background-color: black;
+    background-color: var(--footer-bg);
     width: 100vw;
     height: auto;
     margin: auto;
@@ -942,7 +967,7 @@ footer {
     gap: 1.25rem;
     padding: 0.7rem 1rem;
     margin-top: 7rem;
-    color: white;
+    color: var(--footer-text);
   }
 
   .four img {
@@ -959,19 +984,21 @@ footer {
   }
 
   .main-button {
-    padding-right: 29px;
-    padding-left: 29px;
-    border-radius: 20px;
-    box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.5);
-    -webkit-transition-duration: 350ms, 350ms;
+    padding-right: 1.813rem;
+    padding-left: 1.813rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.188rem 1.063rem 0 rgba(0, 0, 0, 0.5);
     transition-duration: 350ms, 350ms;
-    color: #fff;
-    background: black;
-    width: 196px;
+    color: var(--button-text);
+    background: var(--button-bg);
+    width: 12.25rem;
+    height: 3.625rem;
     border: none;
-    height: 77px;
+    font-size: 1.125rem;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center;
     margin-top: 14px;
-    font-size: 20px;
     cursor: pointer;
   }
 

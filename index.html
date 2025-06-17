@@ -157,7 +157,7 @@
         </div>
       </a>
       <div class="copyrighttext">
-        © Azuna Ekundayo <span class="year">2022</span>
+        &copy; Azuna Ekundayo <span class="year">2022</span>
       </div>
     </footer>
 
@@ -242,6 +242,32 @@
       gtag("js", new Date());
 
       gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <script>
+      const themeToggle = document.querySelectorAll("#themeToggle");
+      const body = document.querySelector("body");
+
+      const setTheme = (theme) => {
+        body.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      };
+
+      const toggleTheme = () => {
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+      };
+
+      themeToggle.forEach((btn) => btn.addEventListener("click", toggleTheme));
+
+      // on page load, check local storage for saved theme
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else {
+        // if no theme is saved, use the default (light)
+        setTheme("light");
+      }
     </script>
     <!-- Code injected by live-server -->
     <script>
