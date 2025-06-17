@@ -1,0 +1,1057 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loader_icon {
+  height: 0;
+  width: 0;
+  padding: 15px;
+  border: 6px solid #0ad81f3f;
+  border-right-color: #0ad81d;
+  border-radius: 22px;
+  animation: rotate 1s infinite linear;
+  /* left, top and position just for the demo! */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-item {
+  display: none;
+}
+
+.logo {
+  width: 40px;
+  height: 67px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .nav-item {
+    display: inline-block;
+  }
+
+  i.btn-hamburger-menu {
+    display: none;
+  }
+}
+
+.logo {
+  width: 3em;
+  display: flex;
+}
+
+.nav-bar {
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+  gap: 0.4em;
+  position: relative;
+}
+
+.panel-fade-in {
+  position: absolute;
+  inset: -42px;
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  opacity: 1;
+  transition: all 1s ease;
+  pointer-events: none;
+  display: none;
+}
+
+/* when the body is faded-in, fade out the panel */
+.panel-fade-out {
+  opacity: 1;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  gap: 2em;
+}
+
+.nav-item {
+  transition: transform 1000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* all nav items start raised up by different amounts */
+/* starting positions: */
+.nav-item:nth-child(1) {
+  /* "it has moved up" */
+  transform: translateY(-12px);
+}
+
+.nav-item:nth-child(2) {
+  transform: translateY(-24px);
+}
+
+.nav-item:nth-child(3) {
+  transform: translateY(-36px);
+}
+
+/* when the body is faded-in, put the nav-item back to its original position */
+body.fade-in .nav-item {
+  /* "it has not moved up" */
+  transform: translateY(0px);
+  /* move to 0px translation */
+}
+
+body.fade-in .panel-fade-in {
+  opacity: 0;
+}
+
+body {
+  padding: 1em;
+  overflow-x: hidden;
+}
+
+.s-icon {
+  margin-right: auto;
+  transition: all 0.3s linear;
+}
+
+.s-icon:hover {
+  transform: scale(1.23) translateX(20px);
+}
+
+.nav-item {
+  font-size: 18px;
+}
+
+.fa-solid {
+  font-size: 1.563rem;
+  color: white;
+  background: black;
+  width: 2.813rem;
+  border-radius: 0.875rem;
+  text-align: center;
+  height: 2.813rem;
+  box-shadow: 0 0.188rem 1.063rem 0 rgba(0, 0, 0, 0.5);
+  padding: 0.625rem;
+}
+
+body.menu-is-open {
+  /* turn off scroll when menu is open */
+  overflow: hidden;
+}
+
+.hamburger-menu-content {
+  position: fixed;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: white;
+  color: black;
+  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hamburger-menu-content.visible {
+  /* display: flex; */
+  opacity: 1;
+
+  pointer-events: all;
+}
+
+a.nav-item {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.hamburger-menu-nav-item {
+  color: #000000;
+}
+
+/* when the hamburger menu is not visible, the menu items are offset a little bit from their positions */
+.hamburger-menu-nav-item {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease-in-out;
+  /* animate the values if they change */
+}
+
+/* when the hamburger menu is visible, the menu-items move back from their initial offset positions */
+.hamburger-menu-content.visible .hamburger-menu-nav-item {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+/* on mouseover, transform a little bit */
+.hamburger-menu-content.visible .hamburger-menu-nav-item:active {
+  transform: scale(1.05) rotate(2deg);
+  transition-delay: 0s !important;
+}
+
+/* we can also add some transition delays so they animate in a sequence: */
+
+/* the first menu-item gets 0.2s delay */
+.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+/* second menu-item gets 0.3s delay */
+.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+/* third menu-item gets 0.4s delay */
+.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+/* fourth menu-item gets 0.5s delay */
+.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(4) {
+  transition-delay: 0.5s;
+}
+
+.intro {
+  color: black;
+  font-size: 2.375rem;
+  line-height: 1.182;
+  display: flex;
+  width: fit-content;
+  margin-top: 1.8em;
+  margin-left: 0.5rem;
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sub-intro {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.main-b {
+  padding: 1.75rem 2.8125rem 1.8125rem;
+  border-radius: 0.75rem;
+  background-color: black;
+  box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: box-shadow 350ms, -webkit-transform 350ms;
+  transition: box-shadow 350ms, transform 350ms, -webkit-transform 350ms;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1em;
+  font-weight: 400;
+  text-align: center;
+  width: 17.5rem;
+  height: 3.625rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.laptop {
+  width: 17.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  margin-top: 2rem;
+  width: fit-content;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-theme="dark"] {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--text-color);
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--text-color);
+  top: 2px;
+  left: 2px;
+  transition: var(--transition);
+  transform: translateX(0);
+}
+
+body[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(23px);
+}
+
+.square {
+  position: relative;
+  width: 17.5rem;
+  height: 31rem;
+  background-color: white;
+  z-index: 2;
+  border: black solid 0.25rem;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: all 0.25s;
+}
+
+.square:hover {
+  border-color: #000000;
+  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #a7f0e0;
+  transform: translate(5px, -5px);
+}
+
+.green:hover {
+  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #dcf1aa;
+}
+
+.blue:hover {
+  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #5aa0d7;
+}
+
+.purple:hover {
+  box-shadow: inset 0 0 0 4px #000000, -5px 5px 0 0 #e9e2ff;
+}
+.brief {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 1.5em;
+}
+
+.small-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9em;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  transform: translateY(0.5rem);
+  background-color: black;
+  width: 100vw;
+  height: auto;
+  margin: auto;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.7rem 1rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+.hero-visual {
+  position: relative;
+  height: 332px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 15rem;
+  height: 32rem;
+}
+
+.shape {
+  position: absolute;
+  border: 2px solid black;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4px;
+  top: 9%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 45%;
+  right: 30%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 27%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(240deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.icon {
+  color: white;
+}
+
+.land {
+  display: none;
+}
+
+.icon i {
+  font-size: 1.3125rem;
+}
+
+.copyrighttext {
+  font-size: 0.75rem;
+  margin-left: auto;
+}
+
+.fa-envelope {
+  margin-top: -0.625rem;
+  width: fit-content;
+}
+
+.one {
+  width: 6.25rem;
+  height: 6.25rem;
+  background: #0ed81e;
+  border-radius: 50%;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.one img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14em;
+  height: 11em;
+}
+
+.case {
+  text-align: center;
+  font-size: 16.5px;
+  width: 14.625rem;
+  background: black;
+  border: none;
+  height: 3.375rem;
+  color: white;
+  padding-top: 15px;
+  border-radius: 1.625rem;
+  box-shadow: 0 0.063rem 0.665rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.two {
+  width: 6.25rem;
+  height: 6.25rem;
+  background: #0e1ed8ff;
+  border-radius: 50%;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.two img {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15em;
+  height: 12em;
+}
+
+.three {
+  width: 6.25rem;
+  height: 6.25rem;
+  background: #f4e100;
+  border-radius: 50%;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.three img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11em;
+  height: 8em;
+}
+
+.four {
+  width: 6.25rem;
+  height: 6.25rem;
+  background: #946cffff;
+  border-radius: 50%;
+  margin: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.four img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-56%, -46%);
+  width: 11em;
+  height: 7em;
+}
+
+.title {
+  font-size: 1.563rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.sub {
+  font-weight: 400;
+}
+
+.btn-close-menu {
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  /* animate the values if they change */
+}
+
+.btn-close-menu:not(.visible) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-b:active {
+  transform: scale(1.23);
+}
+
+.icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.5) rotate(36deg);
+}
+
+.title-one {
+  font-size: 1.563rem;
+}
+
+.title-two {
+  font-size: 1.563rem;
+}
+
+.title-three {
+  font-size: 1.563rem;
+  color: #946cffff;
+}
+
+/** above mobile */
+@media screen and (min-width: 768px) {
+  .panel-fade-in {
+    display: block;
+  }
+
+  body {
+    padding: 2em;
+  }
+
+  .nav-items {
+    display: flex;
+  }
+
+  .shape-1 {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 4px;
+    top: -21%;
+    left: 92%;
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 45%;
+    right: -50%;
+    animation-delay: 2s;
+  }
+
+  .shape-3 {
+    width: 100px;
+    height: 100px;
+    top: 27%;
+    right: -60%;
+    animation-delay: 4s;
+  }
+
+  .one img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27em;
+    height: 21em;
+  }
+
+  .square {
+    height: 31rem;
+    width: 44rem;
+    background-color: white;
+    z-index: 2;
+    border: 0.25rem solid black;
+    border-radius: 2.125rem;
+    padding: 1.2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .land {
+    display: none;
+  }
+
+  .three img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25em;
+    height: 19em;
+  }
+
+  .four img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-56%, -46%);
+    width: 26em;
+    height: 17em;
+  }
+
+  .intro {
+    margin: auto;
+  }
+
+  .sub-intro {
+    text-align: center;
+  }
+
+  .small-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6.899999999999999em;
+    min-height: 63.9375rem;
+  }
+
+  .intro {
+    margin: auto;
+    font-size: 45px;
+  }
+
+  .sub-intro {
+    font-size: 1.125rem;
+    margin-left: 0.5rem;
+  }
+
+  .header {
+    margin-top: 9rem;
+  }
+
+  .laptop {
+    width: 34.5rem;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .main-b {
+    max-width: 100%;
+    padding: 1.75rem 2.8125rem 1.8125rem;
+    border-radius: 0.75rem;
+    background-color: black;
+    box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transition: box-shadow 350ms, -webkit-transform 350ms;
+    transition: box-shadow 350ms, transform 350ms, -webkit-transform 350ms;
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center;
+    width: 19.5rem;
+    height: 3.625rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .one,
+  .two,
+  .three,
+  .four {
+    width: 35%;
+    height: 50%;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 25px;
+  }
+
+  .two img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 29em;
+    height: 29em;
+  }
+
+  .nav-bar {
+    display: flex;
+    margin-top: 1em;
+    justify-content: right;
+    gap: 3em;
+  }
+
+  .s-icon {
+    transition: all 0.3s linear;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .three,
+  .four {
+    width: 31%;
+    height: 54%;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 10px;
+  }
+
+  .shape-1 {
+    width: 24rem;
+    height: 24rem;
+    border-radius: 4px;
+    top: -16%;
+    left: -188%;
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 75%;
+    right: 180%;
+    animation-delay: 2s;
+  }
+
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 58%;
+    right: 190%;
+    animation-delay: 4s;
+  }
+
+  .one {
+    width: 31%;
+    height: 54%;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 36px;
+  }
+
+  .one img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45em;
+    height: 35em;
+  }
+
+  .two {
+    width: 31%;
+    height: 54%;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 36px;
+  }
+
+  .two img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 53em;
+    height: 46em;
+  }
+
+  .three img {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40em;
+    height: 30em;
+  }
+
+  .square {
+    position: relative;
+    width: 77.5rem;
+    height: 46rem;
+    background-color: white;
+    z-index: 2;
+    border: 0.25rem solid black;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .big-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+    margin-top: 12em;
+  }
+
+  .sub {
+    font-size: 21px;
+  }
+
+  .title,
+  .title-one,
+  .title-two,
+  .title-three {
+    font-size: 2.563rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    position: absolute;
+    left: 0;
+    transform: translateY(0.5rem);
+    background-color: black;
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.7rem 1rem;
+    margin-top: 7rem;
+    color: white;
+  }
+
+  .four img {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-56%, -46%);
+    width: 45em;
+    height: 31em;
+  }
+
+  .small-box {
+    display: none;
+  }
+
+  .main-button {
+    padding-right: 29px;
+    padding-left: 29px;
+    border-radius: 20px;
+    box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.5);
+    -webkit-transition-duration: 350ms, 350ms;
+    transition-duration: 350ms, 350ms;
+    color: #fff;
+    background: black;
+    width: 196px;
+    border: none;
+    height: 77px;
+    margin-top: 14px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .main-button:active {
+    transform: scale(1.23);
+  }
+
+  .computer {
+    width: 39vw;
+    height: 60vh;
+  }
+
+  .land {
+    display: flex;
+    gap: 4em;
+    justify-content: space-between;
+    margin-top: 16vh;
+    padding: 0.5vw;
+  }
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: fit-content;
+    justify-content: center;
+    margin-top: -3rem;
+  }
+
+  .intro-a {
+    font-size: 5vw;
+  }
+
+  .logo {
+    width: 5em;
+  }
+
+  .nav-item {
+    margin-left: 3em;
+  }
+
+  .hamburger-menu-content {
+    display: none;
+  }
+
+  .nav-item:active {
+    transition: all 0.5s ease-out;
+  }
+
+  .nav-item {
+    transition: all 0.3s ease-in-out;
+  }
+
+  a.nav-item:hover {
+    transform: rotate(30deg);
+  }
+
+  .two-intro {
+    font-size: 22px;
+    line-height: 1.8em;
+  }
+
+  .case {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .case:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-bar {
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+    gap: 2px;
+    margin-right: 0.6em;
+  }
+
+  body {
+    padding: 4em;
+  }
+}

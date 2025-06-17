@@ -1,0 +1,365 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #0ad81d;
+  --text-color: #333;
+  --white: #ffffff;
+  --light-gray: #f5f6fa;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Override hero background to keep green color */
+.hero {
+  background: #dcf1aa;
+  opacity: 0.8;
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #ffffff;
+}
+
+.overview {
+  border: black solid 2px;
+}
+
+/* Hero Section */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+/* Add margin to main content to prevent overlap with fixed nav */
+.case-study {
+  margin-top: 60px; /* Adjust this value based on your nav height */
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-items {
+  display: flex;
+  gap: 2rem;
+  margin-right: 1rem;
+}
+
+.nav-item {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Debug styles to ensure theme toggle is working */
+.theme-toggle {
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0.5rem !important;
+  font-size: 1.2rem !important;
+  color: var(--text-color) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.dark-theme .nav-bar {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+.dark-theme .nav-item {
+  color: #fff !important;
+}
+
+.dark-theme .nav-item:hover {
+  color: #0ad81d !important;
+}
+
+.dark-theme .section {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+.hero {
+  width: 100%;
+  color: white;
+  padding: 2rem 2rem;
+  border-radius: 0;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.case-study {
+  margin: 0 auto;
+}
+
+.carousel-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.carousel-section .carousel {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-section .carousel-inner {
+  height: 400px;
+}
+
+.carousel-section .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Carousel Styles */
+.carousel {
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  flex: 0 0 auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control.prev {
+  left: 1rem;
+}
+
+.carousel-control.next {
+  right: 1rem;
+}
+
+/* Love It Section */
+
+/* Carousel indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+  background: white;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: black;
+  font-size: 6em;
+  text-align: center;
+}
+
+.project-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.info-item .label {
+  color: #2c3e50;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Sections */
+.section {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Layouts */
+.problem-grid,
+.research-content,
+.solution-grid,
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Problem Section */
+.problem-item {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+/* Research Section */
+.research-methods,
+.research-findings {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+/* Solution Section */
+.solution-item {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+/* Results Section */
+.result-item {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+/* Takeaways Section */
+.takeaway-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.takeaway-item {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .case-study {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+}

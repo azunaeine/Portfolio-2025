@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="common/common-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Azuna Ekundayo - Portfolio</title>
+  </head>
+
+  <body data-theme="light">
+    <div class="hamburger-menu-content">
+      <a class="hamburger-menu-nav-item" href="index.html"> Home</a>
+      <a class="hamburger-menu-nav-item" href="about/index.html"> About </a>
+      <a
+        href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
+        class="hamburger-menu-nav-item"
+        target="_blank"
+        >Resume</a
+      >
+      <button class="theme-toggle" id="themeToggle"></button>
+    </div>
+    <nav class="nav-bar">
+      <div class="panel-fade-in"></div>
+      <a class="s-icon" href="index.html"
+        ><img src="images/logo.svg" alt="logo" class="logo"
+      /></a>
+
+      <i class="btn-hamburger-menu fa-solid fa-bars" onclick="showMenu()"></i>
+      <i
+        class="btn-hamburger-menu btn-close-menu fa-solid fa-close"
+        onclick="hideMenu()"
+      ></i>
+
+      <div class="nav-items">
+        <a class="nav-item" href="index.html"> Home</a>
+        <a class="nav-item" href="about/index.html"> About </a>
+        <a
+          href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
+          class="nav-item"
+          target="_blank"
+          >Resume</a
+        >
+        <button class="theme-toggle" id="themeToggle"></button>
+      </div>
+    </nav>
+    <div class="small-box">
+      <div class="header">
+        <h1 class="intro">I’m Azuna, a product designer</h1>
+        <p class="sub-intro">
+          previously product design intern at <br />
+          <strong>FreshFind</strong>
+        </p>
+      </div>
+      <button class="main-b" onclick="takeUsDownToCaseStudies()">
+        View Work
+      </button>
+      <div class="hero-visual">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="land">
+      <div class="head">
+        <h1 class="intro-a">
+          I’m Azuna, a <br />
+          product designer
+        </h1>
+        <p class="two-intro">
+          Previously Sales & Marketing Associate at <br />
+          <strong>Conduit HR Consulting Boutique</strong> and <br />
+          Founder & CEO of
+          <strong>Red Beam Digital</strong>
+        </p>
+        <button class="main-button" onclick="takeUsDownToCaseStudies()">
+          View Work
+        </button>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="big-box">
+      <div class="container">
+        <div class="square green">
+          <div class="brief">
+            <span class="sub"> Product Design</span>
+            <h3 class="title">Recipe Sharing</h3>
+            <p class="description">
+              A fun and interactive way to record special family recipes and
+              pass them down to younger generations.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="square blue">
+          <div class="brief">
+            <span class="sub">Web Design & Development</span>
+            <h3 class="title-one">Sleep Tracker</h3>
+            <p class="description">
+              A sleep tracker that analyzes your sleep patterns by recording
+              your sleep hours and providing personalized sleep ratings.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="square purple">
+          <div class="brief">
+            <span class="sub"> Product Design</span>
+            <h3 class="title-two">Thesis Project</h3>
+            <p class="description">
+              An AI moderation tool that detects harmful language on X and helps
+              reduce cyberbullying on the platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://www.linkedin.com/in/azunaekundayo/" target="_blank">
+        <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+      </a>
+      <a href="https://github.com/azunaeine" target="_blank">
+        <div class="icon"><i class="fa-brands fa-github"></i></div>
+      </a>
+      <a href="https://twitter.com/xxxazuna" target="_blank">
+        <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+      </a>
+      <a href="mailto:azunaeine@gmail.com" target="_blank">
+        <div class="icon">
+          <i
+            class="fa-solid fa-envelope"
+            style="background: none; box-shadow: none"
+          ></i>
+        </div>
+      </a>
+      <div class="copyrighttext">
+        © Azuna Ekundayo <span class="year">2022</span>
+      </div>
+    </footer>
+
+    <script>
+      // update the year to the current year
+      // 1. grab the year span
+      const yearSpan = document.querySelector("span.year");
+      // 2. set the innerHTML = current year
+      const currentYear = new Date().getFullYear();
+      yearSpan.innerHTML = currentYear;
+    </script>
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 1. fade in the nav items + logo - panel around the nav that fades in
+      // TODO
+      // 2. nav links transition in - move down, move at different speeds, start at different heights
+      // 3. (optional) last item (CTA button) comes down all the way (more than the others)
+      // grab the element
+      //
+      // this will add a class "fade-in" to the body, we can use it to make all our elements fade in!
+      function startTheAnimation() {
+        // start the animation!
+        document.querySelector("body").classList.add("fade-in");
+      }
+      // delay this by 1s (this will run 1s in the future)
+      // start the animation 1s after page loads, so that the user can see the animation (otherwise it's too fast)
+      setTimeout(startTheAnimation, 0.4 * 1000);
+
+      function showMenu() {
+        const hamburgerMenuContent = document.querySelector(
+          ".hamburger-menu-content"
+        );
+        hamburgerMenuContent.classList.add("visible");
+
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        btnCloseMenu.classList.add("visible");
+
+        const body = document.querySelector("body");
+        body.classList.add("menu-is-open");
+      }
+
+      // javascript animate an element function
+      function hideMenu() {
+        // 1. grab the element
+        const hamburgerMenuContent = document.querySelector(
+          ".hamburger-menu-content"
+        );
+        // 2. change its class
+        hamburgerMenuContent.classList.remove("visible");
+
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        btnCloseMenu.classList.remove("visible");
+
+        const body = document.querySelector("body");
+        body.classList.remove("menu-is-open");
+      }
+    </script>
+    <script>
+      function takeUsDownToCaseStudies() {
+        // scroll down to the element with id "case-studies"
+        // 1. grab the element
+        const myContainer = document.querySelector(".container .brief .title");
+        // 2. scrollIntoView({bahavior:"smooth"})
+        myContainer.scrollIntoView({ behavior: "smooth" });
+        // 3. hide the menu
+        hideMenu();
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NLSS6TZ2NF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+  </body>
+</html>

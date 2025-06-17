@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../common/common-case-study.styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../common/common-case-study-js.js" defer></script>
+    <script>
+      // update the year to the current year
+      const yearSpan = document.querySelector("span.year");
+      if (yearSpan) {
+        yearSpan.innerHTML = new Date().getFullYear();
+      }
+    </script>
+    <title>Recipe Sharing</title>
+  </head>
+  <body data-theme="light">
+    <div class="hamburger-menu-content">
+      <a class="hamburger-menu-nav-item" href="../index.html"> Home</a>
+      <a class="hamburger-menu-nav-item" href="../about/index.html"> About </a>
+      <a
+        href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
+        class="hamburger-menu-nav-item"
+        target="_blank"
+        >Resume</a
+      >
+      <button class="theme-toggle" id="themeToggle"></button>
+    </div>
+    <nav class="nav-bar">
+      <div class="panel-fade-in"></div>
+      <a class="s-icon" href="../index.html"
+        ><img src="../images/logo.svg" alt="logo" class="logo"
+      /></a>
+
+      <i class="btn-hamburger-menu fa-solid fa-bars" onclick="showMenu()"></i>
+      <i
+        class="btn-hamburger-menu btn-close-menu fa-solid fa-close"
+        onclick="hideMenu()"
+      ></i>
+
+      <div class="nav-items">
+        <a class="nav-item" href="../index.html"> Home</a>
+        <a class="nav-item" href="../about/index.html"> About </a>
+        <a
+          href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
+          class="nav-item"
+          target="_blank"
+          >Resume</a
+        >
+        <button class="theme-toggle" id="themeToggle"></button>
+      </div>
+    </nav>
+    <div class="case-study">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Recipe Sharing</h1>
+        </div>
+      </section>
+
+      <!-- Carousel Section -->
+      <section class="section carousel-section">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/slide1.jpg" alt="Project Screenshot 1" />
+            </div>
+            <div class="carousel-item">
+              <img src="images/slide2.jpg" alt="Project Screenshot 2" />
+            </div>
+            <div class="carousel-item">
+              <img src="images/slide3.jpg" alt="Project Screenshot 3" />
+            </div>
+          </div>
+          <button class="carousel-control prev">&lt;</button>
+          <button class="carousel-control next">&gt;</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="project-info">
+            <div class="info-item">
+              <span class="label">Role:</span>
+              <span class="value">UX Designer</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Duration:</span>
+              <span class="value">3 months</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Tools:</span>
+              <span class="value">Figma, Adobe XD, Miro</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="section overview">
+        <h2>Project Overview</h2>
+        <p class="description">
+          Brief description of the project and its goals. This section should
+          provide context about the business challenge and the objectives of the
+          project.
+        </p>
+      </section>
+
+      <!-- Problem Statement -->
+      <section class="section problem">
+        <h2>The Problem</h2>
+        <div class="problem-grid">
+          <div class="problem-item">
+            <h3>Business Goals</h3>
+            <ul>
+              <li>Goal 1</li>
+              <li>Goal 2</li>
+              <li>Goal 3</li>
+            </ul>
+          </div>
+          <div class="problem-item">
+            <h3>User Pain Points</h3>
+            <ul>
+              <li>Pain Point 1</li>
+              <li>Pain Point 2</li>
+              <li>Pain Point 3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section class="section research">
+        <h2>Research</h2>
+        <div class="research-content">
+          <div class="research-methods">
+            <h3>Methods Used</h3>
+            <ul>
+              <li>User Interviews</li>
+              <li>Competitor Analysis</li>
+              <li>User Testing</li>
+            </ul>
+          </div>
+          <div class="research-findings">
+            <h3>Key Findings</h3>
+            <p>
+              Summary of research findings and insights gathered from the
+              research phase.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solution -->
+      <section class="section solution">
+        <h2>The Solution</h2>
+        <div class="solution-grid">
+          <div class="solution-item">
+            <h3>Design Decisions</h3>
+            <p>
+              Explanation of key design decisions and rationale behind them.
+            </p>
+          </div>
+          <div class="solution-item">
+            <h3>Design System</h3>
+            <p>
+              Description of the design system components and patterns used.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="section results">
+        <h2>Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <h3>Business Impact</h3>
+            <ul>
+              <li>Result 1</li>
+              <li>Result 2</li>
+              <li>Result 3</li>
+            </ul>
+          </div>
+          <div class="result-item">
+            <h3>User Feedback</h3>
+            <p>Summary of user feedback and satisfaction metrics.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Takeaways -->
+      <section class="section takeaways">
+        <h2>Key Takeaways</h2>
+        <div class="takeaway-list">
+          <div class="takeaway-item">
+            <h3>What Worked Well</h3>
+            <p>Insights about successful aspects of the project.</p>
+          </div>
+          <div class="takeaway-item">
+            <h3>Lessons Learned</h3>
+            <p>Reflections on challenges and what could be improved.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <a href="https://www.linkedin.com/in/azunaekundayo/" target="_blank">
+        <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+      </a>
+      <a href="https://github.com/azunaeine" target="_blank">
+        <div class="icon"><i class="fa-brands fa-github"></i></div>
+      </a>
+      <a href="https://twitter.com/xxxazuna" target="_blank">
+        <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+      </a>
+      <a href="mailto:azunaeine@gmail.com" target="_blank">
+        <div class="icon">
+          <i
+            class="fa-solid fa-envelope"
+            style="background: none; box-shadow: none"
+          ></i>
+        </div>
+      </a>
+      <div class="copyrighttext">
+        © Azuna Ekundayo <span class="year">2022</span>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NLSS6TZ2NF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <script src="../common/common-case-study-js.js"></script>
+    <script>
+      // update the year to the current year
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearSpan = document.querySelector("span.year");
+        if (yearSpan) {
+          yearSpan.innerHTML = new Date().getFullYear();
+        }
+      });
+    </script>
+  </body>
+</html>
