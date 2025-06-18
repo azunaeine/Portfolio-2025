@@ -82,11 +82,16 @@ body[data-theme="dark"] .logo {
   position: absolute;
   inset: -42px;
   z-index: 1;
-  background: rgb(255, 255, 255);
+  background: #121212;
   opacity: 1;
   transition: all 1s ease;
   pointer-events: none;
   display: none;
+}
+
+/* in dark mode, the panel-fade-in should start with dark background */
+body[data-theme="light"] .panel-fade-in {
+  background: #ffffff;
 }
 
 /* when the body is faded-in, fade out the panel */
