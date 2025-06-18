@@ -82,6 +82,47 @@
   transition: var(--transition);
 }
 
+body[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --icon-bg: #ffffff;
+  --icon-text: #000000;
+  --square-bg: #1e1e1e;
+  --square-border: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --footer-bg: #1e1e1e;
+  --footer-text: #ffffff;
+}
+
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--text-color);
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--text-color);
+  top: 2px;
+  left: 2px;
+  transition: var(--transition);
+  transform: translateX(0);
+}
+
+body[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(23px);
+}
+
 .btn-close-menu:not(.visible) {
   opacity: 0;
   pointer-events: none;
