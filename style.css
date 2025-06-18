@@ -439,6 +439,10 @@ footer {
   animation: fadeIn 1s ease-out 1s forwards;
 }
 
+.hero-visual.mobile {
+  align-self: center;
+}
+
 .floating-shapes {
   position: absolute;
   width: 15rem;
