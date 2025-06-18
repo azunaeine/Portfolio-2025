@@ -71,6 +71,17 @@
   /* animate the values if they change */
 }
 
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--text-color);
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
 .btn-close-menu:not(.visible) {
   opacity: 0;
   pointer-events: none;
