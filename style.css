@@ -136,10 +136,11 @@ body[data-theme="light"] .panel-fade-in {
 
 .only-image {
   margin: auto;
+  background-color: #e9e2ff;
 }
 
 .twitter-image {
-  width: 3rem;
+  width: 15rem;
 }
 .nav-item {
   transition: transform 1000ms cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -757,6 +758,10 @@ body[data-theme="dark"] .fa-envelope::before {
     animation-delay: 0s;
   }
 
+  .twitter-image {
+    width: 34rem;
+  }
+
   .shape-2 {
     width: 100px;
     height: 100px;
@@ -945,6 +950,10 @@ body[data-theme="dark"] .fa-envelope::before {
     top: 58%;
     right: 190%;
     animation-delay: 4s;
+  }
+
+  .twitter-image {
+    width: 45rem;
   }
 
   .one {
