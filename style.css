@@ -51,7 +51,7 @@
   transform: scale(1.1);
 }
 
-html[data-theme="dark"] .logo {
+body[data-theme="dark"] .logo {
   filter: invert(1);
 }
 
@@ -82,7 +82,7 @@ html[data-theme="dark"] .logo {
   position: absolute;
   inset: -42px;
   z-index: 1;
-  background: #ffffff;
+  background: #121212;
   opacity: 1;
   transition: all 1s ease;
   pointer-events: none;
@@ -90,8 +90,8 @@ html[data-theme="dark"] .logo {
 }
 
 /* in dark mode, the panel-fade-in should start with dark background */
-html[data-theme="dark"] .panel-fade-in {
-  background: #121212;
+body[data-theme="light"] .panel-fade-in {
+  background: #ffffff;
 }
 
 /* when the body is faded-in, fade out the panel */
@@ -127,13 +127,13 @@ html[data-theme="dark"] .panel-fade-in {
 }
 
 /* when the body is faded-in, put the nav-item back to its original position */
-html.fade-in .nav-item {
+body.fade-in .nav-item {
   /* "it has not moved up" */
   transform: translateY(0px);
   /* move to 0px translation */
 }
 
-html.fade-in .panel-fade-in {
+body.fade-in .panel-fade-in {
   opacity: 0;
 }
 
@@ -270,7 +270,7 @@ a.hamburger-menu-nav-item {
   font-weight: 700;
 }
 
-html[data-theme="dark"] .intro {
+body[data-theme="dark"] .intro {
   color: white;
 }
 
@@ -334,7 +334,7 @@ html[data-theme="dark"] .intro {
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html[data-theme="dark"] {
+body[data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #ffffff;
   --icon-bg: #ffffff;
@@ -371,7 +371,7 @@ html[data-theme="dark"] {
   transform: translateX(0);
 }
 
-html[data-theme="dark"] .theme-toggle::before {
+body[data-theme="dark"] .theme-toggle::before {
   transform: translateX(23px);
 }
 
@@ -460,10 +460,10 @@ footer {
   animation: float 6s ease-in-out infinite;
 }
 
-html[data-theme="dark"] .shape {
+body[data-theme="dark"] .shape {
   border-color: white;
 }
-html[data-theme="dark"] .fa-envelope::before {
+body[data-theme="dark"] .fa-envelope::before {
   color: white;
 }
 
