@@ -18,9 +18,16 @@
       crossorigin="anonymous"
     ></script>
     <title>Azuna Ekundayo - Portfolio</title>
+    <script>
+      // Prevents FOUC
+      (function () {
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
 
-  <body data-theme="light">
+  <body>
     <div class="hamburger-menu-content">
       <a class="hamburger-menu-nav-item" href="index.html"> Home</a>
       <a class="hamburger-menu-nav-item" href="about/index.html"> About </a>

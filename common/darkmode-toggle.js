@@ -1,24 +1,15 @@
 const themeToggle = document.querySelectorAll("#themeToggle");
-const body = document.querySelector("body");
+const doc = document.documentElement;
 
 const setTheme = (theme) => {
-  body.setAttribute("data-theme", theme);
+  doc.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
 };
 
 const toggleTheme = () => {
-  const currentTheme = body.getAttribute("data-theme");
+  const currentTheme = doc.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
   setTheme(newTheme);
 };
 
 themeToggle.forEach((btn) => btn.addEventListener("click", toggleTheme));
-
-// on page load, check local storage for saved theme
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  setTheme(savedTheme);
-} else {
-  // if no theme is saved, use the default (light)
-  setTheme("light");
-}
