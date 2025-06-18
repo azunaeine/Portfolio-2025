@@ -7,11 +7,10 @@
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Override hero background to keep green color */
+/* Hero section - keep green background in dark mode */
 .hero {
-  background: #dcf1aa;
-  opacity: 0.8;
-  color: white;
+  background: #dcf1aa; /* Original green background */
+  color: #333; /* Dark text for better contrast on light green */
   padding: 2rem;
   border-radius: 8px;
   margin-bottom: 2rem;
@@ -22,6 +21,111 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Dark mode styles */
+body[data-theme="dark"] {
+  background-color: #000000; /* Main background black */
+}
+
+/* Nav bar styles */
+body[data-theme="dark"] .nav-bar {
+  background-color: #000000;
+}
+
+/* Nav items */
+body[data-theme="dark"] .nav-item,
+body[data-theme="dark"] .hamburger-menu-nav-item {
+  color: #ffffff !important;
+}
+
+/* Toggle button styles */
+body[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(23px);
+  background: #000000;
+}
+
+body[data-theme="dark"] .theme-toggle {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Override dark mode for hero section only */
+body[data-theme="dark"] .hero {
+  background: #dcf1aa !important; /* Keep the green background */
+  color: #333 !important; /* Keep dark text for readability */
+}
+
+/* Ensure hero text remains dark in dark mode */
+body[data-theme="dark"] .hero h1,
+body[data-theme="dark"] .hero h2,
+body[data-theme="dark"] .hero h3,
+body[data-theme="dark"] .hero p,
+body[data-theme="dark"] .hero .hero-content {
+  color: #333 !important;
+}
+
+/* Update the main dark mode styles to exclude hero from white background override */
+body[data-theme="dark"] .case-study > :not(.hero),
+body[data-theme="dark"] .section:not(.hero) {
+  background-color: #ffffff !important;
+}
+
+/* Ensure hero section doesn't inherit white background */
+body[data-theme="dark"] .hero {
+  background-color: #dcf1aa !important;
+}
+
+/* Content containers - keep original backgrounds */
+body[data-theme="dark"] .case-study,
+body[data-theme="dark"] .section,
+body[data-theme="dark"] .project-info,
+body[data-theme="dark"] .carousel,
+body[data-theme="dark"] .carousel-inner,
+body[data-theme="dark"] .carousel-item,
+body[data-theme="dark"] .project-overview,
+body[data-theme="dark"] .problem-statement,
+body[data-theme="dark"] .research,
+body[data-theme="dark"] .solution,
+body[data-theme="dark"] .overview,
+body[data-theme="dark"] .content-container {
+  background-color: #ffffff !important; /* Force white background for content */
+}
+
+/* Text elements - force black text */
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] h5,
+body[data-theme="dark"] h6,
+body[data-theme="dark"] p,
+body[data-theme="dark"] li,
+body[data-theme="dark"] .label,
+body[data-theme="dark"] .value,
+body[data-theme="dark"] .text-content,
+body[data-theme="dark"] .project-info,
+body[data-theme="dark"] .info-item,
+body[data-theme="dark"] .info-item .label,
+body[data-theme="dark"] .info-item .value {
+  color: #000000 !important; /* Force black text */
+}
+
+/* Links */
+body[data-theme="dark"] a {
+  color: #0066cc !important;
+}
+
+/* Carousel controls */
+body[data-theme="dark"] .carousel-control {
+  color: #333333 !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Ensure images maintain their appearance */
+body[data-theme="dark"] img {
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 body {
@@ -35,7 +139,7 @@ body {
   border: black solid 2px;
 }
 
-/* Hero Section */
+/* Nav bar styles */
 .nav-bar {
   display: flex;
   align-items: center;
@@ -70,15 +174,6 @@ body {
 
 .nav-item:hover {
   color: var(--primary-color);
-}
-
-.hero {
-  width: 100%;
-  color: white;
-  padding: 2rem 2rem;
-  border-radius: 0;
-  margin-bottom: 2rem;
-  position: relative;
 }
 
 .case-study {
