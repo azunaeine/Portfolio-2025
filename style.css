@@ -1012,7 +1012,7 @@ body[data-theme="dark"] .fa-envelope::before {
     color: var(--button-text);
     background: var(--button-bg);
     width: 12.25rem;
-    height: 3.625rem;
+    height: 4.5rem;
     border: none;
     font-size: 1.125rem;
     line-height: 1em;
