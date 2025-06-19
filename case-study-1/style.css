@@ -17,6 +17,25 @@
   position: relative;
 }
 
+.btn-view {
+  background-color: #dcf1aa;
+  border: none;
+  padding: 2em;
+  border-radius: 11px;
+  font-weight: bold;
+  color: black;
+  width: 185px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 0.5em;
+  font-size: 16px;
+  height: 5rem;
+}
+
+.btn-view:hover {
+  transform: scale(0.95);
+}
+
 * {
   margin: 0;
   padding: 0;
