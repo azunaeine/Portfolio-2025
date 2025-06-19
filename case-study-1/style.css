@@ -167,6 +167,11 @@ body {
   width: 100%;
 }
 
+.logo {
+  height: 40px; /* Adjust size as needed */
+  width: auto;
+}
+
 /* Add margin to main content to prevent overlap with fixed nav */
 .case-study {
   margin-top: 60px; /* Adjust this value based on your nav height */
