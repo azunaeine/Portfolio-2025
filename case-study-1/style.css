@@ -359,35 +359,76 @@ body {
 }
 
 .research-methods-list {
-  list-style-type: disc;
-  padding-left: 1.5em;
-  margin: 0.5em 0;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0 0;
 }
 
-.problem-grid ul {
-  list-style-type: disc; /* This adds bullet points */
-  padding-left: 1.5em; /* Add some left padding for better alignment */
-  margin: 0.5em 0; /* Add some vertical spacing */
+.research-methods-list li {
+  margin-bottom: 0.75em; /* Slightly reduce bottom margin */
+  line-height: 1.5;
+  padding-left: 1.25em; /* Add some left padding for bullet points */
+  position: relative;
 }
 
-.problem-grid li {
-  margin-bottom: 0.5em; /* Space between list items */
-  line-height: 1.5; /* Improve readability */
+.research-methods-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-weight: bold;
+}
+
+.research-methods {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  /* Remove fixed height and let it adjust to content */
+  height: 18rem;
+  min-height: 0; /* Reset any minimum height */
 }
 
 /* Problem Section */
 .problem-item {
   background: var(--light-gray);
-  padding: 1.5rem;
+  padding: 2.5rem;
   border-radius: 4px;
+  line-height: 2rem;
 }
 
 /* Research Section */
-.research-methods,
 .research-findings {
   background: var(--light-gray);
   padding: 1.5rem;
   border-radius: 4px;
+}
+
+/* Research Findings List */
+.research-findings-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 1em 0;
+}
+
+.research-findings-list li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.research-findings-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000000; /* Blue bullet point color */
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.research-findings-list li strong {
+  color: #000000; /* Darker color for the heading text */
 }
 
 /* Solution Section */
