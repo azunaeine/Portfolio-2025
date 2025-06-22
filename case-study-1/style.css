@@ -314,6 +314,15 @@ body {
   color: black;
   font-size: 6em;
   text-align: center;
+  margin-bottom: 2rem; /* Add space below the title */
+}
+
+.title-underline {
+  width: 100px; /* Width of the underline */
+  height: 4px; /* Thickness of the underline */
+  background-color: #e8571b; /* Orange color from your design system */
+  margin: 0 auto; /* Center the underline */
+  border-radius: 2px; /* Slight rounding of corners */
 }
 
 .project-info {
@@ -510,7 +519,108 @@ body {
   font-size: 1rem;
 }
 
+/* Screenshots Section */
+.screenshots-section {
+  background: #86674b; /* Light gray background */
+  padding: 0;
+  height: 500px; /* Fixed height */
+  display: flex;
+  align-items: center; /* Vertical centering */
+  overflow-x: auto; /* Allow horizontal scrolling on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.screenshots-container {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.screenshot-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+  gap: 1.5rem;
+  padding: 2rem 0;
+  min-width: min-content;
+  height: 100%;
+}
+
+.screenshot-item {
+  flex: 0 0 auto;
+  width: 22%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  background: white;
+  padding: 1rem;
+}
+
+.screenshot-item.featured {
+  width: 28%;
+  transform: translateY(-20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Hide scrollbar for a cleaner look */
+.screenshots-section::-webkit-scrollbar {
+  display: none;
+}
+
+.screenshots-section {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  .screenshot-item {
+    width: 23%;
+  }
+  .screenshot-item.featured {
+    width: 30%;
+  }
+}
+
+@media (max-width: 992px) {
+  .screenshot-item {
+    width: 25%;
+    min-width: 200px;
+  }
+  .screenshot-item.featured {
+    width: 30%;
+    min-width: 240px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .case-study {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .early-prototype-content img {
     max-width: 220px;
@@ -549,24 +659,5 @@ body {
   .early-prototype-content img {
     max-width: 250px;
     width: 100%;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .case-study {
-    padding: 1rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .section {
-    padding: 1.5rem;
   }
 }
