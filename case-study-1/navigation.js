@@ -1,50 +1,32 @@
-// Navigation functions
 function startTheAnimation() {
-    document.querySelector("body").classList.add("fade-in");
+  document.querySelector("body").classList.add("fade-in");
 }
 
-// Start animation after a short delay
-setTimeout(startTheAnimation, 400);
+setTimeout(startTheAnimation, 0.4 * 1000);
 
-function toggleMenu() {
-    const hamburgerMenuContent = document.querySelector(".hamburger-menu-content");
-    const btnCloseMenu = document.querySelector(".btn-close-menu");
-    const body = document.querySelector("body");
-    
-    const isOpen = body.classList.contains("menu-is-open");
-    
-    if (isOpen) {
-        hamburgerMenuContent.classList.remove("visible");
-        btnCloseMenu.classList.remove("visible");
-        body.classList.remove("menu-is-open");
-    } else {
-        hamburgerMenuContent.classList.add("visible");
-        btnCloseMenu.classList.add("visible");
-        body.classList.add("menu-is-open");
-    }
+function showMenu() {
+  const hamburgerMenuContent = document.querySelector(
+    ".hamburger-menu-content"
+  );
+  hamburgerMenuContent.classList.add("visible");
+
+  const btnCloseMenu = document.querySelector(".btn-close-menu");
+  btnCloseMenu.classList.add("visible");
+
+  const body = document.querySelector("body");
+  body.classList.add("menu-is-open");
 }
 
-// Add event listeners for menu toggle
-const hamburgerMenuBtn = document.querySelector(".btn-hamburger-menu:not(.btn-close-menu)");
-const closeMenuBtn = document.querySelector(".btn-close-menu");
+function hideMenu() {
+  const hamburgerMenuContent = document.querySelector(
+    ".hamburger-menu-content"
+  );
 
-if (hamburgerMenuBtn) {
-    hamburgerMenuBtn.addEventListener("click", toggleMenu);
-}
+  hamburgerMenuContent.classList.remove("visible");
 
-if (closeMenuBtn) {
-    closeMenuBtn.addEventListener("click", toggleMenu);
-}
+  const btnCloseMenu = document.querySelector(".btn-close-menu");
+  btnCloseMenu.classList.remove("visible");
 
-// Close menu when clicking outside
-const hamburgerMenuContent = document.querySelector(".hamburger-menu-content");
-if (hamburgerMenuContent) {
-    document.addEventListener("click", (e) => {
-        if (!hamburgerMenuContent.contains(e.target) && !hamburgerMenuBtn.contains(e.target)) {
-            const isOpen = document.body.classList.contains("menu-is-open");
-            if (isOpen) {
-                toggleMenu();
-            }
-        }
-    });
+  const body = document.querySelector("body");
+  body.classList.remove("menu-is-open");
 }
