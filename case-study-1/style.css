@@ -461,37 +461,20 @@ body {
 /* Early Prototype Section */
 .early-prototype-content {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  overflow-x: auto;
+  justify-content: center;
   padding: 1rem 0;
-  scrollbar-width: thin;
-  scrollbar-color: #888 transparent;
-}
-
-.early-prototype-content::-webkit-scrollbar {
-  height: 6px;
-}
-
-.early-prototype-content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.early-prototype-content::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 3px;
 }
 
 .early-prototype-content img {
-  flex: 0 0 auto;
-  width: calc(25% - 0.75rem); /* 4 images with gap */
+  flex: 0 0 calc(25% - 1rem); /* 4 images per row with gap */
+  max-width: calc(25% - 1rem);
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.early-prototype-content img:hover {
-  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
 }
 
 /* Responsive adjustments */
