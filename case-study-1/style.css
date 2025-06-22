@@ -547,7 +547,9 @@ body {
 
 .screenshot-item {
   flex: 0 0 auto;
-  width: 22%;
+  width: 20%;
+  min-width: 200px; /* Minimum width for each item */
+  max-width: 280px; /* Maximum width for larger screens */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -558,7 +560,9 @@ body {
 }
 
 .screenshot-item.featured {
-  width: 28%;
+  width: 24%;
+  min-width: 240px;
+  max-width: 320px;
   transform: translateY(-20px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
@@ -569,37 +573,86 @@ body {
   display: block;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Hide scrollbar for a cleaner look */
-.screenshots-section::-webkit-scrollbar {
-  display: none;
-}
-
-.screenshots-section {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  object-fit: contain; /* Ensure image maintains aspect ratio */
+  max-height: 400px; /* Limit maximum height */
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .screenshot-item {
-    width: 23%;
+    width: 22%;
+    min-width: 180px;
   }
+
   .screenshot-item.featured {
-    width: 30%;
+    width: 26%;
+    min-width: 220px;
+  }
+
+  .screenshot-item img {
+    max-height: 360px;
   }
 }
 
 @media (max-width: 992px) {
   .screenshot-item {
-    width: 25%;
+    width: 28%;
+    min-width: 160px;
+  }
+
+  .screenshot-item.featured {
+    width: 32%;
     min-width: 200px;
   }
-  .screenshot-item.featured {
-    width: 30%;
-    min-width: 240px;
+
+  .screenshot-item img {
+    max-height: 320px;
   }
+}
+
+@media (max-width: 768px) {
+  .screenshot-wrapper {
+    justify-content: flex-start; /* Align items to start for better mobile scrolling */
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .screenshot-item {
+    width: 80%;
+    min-width: 280px;
+    max-width: 320px;
+    margin: 0 1rem 0 0; /* Add right margin for scrolling */
+  }
+
+  .screenshot-item.featured {
+    width: 80%;
+    min-width: 300px;
+    max-width: 340px;
+    transform: none; /* Remove elevation on mobile */
+  }
+
+  .screenshot-item img {
+    max-height: 400px;
+  }
+}
+
+/* Hide scrollbar for a cleaner look but keep functionality */
+.screenshots-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+.screenshots-section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.screenshots-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.screenshots-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */
