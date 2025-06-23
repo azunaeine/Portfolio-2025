@@ -11,7 +11,7 @@
 .hero {
   background: #dcf1aa; /* Original green background */
   color: #333; /* Dark text for better contrast on light green */
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   margin-bottom: 2rem;
   position: relative;
