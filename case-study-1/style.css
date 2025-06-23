@@ -454,6 +454,90 @@ body {
   border-radius: 4px;
 }
 
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.result-item h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+/* Key Achievements */
+.key-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.key-achievements li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+.key-achievements li:before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: 0.15em;
+  font-weight: bold;
+}
+
+/* User Feedback */
+.user-feedback {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-feedback li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+.user-feedback li:before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: 0.15em;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .result-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .key-achievements li,
+  .user-feedback li {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
 /* Takeaways Section */
 .takeaway-list {
   display: grid;
