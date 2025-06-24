@@ -12,7 +12,6 @@
   background: #dcf1aa; /* Original green background */
   color: #333; /* Dark text for better contrast on light green */
   padding: 1rem;
-  border-radius: 8px;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -1391,6 +1390,17 @@ body[data-theme="dark"] .theme-toggle::before {
 .theme-toggle:hover {
   transform: scale(1.1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .section h2,
+body[data-theme="dark"] .content-box h2,
+body[data-theme="dark"] .info-box h2,
+body[data-theme="dark"] .card h2 {
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /* Mobile Theme Toggle */
