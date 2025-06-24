@@ -67,12 +67,17 @@ body[data-theme="dark"] td,
 body[data-theme="dark"] th,
 body[data-theme="dark"] label,
 body[data-theme="dark"] .text-content,
-body[data-theme="dark"] .info-item .label,
-body[data-theme="dark"] .info-item .value,
 body[data-theme="dark"] .info-box,
 body[data-theme="dark"] .content-box,
 body[data-theme="dark"] .case-study-section {
   color: #000000;
+}
+
+/* Info items in dark mode */
+body[data-theme="dark"] .info-item,
+body[data-theme="dark"] .info-item .label,
+body[data-theme="dark"] .info-item .value {
+  color: #ffffff !important;
 }
 
 /* Update box styles in dark mode */
