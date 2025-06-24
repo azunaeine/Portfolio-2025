@@ -28,37 +28,29 @@
   </head>
   <body data-theme="light">
     <div class="hamburger-menu-content">
-      <a class="hamburger-menu-nav-item" href="../index.html"> Home</a>
-      <a class="hamburger-menu-nav-item" href="../about/index.html"> About </a>
-      <a
-        href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
-        class="hamburger-menu-nav-item"
-        target="_blank"
-        >Resume</a
-      >
+      <a class="hamburger-menu-nav-item" href="../index.html">Home</a>
+      <a class="hamburger-menu-nav-item" href="../about/index.html">About</a>
+      <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
+         class="hamburger-menu-nav-item" 
+         target="_blank">Resume</a>
       <button class="theme-toggle" id="themeToggle"></button>
     </div>
     <nav class="nav-bar">
       <div class="panel-fade-in"></div>
-      <a class="s-icon" href="../index.html"
-        ><img src="../images/logo.svg" alt="logo" class="logo"></a>
+      <a class="s-icon" href="../index.html">
+        <img src="../images/logo.svg" alt="logo" class="logo">
+      </a>
 
       <i class="btn-hamburger-menu fa-solid fa-bars" onclick="showMenu()"></i>
-      <i
-        class="btn-hamburger-menu btn-close-menu fa-solid fa-close"
-        onclick="hideMenu()"
-      ></i>
+      <i class="btn-hamburger-menu btn-close-menu fa-solid fa-close" onclick="hideMenu()"></i>
 
       <div class="nav-items">
-        <a class="nav-item" href="../index.html"> Home</a>
-        <a class="nav-item" href="../about/index.html"> About </a>
-        <a
-          href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
-          class="nav-item"
-          target="_blank"
-          >Resume</a
-        >
-        <button class="theme-toggle" id="themeToggle"></button>
+        <a class="nav-item" href="../index.html">Home</a>
+        <a class="nav-item" href="../about/index.html">About</a>
+        <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
+           class="nav-item" 
+           target="_blank">Resume</a>
+        <button class="theme-toggle" id="desktopThemeToggle"></button>
       </div>
     </nav>
     <div class="case-study">
@@ -377,7 +369,62 @@
         }
       });
     </script>
-     <script src="../common/darkmode-toggle.js"></script>
-     <script src="navigation.js"></script>
+    <script>
+      // 1. fade in the nav items + logo - panel around the nav that fades in
+      // TODO
+      // 2. nav links transition in - move down, move at different speeds, start at different heights
+      // 3. (optional) last item (CTA button) comes down all the way (more than the others)
+      // grab the element
+      //
+      // this will add a class "fade-in" to the body, we can use it to make all our elements fade in!
+      function startTheAnimation() {
+        // start the animation!
+        document.querySelector("body").classList.add("fade-in");
+      }
+      // delay this by 1s (this will run 1s in the future)
+      // start the animation 1s after page loads, so that the user can see the animation (otherwise it's too fast)
+      setTimeout(startTheAnimation, 0.4 * 1000);
+
+      function showMenu() {
+        const hamburgerMenuContent = document.querySelector(
+          ".hamburger-menu-content"
+        );
+        hamburgerMenuContent.classList.add("visible");
+
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        btnCloseMenu.classList.add("visible");
+
+        const body = document.querySelector("body");
+        body.classList.add("menu-is-open");
+      }
+
+      // javascript animate an element function
+      function hideMenu() {
+        // 1. grab the element
+        const hamburgerMenuContent = document.querySelector(
+          ".hamburger-menu-content"
+        );
+        // 2. change its class
+        hamburgerMenuContent.classList.remove("visible");
+
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        btnCloseMenu.classList.remove("visible");
+
+        const body = document.querySelector("body");
+        body.classList.remove("menu-is-open");
+      }
+    </script>
+    <script>
+      function takeUsDownToCaseStudies() {
+        // scroll down to the element with id "case-studies"
+        // 1. grab the element
+        const myContainer = document.querySelector(".container .brief .title");
+        // 2. scrollIntoView({bahavior:"smooth"})
+        myContainer.scrollIntoView({ behavior: "smooth" });
+        // 3. hide the menu
+        hideMenu();
+      }
+    </script>
+    <script src="../common/darkmode-toggle.js"></script>
   </body>
 </html>

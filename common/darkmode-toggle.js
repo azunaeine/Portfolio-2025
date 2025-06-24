@@ -1,4 +1,4 @@
-const themeToggle = document.querySelectorAll("#themeToggle");
+const themeToggles = document.querySelectorAll(".theme-toggle");
 const body = document.querySelector("body");
 
 const setTheme = (theme) => {
@@ -12,7 +12,7 @@ const toggleTheme = () => {
   setTheme(newTheme);
 };
 
-themeToggle.forEach((btn) => btn.addEventListener("click", toggleTheme));
+themeToggles.forEach((btn) => btn.addEventListener("click", toggleTheme));
 
 // on page load, check local storage for saved theme
 const savedTheme = localStorage.getItem("theme");
