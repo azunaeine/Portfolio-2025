@@ -107,6 +107,13 @@ body[data-theme="dark"] .card h2 {
 
 /* Text in boxes */
 body[data-theme="dark"] .section p {
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Text in boxes */
+body[data-theme="dark"] .overview p {
   color: #ffffff;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -115,7 +122,7 @@ body[data-theme="dark"] .section p {
 body[data-theme="dark"] .content-box p,
 body[data-theme="dark"] .info-box p,
 body[data-theme="dark"] .card p {
-  color: #b0b0b0;
+  color: #ffffff;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -133,7 +140,7 @@ body[data-theme="dark"] .section li,
 body[data-theme="dark"] .content-box li,
 body[data-theme="dark"] .info-box li,
 body[data-theme="dark"] .card li {
-  color: #b0b0b0;
+  color: #000000;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
