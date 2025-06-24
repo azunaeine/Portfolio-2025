@@ -1276,10 +1276,6 @@ body.menu-is-open {
   transition: color 0.2s ease;
 }
 
-.nav-item:hover {
-  color: #0ad81d;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav-items {
@@ -1295,11 +1291,6 @@ body[data-theme="dark"] .hamburger-menu-content {
 body[data-theme="dark"] .hamburger-menu-nav-item,
 body[data-theme="dark"] .nav-item {
   color: #fff;
-}
-
-body[data-theme="dark"] .hamburger-menu-nav-item:hover,
-body[data-theme="dark"] .nav-item:hover {
-  color: #0ad81d;
 }
 
 /* Hamburger Menu Button */
