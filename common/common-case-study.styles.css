@@ -211,7 +211,7 @@ a {
 .hamburger-menu-content {
   position: fixed;
   z-index: 10;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   top: 0;
   right: 0;
