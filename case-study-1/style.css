@@ -776,6 +776,7 @@ body {
 
   .screenshot-wrapper {
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 1rem;
   }
 
   .screenshot-item.featured {
