@@ -1289,13 +1289,6 @@ body {
   transition-delay: 0.5s;
 }
 
-/* Theme Toggle in Hamburger Menu */
-.theme-toggle-container {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
 
 /* Navigation Bar Styles */
 .nav-bar {
@@ -1435,11 +1428,6 @@ body.menu-is-open {
   z-index: 100;
 }
 
-/* Ensure the theme toggle is visible in the hamburger menu */
-.hamburger-menu-content .theme-toggle {
-  margin-top: 1em;
-}
-
 /* Responsive styles */
 @media (min-width: 768px) {
   .btn-hamburger-menu,
@@ -1456,48 +1444,6 @@ body.menu-is-open {
     gap: 2em;
     align-items: center;
   }
-}
-
-/* Theme Toggle Button Styles */
-.theme-toggle {
-  background: none;
-  border: 2px solid var(--text-color);
-  width: 50px;
-  height: 25px;
-  border-radius: 25px;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin: 0 10px;
-}
-
-.theme-toggle::before {
-  content: "";
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: var(--text-color);
-  top: 2px;
-  left: 2px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(0);
-}
-
-body[data-theme="dark"] .theme-toggle {
-  border-color: #ffffff;
-  background: transparent;
-}
-
-body[data-theme="dark"] .theme-toggle::before {
-  background: #ffffff;
-  transform: translateX(23px);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 body[data-theme="dark"] .section h2,
