@@ -29,7 +29,7 @@
         target="_blank"
         >Resume</a
       >
-      <button class="theme-toggle" id="themeToggle"></button>
+      <div class="theme-toggle-container"></div>
     </div>
     <nav class="nav-bar">
       <div class="panel-fade-in"></div>
@@ -52,7 +52,7 @@
           target="_blank"
           >Resume</a
         >
-        <button class="theme-toggle" id="themeToggle"></button>
+        <div class="theme-toggle-container"></div>
       </div>
     </nav>
     <div class="mobile small-box">
@@ -290,6 +290,24 @@
       gtag("js", new Date());
 
       gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <script>
+      // Fetch and insert dark toggle button
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleContainers = document.querySelectorAll('.theme-toggle-container');
+        
+        // Load the dark toggle button into all containers
+        toggleContainers.forEach(container => {
+          fetch('darktoggle.html')
+            .then(response => response.text())
+            .then(html => {
+              container.innerHTML = html;
+            })
+            .catch(error => {
+              console.error('Error loading dark toggle:', error);
+            });
+        });
+      });
     </script>
     <script src="common/darkmode-toggle.js"></script>
     <!-- Code injected by live-server -->
