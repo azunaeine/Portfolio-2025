@@ -410,7 +410,7 @@ function hideMenu() {
         
         // Load the dark toggle button into all containers
         toggleContainers.forEach(container => {
-          fetch('../darktoggle.html')
+          fetch('../common/darktoggle.html')
             .then(response => response.text())
             .then(html => {
               container.innerHTML = html;
