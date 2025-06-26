@@ -39,9 +39,7 @@
              class="hamburger-menu-nav-item" 
              target="_blank">Resume</a>
         </div>
-        <div class="theme-toggle-container">
-          <button class="theme-toggle" id="themeToggle"></button>
-        </div>
+        <div class="theme-toggle-container"></div>
       </div>
     </div>
     <nav class="nav-bar">
@@ -56,7 +54,7 @@
         <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
            class="nav-item" 
            target="_blank">Resume</a>
-        <button class="theme-toggle" id="desktopThemeToggle"></button>
+        <div class="theme-toggle-container"></div>
       </div>
     </nav>
     <div class="case-study">
@@ -404,6 +402,24 @@ function hideMenu() {
   const body = document.querySelector("body");
   body.classList.remove("menu-is-open");
 }
+    </script>
+    <script>
+      // Fetch and insert dark toggle button
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleContainers = document.querySelectorAll('.theme-toggle-container');
+        
+        // Load the dark toggle button into all containers
+        toggleContainers.forEach(container => {
+          fetch('../darktoggle.html')
+            .then(response => response.text())
+            .then(html => {
+              container.innerHTML = html;
+            })
+            .catch(error => {
+              console.error('Error loading dark toggle:', error);
+            });
+        });
+      });
     </script>
     <script src="../common/darkmode-toggle.js"></script>
   </body>

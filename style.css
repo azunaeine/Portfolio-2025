@@ -430,34 +430,6 @@ body[data-theme="dark"] {
   --footer-text: #ffffff;
 }
 
-.theme-toggle {
-  background: none;
-  border: 2px solid var(--text-color);
-  width: 50px;
-  height: 25px;
-  border-radius: 25px;
-  position: relative;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.theme-toggle::before {
-  content: "";
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: var(--text-color);
-  top: 2px;
-  left: 2px;
-  transition: var(--transition);
-  transform: translateX(0);
-}
-
-body[data-theme="dark"] .theme-toggle::before {
-  transform: translateX(23px);
-}
-
 .square {
   position: relative;
   width: 17.5rem;
