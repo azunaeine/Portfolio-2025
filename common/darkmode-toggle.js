@@ -1,4 +1,3 @@
-const themeToggles = document.querySelectorAll(".theme-toggle");
 const body = document.querySelector("body");
 
 const setTheme = (theme) => {
@@ -12,7 +11,12 @@ const toggleTheme = () => {
   setTheme(newTheme);
 };
 
-themeToggles.forEach((btn) => btn.addEventListener("click", toggleTheme));
+// Use event delegation to handle dynamically loaded toggle buttons
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".theme-toggle")) {
+    toggleTheme();
+  }
+});
 
 // on page load, check local storage for saved theme
 const savedTheme = localStorage.getItem("theme");
