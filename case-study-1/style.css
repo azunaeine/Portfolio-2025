@@ -1313,10 +1313,29 @@ body {
   transition: color 0.2s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Mobile styles */
+@media (max-width: 767px) {
   .nav-items {
     display: none;
+  }
+}
+
+/* Desktop styles - 768px and above */
+@media (min-width: 768px) {
+  .nav-items {
+    display: flex;
+  }
+  
+  /* Hide hamburger menu on desktop */
+  .btn-hamburger-menu,
+  .btn-close-menu,
+  .hamburger-menu-content {
+    display: none !important;
+  }
+  
+  /* Ensure body scroll is enabled on desktop */
+  body.menu-is-open {
+    overflow: auto;
   }
 }
 
