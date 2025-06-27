@@ -352,8 +352,26 @@
         fetch("common/hamburger-menu.html")
           .then((response) => response.text())
           .then((html) => {
+            // Create a temporary div to parse the HTML
+            const temp = document.createElement('div');
+            temp.innerHTML = html;
+            
             // Insert the hamburger menu at the end of the body
             document.body.insertAdjacentHTML("beforeend", html);
+            
+            // Find and execute any scripts in the loaded HTML
+            const scripts = temp.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+              const newScript = document.createElement('script');
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.textContent = oldScript.textContent;
+              }
+              document.body.appendChild(newScript);
+            });
+            
+            console.log('Hamburger menu loaded and scripts executed');
           })
           .catch((error) => {
             console.error("Error loading hamburger menu:", error);
