@@ -64,8 +64,16 @@ body[data-theme="dark"] .logo {
     display: inline-block;
   }
 
+  /* Hamburger menu button is shown on mobile and hidden on desktop */
   i.btn-hamburger-menu {
-    display: none;
+    display: none; /* Will be overridden by media query for mobile */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    z-index: 1000;
+    color: var(--text-color);
+    cursor: pointer;
   }
 }
 
@@ -164,6 +172,16 @@ body[data-theme="light"] .panel-fade-in {
     padding: 1.5rem;
     margin: 1.5rem 0;
   }
+  
+  /* Show hamburger menu button on mobile */
+  i.btn-hamburger-menu {
+    display: block !important;
+  }
+  
+  /* Hide regular nav items on mobile */
+  .nav-items {
+    display: none !important;
+  }
 }
 
 /* Tablet styles - updated */
@@ -258,34 +276,7 @@ body.menu-is-open {
   overflow: hidden;
 }
 
-.hamburger-menu-content {
-  position: fixed;
-  z-index: 10;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: var(--bg-color);
-  color: var(--text-color);
-  /* display: none; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4em;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hamburger-menu-content.visible {
-  /* display: flex; */
-  opacity: 1;
-
-  pointer-events: all;
-}
+/* Hamburger menu styles have been moved to common/hamburger-menu.html */
 
 a.nav-item {
   color: var(--text-color);
@@ -294,52 +285,6 @@ a.nav-item {
 a {
   text-decoration: none;
   color: var(--text-color);
-}
-
-a.hamburger-menu-nav-item {
-  color: var(--text-color);
-}
-
-/* when the hamburger menu is not visible, the menu items are offset a little bit from their positions */
-.hamburger-menu-nav-item {
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.3s ease-in-out;
-  /* animate the values if they change */
-}
-
-/* when the hamburger menu is visible, the menu-items move back from their initial offset positions */
-.hamburger-menu-content.visible .hamburger-menu-nav-item {
-  transform: translateX(0px);
-  opacity: 1;
-}
-
-/* on mouseover, transform a little bit */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:active {
-  transform: scale(1.05) rotate(2deg);
-  transition-delay: 0s !important;
-}
-
-/* we can also add some transition delays so they animate in a sequence: */
-
-/* the first menu-item gets 0.2s delay */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(1) {
-  transition-delay: 0.2s;
-}
-
-/* second menu-item gets 0.3s delay */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(2) {
-  transition-delay: 0.3s;
-}
-
-/* third menu-item gets 0.4s delay */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(3) {
-  transition-delay: 0.4s;
-}
-
-/* fourth menu-item gets 0.5s delay */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(4) {
-  transition-delay: 0.5s;
 }
 
 .intro {
@@ -1155,9 +1100,7 @@ body[data-theme="dark"] .fa-envelope::before {
     margin-left: 3em;
   }
 
-  .hamburger-menu-content {
-    display: none;
-  }
+  /* Hamburger menu styles have been moved to common/hamburger-menu.html */
 
   .nav-item:active {
     transition: all 0.5s ease-out;

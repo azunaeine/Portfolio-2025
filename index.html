@@ -20,17 +20,7 @@
     <title>Azuna Ekundayo - Portfolio</title>
   </head>
   <body data-theme="light">
-    <div class="hamburger-menu-content">
-      <a class="hamburger-menu-nav-item" href="index.html"> Home</a>
-      <a class="hamburger-menu-nav-item" href="about/index.html"> About </a>
-      <a
-        href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
-        class="hamburger-menu-nav-item"
-        target="_blank"
-        >Resume</a
-      >
-      <div class="theme-toggle-container"></div>
-    </div>
+    <!-- Hamburger menu will be loaded here -->
     <nav class="nav-bar">
       <div class="panel-fade-in"></div>
       <a class="s-icon" href="index.html"
@@ -236,7 +226,6 @@
       // delay this by 1s (this will run 1s in the future)
       // start the animation 1s after page loads, so that the user can see the animation (otherwise it's too fast)
       setTimeout(startTheAnimation, 0.4 * 1000);
-
       function showMenu() {
         const hamburgerMenuContent = document.querySelector(
           ".hamburger-menu-content"
@@ -291,25 +280,26 @@
 
       gtag("config", "G-NLSS6TZ2NF");
     </script>
+    <!-- Load hamburger menu -->
     <script>
-      // Fetch and insert dark toggle button
-      document.addEventListener('DOMContentLoaded', function() {
-        const toggleContainers = document.querySelectorAll('.theme-toggle-container');
-        
-        // Load the dark toggle button into all containers
-        toggleContainers.forEach(container => {
-          fetch('darktoggle.html')
-            .then(response => response.text())
-            .then(html => {
-              container.innerHTML = html;
-            })
-            .catch(error => {
-              console.error('Error loading dark toggle:', error);
-            });
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load hamburger menu HTML
+        fetch("common/hamburger-menu.html")
+          .then((response) => response.text())
+          .then((html) => {
+            // Insert the hamburger menu at the end of the body
+            document.body.insertAdjacentHTML("beforeend", html);
+
+            // Load the hamburger menu JavaScript
+            const script = document.createElement("script");
+            script.src = "common/hamburger-menu.js";
+            document.body.appendChild(script);
+          })
+          .catch((error) => {
+            console.error("Error loading hamburger menu:", error);
+          });
       });
     </script>
-    <script src="common/darkmode-toggle.js"></script>
     <!-- Code injected by live-server -->
     <script>
       // <![CDATA[  <-- For SVG support

@@ -27,26 +27,12 @@
     <title>Recipe Sharing</title>
   </head>
   <body data-theme="light">
-    <div class="hamburger-menu-overlay">
-      <div class="hamburger-menu-content">
-        <div class="hamburger-menu-header">
-          <i class="btn-close-menu fa-solid fa-xmark" onclick="hideMenu()"></i>
-        </div>
-        <div class="hamburger-menu-items">
-          <a class="hamburger-menu-nav-item" href="../index.html">Home</a>
-          <a class="hamburger-menu-nav-item" href="../about/index.html">About</a>
-          <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
-             class="hamburger-menu-nav-item" 
-             target="_blank">Resume</a>
-        </div>
-        <div class="theme-toggle-container"></div>
-      </div>
-    </div>
+    <!-- Hamburger menu will be loaded here -->
     <nav class="nav-bar">
       <a class="s-icon" href="../index.html">
         <img src="../images/logo.svg" alt="logo" class="logo">
       </a>
-      <i class="btn-hamburger-menu fa-solid fa-bars" onclick="showMenu()"></i>
+      <!-- Hamburger menu button will be added by hamburger-menu.html -->
 
       <div class="nav-items">
         <a class="nav-item" href="../index.html">Home</a>
@@ -373,52 +359,24 @@
         }
       });
     </script>
+    <!-- Load hamburger menu -->
     <script>
-    function showMenu() {
-  const hamburgerMenuContent = document.querySelector(
-    ".hamburger-menu-content"
-  );
-  hamburgerMenuContent.classList.add("visible");
-
-  const btnCloseMenu = document.querySelector(".btn-close-menu");
-  btnCloseMenu.classList.add("visible");
-
-  const body = document.querySelector("body");
-  body.classList.add("menu-is-open");
-}
-
-// javascript animate an element function
-function hideMenu() {
-  // 1. grab the element
-  const hamburgerMenuContent = document.querySelector(
-    ".hamburger-menu-content"
-  );
-  // 2. change its class
-  hamburgerMenuContent.classList.remove("visible");
-
-  const btnCloseMenu = document.querySelector(".btn-close-menu");
-  btnCloseMenu.classList.remove("visible");
-
-  const body = document.querySelector("body");
-  body.classList.remove("menu-is-open");
-}
-    </script>
-    <script>
-      // Fetch and insert dark toggle button
       document.addEventListener('DOMContentLoaded', function() {
-        const toggleContainers = document.querySelectorAll('.theme-toggle-container');
-        
-        // Load the dark toggle button into all containers
-        toggleContainers.forEach(container => {
-          fetch('../common/darktoggle.html')
-            .then(response => response.text())
-            .then(html => {
-              container.innerHTML = html;
-            })
-            .catch(error => {
-              console.error('Error loading dark toggle:', error);
-            });
-        });
+        // Load hamburger menu HTML
+        fetch('../common/hamburger-menu.html')
+          .then(response => response.text())
+          .then(html => {
+            // Insert the hamburger menu at the end of the body
+            document.body.insertAdjacentHTML('beforeend', html);
+            
+            // Load the hamburger menu JavaScript
+            const script = document.createElement('script');
+            script.src = '../common/hamburger-menu.js';
+            document.body.appendChild(script);
+          })
+          .catch(error => {
+            console.error('Error loading hamburger menu:', error);
+          });
       });
     </script>
     <script src="../common/darkmode-toggle.js"></script>

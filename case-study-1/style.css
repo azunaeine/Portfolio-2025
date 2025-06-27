@@ -1268,28 +1268,6 @@ body {
   pointer-events: none;
 }
 
-.btn-close-menu:hover {
-  transform: rotate(90deg);
-}
-
-/* Staggered animation delays for menu items */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(1) {
-  transition-delay: 0.2s;
-}
-
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(2) {
-  transition-delay: 0.3s;
-}
-
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(3) {
-  transition-delay: 0.4s;
-}
-
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(4) {
-  transition-delay: 0.5s;
-}
-
-
 /* Navigation Bar Styles */
 .nav-bar {
   display: flex;
@@ -1351,66 +1329,8 @@ body[data-theme="dark"] .nav-item {
   pointer-events: none;
 }
 
-/* Hamburger menu content */
-.hamburger-menu-content {
-  position: fixed;
-  z-index: 10;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: var(--bg-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hamburger-menu-content.visible {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* Menu items */
-.hamburger-menu-nav-item {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: var(--text-color);
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger-menu-content.visible .hamburger-menu-nav-item {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* Menu item hover/active effects */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:active {
-  transform: scale(1.05) rotate(2deg);
-  transition-delay: 0s !important;
-}
-
-/* Staggered animation delays */
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(1) {
-  transition-delay: 0.2s;
-}
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(2) {
-  transition-delay: 0.3s;
-}
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(3) {
-  transition-delay: 0.4s;
-}
-.hamburger-menu-content.visible .hamburger-menu-nav-item:nth-child(4) {
-  transition-delay: 0.5s;
+.btn-close-menu:hover {
+  transform: rotate(90deg);
 }
 
 /* Prevent scrolling when menu is open */
@@ -1430,15 +1350,6 @@ body.menu-is-open {
 
 /* Responsive styles */
 @media (min-width: 768px) {
-  .btn-hamburger-menu,
-  .btn-close-menu {
-    display: none;
-  }
-
-  .hamburger-menu-content {
-    display: none;
-  }
-
   .nav-items {
     display: flex;
     gap: 2em;
@@ -1455,21 +1366,6 @@ body[data-theme="dark"] .card h2 {
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
-}
-
-/* Mobile Theme Toggle */
-.hamburger-menu-content .theme-toggle {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: rgba(0, 0, 0, 0.1);
-  border: 2px solid #333;
-  z-index: 1000;
-}
-
-[data-theme="dark"] .hamburger-menu-content .theme-toggle {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #fff;
 }
 
 /* Disable light gray background in dark mode */
