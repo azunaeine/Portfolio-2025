@@ -1491,14 +1491,35 @@ body[data-theme="dark"] .card h2 {
 /* Mobile Theme Toggle */
 .hamburger-menu-content .theme-toggle {
   margin-top: 2em;
-  background: rgba(0, 0, 0, 0.1);
-  border: 2px solid #333;
-  border-radius: 30px;
-  padding: 0.5em 1em;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
   opacity: 0;
   transform: translateX(-10px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, border-color 0.3s ease-in-out;
   transition-delay: 0.5s;
+  padding: 0;
+}
+
+.hamburger-menu-content .theme-toggle::before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--text-color);
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+body[data-theme="dark"] .hamburger-menu-content .theme-toggle::before {
+  transform: translateX(23px);
 }
 
 .hamburger-menu-content.visible .theme-toggle {
@@ -1508,7 +1529,7 @@ body[data-theme="dark"] .card h2 {
 
 /* Dark mode theme toggle */
 body[data-theme="dark"] .hamburger-menu-content .theme-toggle {
-  border-color: #fff;
+  border-color: var(--text-color);
 }
 
 [data-theme="dark"] .hamburger-menu-content .theme-toggle {
