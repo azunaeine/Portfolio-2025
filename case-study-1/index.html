@@ -368,11 +368,6 @@
           .then(html => {
             // Insert the hamburger menu at the end of the body
             document.body.insertAdjacentHTML('beforeend', html);
-            
-            // Load the hamburger menu JavaScript
-            const script = document.createElement('script');
-            script.src = '../common/hamburger-menu.js';
-            document.body.appendChild(script);
           })
           .catch(error => {
             console.error('Error loading hamburger menu:', error);

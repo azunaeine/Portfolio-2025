@@ -39,37 +39,41 @@
       }
     </style>
 
-    <script>
-      const body = document.querySelector("body");
-
-      const setTheme = (theme) => {
-        body.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-      };
-
-      function toggleTheme() {
-        const currentTheme = body.getAttribute("data-theme");
-        console.log("🚀 ~ toggleTheme ~ currentTheme:", currentTheme);
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-      }
-
-      // on page load, check local storage for saved theme
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        setTheme(savedTheme);
-      } else {
-        // if no theme is saved, use the default (light)
-        setTheme("light");
-      }
-    </script>
-
     <button
       class="theme-toggle"
       id="themeToggle"
       aria-label="Toggle dark mode"
-      onclick="toggleTheme()"
     ></button>
+    <script>
+      // Make sure these are in the global scope
+      window.setTheme = function (theme) {
+        document.body.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      };
+
+      window.toggleTheme = function () {
+        const currentTheme = document.body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        window.setTheme(newTheme);
+      };
+
+      // Set up event listener for the toggle button
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("themeToggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", window.toggleTheme);
+        }
+
+        // on page load, check local storage for saved theme
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          window.setTheme(savedTheme);
+        } else {
+          // if no theme is saved, use the default (light)
+          window.setTheme("light");
+        }
+      });
+    </script>
   </div>
 
   <script src="./darkmode-toggle.js"></script>
@@ -227,6 +231,3 @@
   >
   <div class="theme-toggle-container"></div>
 </div>
-
-<!-- Include the external JavaScript file -->
-<script src="hamburger-menu.js"></script>

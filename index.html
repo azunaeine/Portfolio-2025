@@ -42,7 +42,72 @@
           target="_blank"
           >Resume</a
         >
-        <div class="theme-toggle-container"></div>
+        <div class="theme-toggle-container">
+          <button
+            class="theme-toggle"
+            id="mainThemeToggle"
+            aria-label="Toggle dark mode"
+          ></button>
+          <style>
+            .theme-toggle {
+              background: transparent;
+              border: 2px solid var(--text-color);
+              width: 50px;
+              height: 25px;
+              border-radius: 25px;
+              position: relative;
+              cursor: pointer;
+              transition: var(--transition);
+            }
+
+            .theme-toggle::before {
+              content: "";
+              position: absolute;
+              width: 17px;
+              height: 17px;
+              border-radius: 50%;
+              background: var(--text-color);
+              top: 2px;
+              left: 2px;
+              transition: var(--transition);
+              transform: translateX(0);
+            }
+
+            body[data-theme="dark"] .theme-toggle::before {
+              transform: translateX(23px);
+            }
+          </style>
+          <script>
+            // Make sure the toggle function is available globally
+            if (!window.toggleTheme) {
+              window.toggleTheme = function () {
+                const currentTheme = document.body.getAttribute("data-theme");
+                const newTheme = currentTheme === "light" ? "dark" : "light";
+                window.setTheme(newTheme);
+              };
+            }
+
+            if (!window.setTheme) {
+              window.setTheme = function (theme) {
+                document.body.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+              };
+            }
+
+            // Initialize the toggle button
+            document.addEventListener("DOMContentLoaded", function () {
+              const toggleBtn = document.getElementById("mainThemeToggle");
+              if (toggleBtn) {
+                toggleBtn.addEventListener("click", window.toggleTheme);
+              }
+
+              // Set initial theme if not set
+              if (!localStorage.getItem("theme")) {
+                window.setTheme("light");
+              }
+            });
+          </script>
+        </div>
       </div>
     </nav>
     <div class="mobile small-box">
@@ -289,11 +354,6 @@
           .then((html) => {
             // Insert the hamburger menu at the end of the body
             document.body.insertAdjacentHTML("beforeend", html);
-
-            // Load the hamburger menu JavaScript
-            const script = document.createElement("script");
-            script.src = "common/hamburger-menu.js";
-            document.body.appendChild(script);
           })
           .catch((error) => {
             console.error("Error loading hamburger menu:", error);
