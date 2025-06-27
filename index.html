@@ -78,32 +78,30 @@
             }
           </style>
           <script>
-            // Make sure the toggle function is available globally
-            if (!window.toggleTheme) {
-              window.toggleTheme = function () {
-                const currentTheme = document.body.getAttribute("data-theme");
-                const newTheme = currentTheme === "light" ? "dark" : "light";
-                window.setTheme(newTheme);
-              };
-            }
-
-            if (!window.setTheme) {
-              window.setTheme = function (theme) {
-                document.body.setAttribute("data-theme", theme);
-                localStorage.setItem("theme", theme);
-              };
-            }
-
-            // Initialize the toggle button
             document.addEventListener("DOMContentLoaded", function () {
-              const toggleBtn = document.getElementById("mainThemeToggle");
-              if (toggleBtn) {
-                toggleBtn.addEventListener("click", window.toggleTheme);
-              }
+              const themeToggle = document.getElementById("mainThemeToggle");
 
-              // Set initial theme if not set
-              if (!localStorage.getItem("theme")) {
-                window.setTheme("light");
+              if (themeToggle) {
+                // Set initial theme from localStorage or default to light
+                const savedTheme = localStorage.getItem("theme") || "light";
+                document.body.setAttribute("data-theme", savedTheme);
+
+                // Update toggle button state
+                themeToggle.classList.toggle("dark", savedTheme === "dark");
+
+                // Add click event listener
+                themeToggle.addEventListener("click", function () {
+                  const currentTheme =
+                    document.body.getAttribute("data-theme") || "light";
+                  const newTheme = currentTheme === "light" ? "dark" : "light";
+
+                  // Update theme
+                  document.body.setAttribute("data-theme", newTheme);
+                  localStorage.setItem("theme", newTheme);
+
+                  // Update toggle button state
+                  themeToggle.classList.toggle("dark", newTheme === "dark");
+                });
               }
             });
           </script>
