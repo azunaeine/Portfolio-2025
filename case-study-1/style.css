@@ -1300,6 +1300,22 @@ body {
   z-index: 10;
 }
 
+/* Logo styles */
+.nav-bar .logo {
+  width: 40px;
+  height: auto;
+  z-index: 1001; /* Ensure logo stays above other elements */
+  transition: opacity 0.3s ease;
+  opacity: 1; /* Ensure logo is visible by default */
+}
+
+/* Hide logo when hamburger menu is open */
+body.menu-is-open .nav-bar .logo {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
 .nav-items {
   display: flex;
   gap: 2rem;
@@ -1318,12 +1334,24 @@ body {
   .nav-items {
     display: none;
   }
+  
+  /* Ensure logo is properly sized and visible on mobile */
+  .nav-bar .logo {
+    width: 40px;
+    opacity: 1; /* Ensure logo is visible on mobile */
+  }
 }
 
 /* Desktop styles - 768px and above */
 @media (min-width: 768px) {
   .nav-items {
     display: flex;
+  }
+  
+  /* Ensure logo is visible on desktop */
+  .nav-bar .logo {
+    width: 40px;
+    margin-right: auto; /* Push nav items to the right */
   }
   
   /* Hide hamburger menu on desktop */
@@ -1336,6 +1364,11 @@ body {
   /* Ensure body scroll is enabled on desktop */
   body.menu-is-open {
     overflow: auto;
+  }
+  
+  /* Adjust nav items spacing */
+  .nav-items {
+    margin-left: auto; /* Push nav items to the right */
   }
 }
 
