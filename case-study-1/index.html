@@ -374,17 +374,9 @@
         const btnCloseMenu = document.querySelector(".btn-close-menu");
         const body = document.body;
         
-        // Show menu and close button
         hamburgerMenuContent.classList.add("visible");
         btnCloseMenu.classList.add("visible");
         body.classList.add("menu-is-open");
-        
-        // Ensure logo is hidden when menu is open
-        const logo = document.querySelector('.nav-bar .logo');
-        if (logo) {
-          logo.style.opacity = '0';
-          logo.style.pointerEvents = 'none';
-        }
       }
 
       function hideMenu() {
@@ -392,20 +384,9 @@
         const btnCloseMenu = document.querySelector(".btn-close-menu");
         const body = document.body;
         
-        // Hide menu and close button
         hamburgerMenuContent.classList.remove("visible");
         btnCloseMenu.classList.remove("visible");
         body.classList.remove("menu-is-open");
-        
-        // Restore logo visibility when menu is closed
-        const logo = document.querySelector('.nav-bar .logo');
-        if (logo) {
-          // Use setTimeout to ensure the CSS transition works properly
-          setTimeout(() => {
-            logo.style.opacity = '';
-            logo.style.pointerEvents = '';
-          }, 10);
-        }
       }
     </script>
 

@@ -1306,14 +1306,7 @@ body {
   height: auto;
   z-index: 1001; /* Ensure logo stays above other elements */
   transition: opacity 0.3s ease;
-  opacity: 1; /* Ensure logo is visible by default */
-}
-
-/* Hide logo when hamburger menu is open */
-body.menu-is-open .nav-bar .logo {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  opacity: 1;
 }
 
 .nav-items {
@@ -1335,10 +1328,24 @@ body.menu-is-open .nav-bar .logo {
     display: none;
   }
   
-  /* Ensure logo is properly sized and visible on mobile */
   .nav-bar .logo {
     width: 40px;
-    opacity: 1; /* Ensure logo is visible on mobile */
+    opacity: 1;
+  }
+  
+  /* Hide logo when menu is open */
+  body.menu-is-open .nav-bar .logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Show hamburger menu button on mobile */
+  .btn-hamburger-menu {
+    display: block;
+  }
+  
+  .btn-close-menu {
+    display: block;
   }
 }
 
@@ -1348,10 +1355,17 @@ body.menu-is-open .nav-bar .logo {
     display: flex;
   }
   
+  /* Hide hamburger menu on desktop */
+  .btn-hamburger-menu,
+  .btn-close-menu {
+    display: none !important;
+  }
+  
   /* Ensure logo is visible on desktop */
   .nav-bar .logo {
     width: 40px;
     margin-right: auto; /* Push nav items to the right */
+    opacity: 1 !important; /* Force logo to be visible */
   }
   
   /* Hide hamburger menu on desktop */
@@ -1389,10 +1403,12 @@ body[data-theme="dark"] .nav-item {
   position: relative;
   font-size: 1.5em;
   transition: all 0.3s ease-in-out;
+  display: none; /* Hidden by default */
 }
 
 /* fade in/out the close button */
 .btn-close-menu {
+  display: none; /* Hidden by default */
   position: fixed;
   top: 1.5em;
   right: 1.5em;
