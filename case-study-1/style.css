@@ -1335,6 +1335,8 @@ body[data-theme="dark"] .nav-item {
   z-index: 100;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  position: relative;
+  font-size: 1.5em;
 }
 
 .btn-close-menu {
@@ -1344,11 +1346,27 @@ body[data-theme="dark"] .nav-item {
   z-index: 100;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-}
-
-.btn-close-menu:not(.visible) {
   opacity: 0;
   pointer-events: none;
+  position: absolute;
+  font-size: 1.5em;
+}
+
+.btn-close-menu.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Hide the bars icon when menu is open */
+body.menu-is-open .btn-hamburger-menu:not(.btn-close-menu) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Show the close button when menu is open */
+body.menu-is-open .btn-close-menu {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Hamburger menu content */
