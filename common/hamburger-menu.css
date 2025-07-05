@@ -244,32 +244,10 @@
   outline: none;
 }
 
-.hamburger-menu-nav-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--secondary-color);
-  transform: scaleY(0);
-  transform-origin: center top;
-  transition: transform 0.3s ease;
-}
-
-.hamburger-menu-nav-item:hover::before,
-.hamburger-menu-nav-item:focus::before {
-  transform: scaleY(1);
-}
-
 /* Active state for current page */
 .hamburger-menu-nav-item[aria-current="page"] {
   color: var(--secondary-color);
   font-weight: 600;
-}
-
-.hamburger-menu-nav-item[aria-current="page"]::before {
-  transform: scaleY(1);
 }
 
 /* Responsive Styles */
