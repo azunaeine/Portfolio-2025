@@ -1225,15 +1225,6 @@ body {
 
 /* Responsive styles */
 @media (min-width: 768px) {
-  .btn-hamburger-menu,
-  .btn-close-menu {
-    display: none;
-  }
-
-  .hamburger-menu-content {
-    display: none;
-  }
-
   .nav-items {
     display: flex;
     gap: 2em;

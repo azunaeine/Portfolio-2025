@@ -28,11 +28,13 @@
     <title>Recipe Sharing</title>
   </head>
   <body data-theme="light">
+    <!-- Hamburger menu will be loaded here -->
     <nav class="nav-bar">
       <div class="panel-fade-in"></div>
       <a class="s-icon" href="../index.html">
         <img src="../images/logo.svg" alt="logo" class="logo">
       </a>
+      <!-- Hamburger menu button will be added by hamburger-menu.html -->
 
       <div class="nav-items">
         <a class="nav-item" href="../index.html">Home</a>
@@ -40,7 +42,39 @@
         <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
            class="nav-item" 
            target="_blank">Resume</a>
-        <div class="theme-toggle-container"></div>
+        <div class="theme-toggle-container">
+          <button
+            class="theme-toggle"
+            id="mainThemeToggle"
+            aria-label="Toggle dark mode"
+          ></button>
+          <style>
+            .theme-toggle {
+              background: transparent;
+              border: 2px solid var(--text-color);
+              width: 50px;
+              height: 25px;
+              border-radius: 25px;
+              position: relative;
+              cursor: pointer;
+              transition: var(--transition);
+            }
+            .theme-toggle::before {
+              content: "";
+              position: absolute;
+              width: 17px;
+              height: 17px;
+              border-radius: 50%;
+              background: var(--text-color);
+              top: 2px;
+              left: 2px;
+              transition: var(--transition);
+            }
+            body[data-theme="dark"] .theme-toggle::before {
+              transform: translateX(23px);
+            }
+          </style>
+        </div>
       </div>
     </nav>
     <div class="case-study">
@@ -384,6 +418,7 @@
         }
       });
     </script>
+    <!-- Load hamburger menu -->
     <script>
       // Hamburger menu functions
       function showMenu() {

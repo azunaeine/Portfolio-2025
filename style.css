@@ -64,8 +64,16 @@ body[data-theme="dark"] .logo {
     display: inline-block;
   }
 
+  /* Hamburger menu button is shown on mobile and hidden on desktop */
   i.btn-hamburger-menu {
-    display: none;
+    display: none; /* Will be overridden by media query for mobile */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    z-index: 1000;
+    color: var(--text-color);
+    cursor: pointer;
   }
 }
 
@@ -163,6 +171,16 @@ body[data-theme="light"] .panel-fade-in {
   .only-image {
     padding: 1.5rem;
     margin: 1.5rem 0;
+  }
+
+  /* Show hamburger menu button on mobile */
+  i.btn-hamburger-menu {
+    display: block !important;
+  }
+
+  /* Hide regular nav items on mobile */
+  .nav-items {
+    display: none !important;
   }
 }
 
@@ -1053,9 +1071,7 @@ body[data-theme="dark"] .fa-envelope::before {
     margin-left: 3em;
   }
 
-  .hamburger-menu-content {
-    display: none;
-  }
+  /* Hamburger menu styles have been moved to common/hamburger-menu.html */
 
   .nav-item:active {
     transition: all 0.5s ease-out;
