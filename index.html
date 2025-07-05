@@ -291,25 +291,7 @@
 
       gtag("config", "G-NLSS6TZ2NF");
     </script>
-    <script>
-      // Fetch and insert dark toggle button
-      document.addEventListener('DOMContentLoaded', function() {
-        const toggleContainers = document.querySelectorAll('.theme-toggle-container');
-        
-        // Load the dark toggle button into all containers
-        toggleContainers.forEach(container => {
-          fetch('darktoggle.html')
-            .then(response => response.text())
-            .then(html => {
-              container.innerHTML = html;
-            })
-            .catch(error => {
-              console.error('Error loading dark toggle:', error);
-            });
-        });
-      });
-    </script>
-    <script src="common/darkmode-toggle.js"></script>
+
     <!-- Code injected by live-server -->
     <script>
       // <![CDATA[  <-- For SVG support

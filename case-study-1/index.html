@@ -27,20 +27,30 @@
     <title>Recipe Sharing</title>
   </head>
   <body data-theme="light">
-    <div class="hamburger-menu-content">
-      <a class="hamburger-menu-nav-item" href="../index.html">Home</a>
-      <a class="hamburger-menu-nav-item" href="../about/index.html">About</a>
-      <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
-         class="hamburger-menu-nav-item" 
-         target="_blank">Resume</a>
-      <div class="theme-toggle-container"></div>
-    </div>
+    <!-- Include common hamburger menu -->
+    <div id="hamburger-menu-container"></div>
+    <script>
+      // Load hamburger menu content
+      fetch('../common/hamburger-menu.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('hamburger-menu-container').innerHTML = html;
+          // Load the scripts after the HTML is inserted
+          const script1 = document.createElement('script');
+          script1.src = '../common/hamburger-menu.js';
+          document.body.appendChild(script1);
+          
+          const script2 = document.createElement('script');
+          script2.src = '../common/darkmode-toggle.js';
+          document.body.appendChild(script2);
+        })
+        .catch(error => console.error('Error loading hamburger menu:', error));
+    </script>
     <nav class="nav-bar">
       <a class="s-icon" href="../index.html">
         <img src="../images/logo.svg" alt="logo" class="logo">
       </a>
-      <i class="btn-hamburger-menu fa-solid fa-bars" onclick="showMenu()"></i>
-      <i class="btn-hamburger-menu btn-close-menu fa-solid fa-xmark" onclick="hideMenu()"></i>
+      <!-- Hamburger menu button will be included from common/hamburger-menu.html -->
 
       <div class="nav-items">
         <a class="nav-item" href="../index.html">Home</a>
@@ -355,8 +365,33 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <script>
+      // Initialize w3-include-html
+      function includeHTML() {
+        var z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }      
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+          }
+        }
+      }
+      window.onload = includeHTML;
     </script>
     <script>
       // update the year to the current year
@@ -390,25 +425,6 @@
       }
     </script>
 
-    <!-- Theme Toggle -->
-    <script>
-      // Fetch and insert dark toggle button
-      document.addEventListener('DOMContentLoaded', function() {
-        const toggleContainers = document.querySelectorAll('.theme-toggle-container');
-        
-        // Load the dark toggle button into all containers
-        toggleContainers.forEach(container => {
-          fetch('../darktoggle.html')
-            .then(response => response.text())
-            .then(html => {
-              container.innerHTML = html;
-            })
-            .catch(error => {
-              console.error('Error loading dark toggle:', error);
-            });
-        });
-      });
-    </script>
-    <script src="../common/darkmode-toggle.js"></script>
+
   </body>
 </html>
