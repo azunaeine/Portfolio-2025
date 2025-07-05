@@ -386,7 +386,8 @@
 
     log('Loading theme toggle...');
     
-    fetch('darktoggle.html')
+    // Use root-relative path to ensure it works from any page
+    fetch('/common/darktoggle.html')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -396,6 +397,18 @@
       .then(html => {
         themeToggleContainer.innerHTML = html;
         log('Theme toggle loaded');
+        
+        // Initialize any scripts in the loaded content
+        const scripts = themeToggleContainer.getElementsByTagName('script');
+        Array.from(scripts).forEach(script => {
+          const newScript = document.createElement('script');
+          if (script.src) {
+            newScript.src = script.src;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
       })
       .catch(err => {
         error('Error loading theme toggle:', err);

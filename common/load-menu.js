@@ -5,9 +5,9 @@
   'use strict';
 
   const CONFIG = {
-    menuHtmlPath: 'common/hamburger-menu.html',
-    menuScriptPath: 'common/hamburger-menu.js',
-    darkModeScriptPath: 'common/darkmode-toggle.js',
+    menuHtmlPath: '/common/hamburger-menu.html',
+    menuScriptPath: '/common/hamburger-menu.js',
+    darkModeScriptPath: '/common/darkmode-toggle.js',
     containerId: 'hamburger-menu-container',
     logPrefix: '[Menu Loader]',
     debug: true
@@ -46,44 +46,43 @@
   }
 
   /**
-   * Loads the hamburger menu HTML
+   * Loads the hamburger menu
    * @returns {Promise<void>}
    */
   async function loadMenu() {
     try {
       log('Loading hamburger menu...');
       
-      // Get the container
-      const container = document.getElementById(CONFIG.containerId);
-      if (!container) {
-        throw new Error(`Container element with ID '${CONFIG.containerId}' not found`);
-      }
-
-      // Load the menu HTML
+      // Load menu HTML
       const response = await fetch(CONFIG.menuHtmlPath);
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Failed to load menu HTML: ${response.status}`);
       }
       
-      const html = await response.text();
-      container.innerHTML = html;
-      log('Hamburger menu HTML loaded');
-
-      // Load and initialize the hamburger menu script
+      const menuHtml = await response.text();
+      
+      // Create container if it doesn't exist
+      let container = document.getElementById(CONFIG.containerId);
+      if (!container) {
+        container = document.createElement('div');
+        container.id = CONFIG.containerId;
+        document.body.appendChild(container);
+      }
+      
+      // Inject menu HTML
+      container.innerHTML = menuHtml;
+      log('Menu HTML loaded');
+      
+      // Load and initialize menu script
       await loadScript(CONFIG.menuScriptPath);
       
-      // Initialize the hamburger menu
-      if (window.hamburgerMenu && typeof window.hamburgerMenu.init === 'function') {
-        window.hamburgerMenu.init();
-        log('Hamburger menu initialized');
-      } else {
-        throw new Error('Hamburger menu API not found');
-      }
-
-      // Load dark mode toggle if needed
-      if (document.querySelector('.theme-toggle-container')) {
-        await loadScript(CONFIG.darkModeScriptPath);
-        log('Dark mode toggle loaded');
+      // Load dark mode script
+      await loadScript(CONFIG.darkModeScriptPath);
+      log('Dark mode toggle loaded');
+      
+      // Initialize dark mode if needed
+      if (window.darkModeToggle) {
+        window.darkModeToggle.init();
       }
       
     } catch (err) {
