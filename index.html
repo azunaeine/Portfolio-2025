@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="common/common-styles.css" />
+    <link rel="stylesheet" href="common/hamburger-menu.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -20,30 +21,14 @@
     <title>Azuna Ekundayo - Portfolio</title>
   </head>
   <body data-theme="light">
+    <!-- Hamburger Menu will be loaded here by load-menu.js -->
     <div id="hamburger-menu-container"></div>
     <script src="./common/load-menu.js"></script>
-    <div class="hamburger-menu-content">
-      <a class="hamburger-menu-nav-item" href="index.html"> Home</a>
-      <a class="hamburger-menu-nav-item" href="about/index.html"> About </a>
-      <a
-        href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
-        class="hamburger-menu-nav-item"
-        target="_blank"
-        >Resume</a
-      >
-      <div class="theme-toggle-container"></div>
-    </div>
     <nav class="nav-bar">
       <div class="panel-fade-in"></div>
       <a class="s-icon" href="index.html"
         ><img src="images/logo.svg" alt="logo" class="logo"
       /></a>
-
-      <i class="btn-hamburger-menu fa-solid fa-bars" onclick="showMenu()"></i>
-      <i
-        class="btn-hamburger-menu btn-close-menu fa-solid fa-close"
-        onclick="hideMenu()"
-      ></i>
 
       <div class="nav-items">
         <a class="nav-item" href="index.html"> Home</a>
@@ -219,54 +204,14 @@
       const currentYear = new Date().getFullYear();
       yearSpan.innerHTML = currentYear;
     </script>
-    <script
-      src="https://kit.fontawesome.com/b85921a939.js"
-      crossorigin="anonymous"
-    ></script>
     <script>
-      // 1. fade in the nav items + logo - panel around the nav that fades in
-      // TODO
-      // 2. nav links transition in - move down, move at different speeds, start at different heights
-      // 3. (optional) last item (CTA button) comes down all the way (more than the others)
-      // grab the element
-      //
       // this will add a class "fade-in" to the body, we can use it to make all our elements fade in!
       function startTheAnimation() {
         // start the animation!
         document.querySelector("body").classList.add("fade-in");
       }
-      // delay this by 1s (this will run 1s in the future)
-      // start the animation 1s after page loads, so that the user can see the animation (otherwise it's too fast)
-      setTimeout(startTheAnimation, 0.4 * 1000);
-
-      function showMenu() {
-        const hamburgerMenuContent = document.querySelector(
-          ".hamburger-menu-content"
-        );
-        hamburgerMenuContent.classList.add("visible");
-
-        const btnCloseMenu = document.querySelector(".btn-close-menu");
-        btnCloseMenu.classList.add("visible");
-
-        const body = document.querySelector("body");
-        body.classList.add("menu-is-open");
-      }
-
-      // javascript animate an element function
-      function hideMenu() {
-        // 1. grab the element
-        const hamburgerMenuContent = document.querySelector(
-          ".hamburger-menu-content"
-        );
-        // 2. change its class
-        hamburgerMenuContent.classList.remove("visible");
-
-        const btnCloseMenu = document.querySelector(".btn-close-menu");
-        btnCloseMenu.classList.remove("visible");
-
-        const body = document.querySelector("body");
-        body.classList.remove("menu-is-open");
-      }
+      // Start the animation after a short delay
+      setTimeout(startTheAnimation, 400);
     </script>
     <script>
       function takeUsDownToCaseStudies() {

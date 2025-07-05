@@ -1,0 +1,319 @@
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  margin: 1rem auto;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+/* Navigation Items */
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  display: none;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  margin: 0 0.5rem;
+}
+
+.nav-item:hover {
+  color: var(--secondary-color);
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-item:hover::after {
+  width: 70%;
+}
+
+/* Hamburger Menu Button */
+.btn-hamburger-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hamburger-menu:hover,
+.btn-hamburger-menu:focus {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: scale(1.1);
+  outline: none;
+}
+
+.btn-hamburger-menu[aria-expanded="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-close-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close-menu.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.btn-close-menu:hover,
+.btn-close-menu:focus {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: rotate(90deg);
+  outline: none;
+}
+
+/* Hamburger Menu Overlay */
+.hamburger-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hamburger-menu-overlay[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.hamburger-menu-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  max-width: 400px;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: 1000;
+  padding: 6rem 2rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-menu-content.visible {
+  transform: translateX(0);
+}
+
+.hamburger-menu-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  background: var(--bg-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.hamburger-menu-nav {
+  margin-top: 1rem;
+}
+
+.hamburger-menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hamburger-menu-items li {
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger-menu-nav-item {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  margin: 0 -1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hamburger-menu-nav-item:hover,
+.hamburger-menu-nav-item:focus {
+  color: var(--secondary-color);
+  background: rgba(var(--secondary-color-rgb), 0.1);
+  outline: none;
+}
+
+.hamburger-menu-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--secondary-color);
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-menu-nav-item:hover::before,
+.hamburger-menu-nav-item:focus::before {
+  transform: scaleY(1);
+}
+
+/* Active state for current page */
+.hamburger-menu-nav-item[aria-current="page"] {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.hamburger-menu-nav-item[aria-current="page"]::before {
+  transform: scaleY(1);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .nav-item {
+    display: inline-flex;
+  }
+
+  .btn-hamburger-menu,
+  .hamburger-menu-overlay,
+  .hamburger-menu-content {
+    display: none !important;
+  }
+}
+
+/* Animation for menu items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to menu items */
+.hamburger-menu-nav-item {
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Stagger the animation for each menu item */
+.hamburger-menu-items li:nth-child(1) .hamburger-menu-nav-item {
+  animation-delay: 0.1s;
+}
+
+.hamburger-menu-items li:nth-child(2) .hamburger-menu-nav-item {
+  animation-delay: 0.2s;
+}
+
+.hamburger-menu-items li:nth-child(3) .hamburger-menu-nav-item {
+  animation-delay: 0.3s;
+}
+
+/* Focus styles for better accessibility */
+.hamburger-menu-nav-item:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hamburger-menu-nav-item,
+  .hamburger-menu-content,
+  .btn-hamburger-menu,
+  .btn-close-menu {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .hamburger-menu-nav-item {
+    opacity: 1;
+  }
+}
+
+/* Dark Mode Styles */
+body[data-theme="dark"] .hamburger-menu-content {
+  background: var(--bg-color);
+}
+
+body[data-theme="dark"] .hamburger-menu-nav-item {
+  color: var(--text-color);
+  border-color: rgba(255, 255, 255, 0.1);
+}
