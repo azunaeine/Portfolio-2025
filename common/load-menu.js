@@ -1,16 +1,16 @@
 /**
  * Loads and initializes the hamburger menu
  */
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
   const CONFIG = {
-    menuHtmlPath: '/common/hamburger-menu.html',
-    menuScriptPath: '/common/hamburger-menu.js',
-    darkModeScriptPath: '/common/darkmode-toggle.js',
-    containerId: 'hamburger-menu-container',
-    logPrefix: '[Menu Loader]',
-    debug: true
+    menuHtmlPath: "/common/hamburger-menu.html",
+    menuScriptPath: "/common/hamburger-menu.js",
+    darkModeScriptPath: "/common/darkmode-toggle.js",
+    containerId: "hamburger-menu-container",
+    logPrefix: "[Menu Loader]",
+    debug: true,
   };
 
   // Utility functions
@@ -31,7 +31,7 @@
    */
   function loadScript(src) {
     return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = src;
       script.onload = () => {
         log(`Script loaded: ${src}`);
@@ -51,73 +51,66 @@
    */
   async function loadMenu() {
     try {
-      log('Loading hamburger menu...');
-      
+      log("Loading hamburger menu...");
+
       // Load menu HTML
       const response = await fetch(CONFIG.menuHtmlPath);
       if (!response.ok) {
         throw new Error(`Failed to load menu HTML: ${response.status}`);
       }
-      
+
       const menuHtml = await response.text();
-      
+
       // First, remove any existing container to prevent duplicates
       const existingContainer = document.getElementById(CONFIG.containerId);
       if (existingContainer) {
         existingContainer.remove();
-        log('Removed existing menu container');
+        log("Removed existing menu container");
       }
-      
+
       // Create new container
-      const container = document.createElement('div');
+      const container = document.createElement("div");
       container.id = CONFIG.containerId;
-      
-      // Ensure the container has proper styling for positioning
-      container.style.position = 'absolute';
-      container.style.top = '1.5rem';
-      container.style.right = '1.5rem';
-      container.style.zIndex = '1000';
-      
+
       // Find the nav bar
-      const navBar = document.querySelector('.nav-bar');
+      const navBar = document.querySelector(".nav-bar");
       if (navBar) {
         // Make sure nav bar has relative positioning
-        navBar.style.position = 'relative';
+        navBar.style.position = "relative";
         // Insert the container at the beginning of the nav bar
-        navBar.insertBefore(container, navBar.firstChild);
-        log('Menu container inserted into nav bar');
-        console.log('Nav bar found, inserted menu container as first child');
+        navBar.appendChild(container, navBar);
+        log("Menu container inserted into nav bar");
+        console.log("Nav bar found, inserted menu container as first child");
       } else {
         // Fallback to body if nav bar not found
-        console.error('Nav bar not found, check your HTML structure');
+        console.error("Nav bar not found, check your HTML structure");
         document.body.appendChild(container);
-        log('Nav bar not found, menu container added to body');
+        log("Nav bar not found, menu container added to body");
       }
-      
+
       // Inject menu HTML
       container.innerHTML = menuHtml;
-      log('Menu HTML loaded');
-      
+      log("Menu HTML loaded");
+
       // Load and initialize menu script
       await loadScript(CONFIG.menuScriptPath);
-      
+
       // Load dark mode script
       await loadScript(CONFIG.darkModeScriptPath);
-      log('Dark mode toggle loaded');
-      
+      log("Dark mode toggle loaded");
+
       // Initialize dark mode if needed
       if (window.darkModeToggle) {
         window.darkModeToggle.init();
       }
-      
     } catch (err) {
-      error('Failed to load hamburger menu:', err);
+      error("Failed to load hamburger menu:", err);
     }
   }
 
   // Initialize when the DOM is fully loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadMenu);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadMenu);
   } else {
     // DOM already loaded, run immediately
     setTimeout(loadMenu, 0);

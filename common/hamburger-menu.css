@@ -247,9 +247,15 @@
   color: var(--secondary-color);
   font-weight: 600;
 }
+.nav-items {
+  display: none;
+}
 
 /* Responsive Styles */
 @media (min-width: 768px) {
+  .nav-items {
+    display: flex;
+  }
   .nav-item {
     display: inline-flex;
   }
