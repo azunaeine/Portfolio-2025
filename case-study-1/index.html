@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../common/common-case-study.styles.css" />
+    <link rel="stylesheet" href="../common/common-styles.css" />
+    <link rel="stylesheet" href="../common/hamburger-menu.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/x-icon" href="../favicon.ico" />
@@ -29,6 +30,7 @@
   <body data-theme="light">
     <!-- Hamburger menu will be loaded here -->
     <nav class="nav-bar">
+      <div class="panel-fade-in"></div>
       <a class="s-icon" href="../index.html">
         <img src="../images/logo.svg" alt="logo" class="logo">
       </a>
@@ -379,8 +381,33 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <script>
+      // Initialize w3-include-html
+      function includeHTML() {
+        var z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }      
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+          }
+        }
+      }
+      window.onload = includeHTML;
     </script>
     <script>
       // update the year to the current year
@@ -393,35 +420,31 @@
     </script>
     <!-- Load hamburger menu -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Load hamburger menu HTML
-        fetch('../common/hamburger-menu-content.html')
-          .then(response => response.text())
-          .then(html => {
-            // Create a temporary div to parse the HTML
-            const temp = document.createElement('div');
-            temp.innerHTML = html;
-            
-            // Insert the hamburger menu at the end of the body
-            document.body.insertAdjacentHTML('beforeend', html);
-            
-            // Find and execute any scripts in the loaded HTML
-            const scripts = temp.querySelectorAll('script');
-            scripts.forEach(oldScript => {
-              const newScript = document.createElement('script');
-              if (oldScript.src) {
-                newScript.src = oldScript.src;
-              } else {
-                newScript.textContent = oldScript.textContent;
-              }
-              document.body.appendChild(newScript);
-            });
-            
-          })
-          .catch(error => {
-            console.error('Error loading hamburger menu:', error);
-          });
-      });
+      // Hamburger menu functions
+      function showMenu() {
+        const hamburgerMenuContent = document.querySelector(".hamburger-menu-content");
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        const body = document.body;
+        
+        hamburgerMenuContent.classList.add("visible");
+        btnCloseMenu.classList.add("visible");
+        body.classList.add("menu-is-open");
+      }
+
+      function hideMenu() {
+        const hamburgerMenuContent = document.querySelector(".hamburger-menu-content");
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        const body = document.body;
+        
+        hamburgerMenuContent.classList.remove("visible");
+        btnCloseMenu.classList.remove("visible");
+        body.classList.remove("menu-is-open");
+      }
     </script>
+
+
+    <!-- Hamburger Menu will be loaded here by load-menu.js -->
+    <div id="hamburger-menu-container"></div>
+    <script src="../common/load-menu.js"></script>
   </body>
 </html>

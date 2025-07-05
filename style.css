@@ -172,12 +172,12 @@ body[data-theme="light"] .panel-fade-in {
     padding: 1.5rem;
     margin: 1.5rem 0;
   }
-  
+
   /* Show hamburger menu button on mobile */
   i.btn-hamburger-menu {
     display: block !important;
   }
-  
+
   /* Hide regular nav items on mobile */
   .nav-items {
     display: none !important;
@@ -276,8 +276,6 @@ body.menu-is-open {
   overflow: hidden;
 }
 
-/* Hamburger menu styles have been moved to common/hamburger-menu.html */
-
 a.nav-item {
   color: var(--text-color);
 }
@@ -346,33 +344,6 @@ body[data-theme="dark"] .intro {
   margin: auto;
   margin-top: 2rem;
   width: fit-content;
-}
-
-:root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --icon-bg: #000000;
-  --icon-text: #ffffff;
-  --square-bg: #ffffff;
-  --square-border: #000000;
-  --button-bg: #000000;
-  --button-text: #ffffff;
-  --footer-bg: #000000;
-  --footer-text: #ffffff;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --icon-bg: #ffffff;
-  --icon-text: #000000;
-  --square-bg: #1e1e1e;
-  --square-border: #ffffff;
-  --button-bg: #ffffff;
-  --button-text: #000000;
-  --footer-bg: #1e1e1e;
-  --footer-text: #ffffff;
 }
 
 .square {
