@@ -61,12 +61,37 @@
       
       const menuHtml = await response.text();
       
-      // Create container if it doesn't exist
-      let container = document.getElementById(CONFIG.containerId);
-      if (!container) {
-        container = document.createElement('div');
-        container.id = CONFIG.containerId;
+      // First, remove any existing container to prevent duplicates
+      const existingContainer = document.getElementById(CONFIG.containerId);
+      if (existingContainer) {
+        existingContainer.remove();
+        log('Removed existing menu container');
+      }
+      
+      // Create new container
+      const container = document.createElement('div');
+      container.id = CONFIG.containerId;
+      
+      // Ensure the container has proper styling for positioning
+      container.style.position = 'absolute';
+      container.style.top = '1.5rem';
+      container.style.right = '1.5rem';
+      container.style.zIndex = '1000';
+      
+      // Find the nav bar
+      const navBar = document.querySelector('.nav-bar');
+      if (navBar) {
+        // Make sure nav bar has relative positioning
+        navBar.style.position = 'relative';
+        // Insert the container at the beginning of the nav bar
+        navBar.insertBefore(container, navBar.firstChild);
+        log('Menu container inserted into nav bar');
+        console.log('Nav bar found, inserted menu container as first child');
+      } else {
+        // Fallback to body if nav bar not found
+        console.error('Nav bar not found, check your HTML structure');
         document.body.appendChild(container);
+        log('Nav bar not found, menu container added to body');
       }
       
       // Inject menu HTML

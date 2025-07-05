@@ -2,21 +2,25 @@
   --primary-color: #2c3e50;
   --secondary-color: #000;
   --text-color: #333;
-  --bg-color: #ffffff;
+  --bg-color: #000;
   --border-color: #e0e0e0;
   --white: #ffffff;
   --light-gray: #f5f6fa;
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --icon-text: #fff !important;
 }
 
 /* Set light theme as default */
 body {
-  --text-color: #333;
-  --bg-color: #ffffff;
-  --border-color: #e0e0e0;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+i.fa-bars {
+  color: var(--icon-text);
+}
+.btn-hamburger-menu {
+  border-radius: 0.875rem !important;
 }
 
 /* Hero section - keep green background in dark mode */
