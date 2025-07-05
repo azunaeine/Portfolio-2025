@@ -5,20 +5,14 @@
   const CONFIG = {
     selectors: {
       body: 'body',
-      themeToggle: '.theme-toggle',
-      themeToggleIcon: '.theme-toggle-icon'
+      themeToggle: '.theme-toggle'
     },
     attributes: {
-      theme: 'data-theme',
-      icon: 'data-icon'
+      theme: 'data-theme'
     },
     themes: {
       light: 'light',
       dark: 'dark'
-    },
-    icons: {
-      light: 'fa-sun',
-      dark: 'fa-moon'
     },
     storageKey: 'theme',
     debug: true
@@ -82,6 +76,22 @@
       return;
     }
 
+    // Don't do anything if the theme isn't changing
+    if (state.currentTheme === theme) {
+      return;
+    }
+
+    // Add pulse animation class to all toggle buttons
+    const toggles = document.querySelectorAll(CONFIG.selectors.themeToggle);
+    toggles.forEach(toggle => {
+      toggle.classList.add('pulse');
+      
+      // Remove the animation class after it completes
+      setTimeout(() => {
+        toggle.classList.remove('pulse');
+      }, 500);
+    });
+
     // Update the theme attribute on the body
     elements.body.setAttribute(CONFIG.attributes.theme, theme);
     
@@ -117,22 +127,6 @@
         : 'Switch to light mode';
       
       toggle.setAttribute('aria-label', label);
-      
-      // Update icon if it exists
-      const icon = toggle.querySelector(CONFIG.selectors.themeToggleIcon);
-      if (icon) {
-        // Remove existing icon classes
-        Object.values(CONFIG.icons).forEach(iconClass => {
-          icon.classList.remove(iconClass);
-        });
-        
-        // Add the appropriate icon class
-        const iconClass = state.currentTheme === CONFIG.themes.light 
-          ? CONFIG.icons.dark 
-          : CONFIG.icons.light;
-        
-        icon.classList.add('fa-solid', iconClass);
-      }
     });
   }
 
