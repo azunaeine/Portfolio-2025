@@ -28,7 +28,6 @@ body[data-theme="dark"] {
 .nav-bar {
   display: flex;
   margin: 1rem auto;
-  max-width: 1200px;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
