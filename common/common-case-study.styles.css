@@ -505,6 +505,10 @@ a {
     padding: 0;
   }
 
+  div.nav-items {
+    margin-right: -12rem;
+  }
+
   footer {
     position: absolute;
     left: 0;
