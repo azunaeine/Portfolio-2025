@@ -1,0 +1,26 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --icon-bg: #000000;
+  --icon-text: #ffffff;
+  --square-bg: #ffffff;
+  --square-border: #000000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
+  --footer-bg: #000000;
+  --footer-text: #ffffff;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --icon-bg: #ffffff;
+  --icon-text: #000000;
+  --square-bg: #1e1e1e;
+  --square-border: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #000000;
+  --footer-bg: #1e1e1e;
+  --footer-text: #ffffff;
+}
