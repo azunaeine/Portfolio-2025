@@ -1,0 +1,110 @@
+.theme-toggle {
+  background: var(--bg-color);
+  border: 2px solid var(--text-color);
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-color);
+  font-size: 10px;
+  line-height: 1;
+  z-index: 2;
+}
+
+/* Sun icon (visible in light mode) */
+.theme-toggle::before {
+  content: "\f185"; /* Font Awesome sun icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Moon icon (visible in dark mode) */
+[data-theme="dark"] .theme-toggle::before {
+  content: "\f186"; /* Font Awesome moon icon */
+  transform: translateX(25px);
+}
+
+/* Background gradient for dark mode */
+[data-theme="dark"] .theme-toggle {
+  background: #2c3e50;
+  border-color: #3498db;
+}
+
+/* Background gradient for light mode */
+[data-theme="light"] .theme-toggle {
+  background: #f1c40f;
+  border-color: #f39c12;
+}
+
+/* Hover effect */
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Active/click effect */
+.theme-toggle:active {
+  transform: scale(0.98);
+}
+
+/* Focus styles for better accessibility */
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-color);
+}
+
+/* Hide the default button text */
+.theme-toggle span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Smooth transition for theme changes */
+.theme-toggle,
+.theme-toggle::before {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Add a subtle pulse animation when theme changes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.theme-toggle.pulse {
+  animation: pulse 0.5s ease-in-out;
+}

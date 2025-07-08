@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../theme.css" />
     <link rel="stylesheet" href="../common/common-case-study.styles.css" />
     <link rel="stylesheet" href="../common/hamburger-menu.css" />
+    <link rel="stylesheet" href="../common/darkmode-toggle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/x-icon" href="../favicon.ico" />
@@ -49,32 +50,6 @@
             id="mainThemeToggle"
             aria-label="Toggle dark mode"
           ></button>
-          <style>
-            .theme-toggle {
-              background: transparent;
-              border: 2px solid var(--text-color);
-              width: 50px;
-              height: 25px;
-              border-radius: 25px;
-              position: relative;
-              cursor: pointer;
-              transition: var(--transition);
-            }
-            .theme-toggle::before {
-              content: "";
-              position: absolute;
-              width: 17px;
-              height: 17px;
-              border-radius: 50%;
-              background: var(--text-color);
-              top: 2px;
-              left: 2px;
-              transition: var(--transition);
-            }
-            body[data-theme="dark"] .theme-toggle::before {
-              transform: translateX(23px);
-            }
-          </style>
         </div>
       </div>
     </nav>
