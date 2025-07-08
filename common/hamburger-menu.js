@@ -1,45 +1,46 @@
 /**
  * Hamburger Menu - A fully accessible, responsive navigation menu
  */
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
   // Configuration
   const CONFIG = {
     // Selectors
     selectors: {
-      hamburgerBtn: '.btn-hamburger-menu',
-      closeBtn: '.btn-close-menu',
-      menuOverlay: '.hamburger-menu-overlay',
-      menuContent: '.hamburger-menu-content',
-      menuItems: '.hamburger-menu-nav-item',
-      themeToggle: '.theme-toggle-container',
+      hamburgerBtn: ".btn-hamburger-menu",
+      closeBtn: ".btn-close-menu",
+      menuOverlay: ".hamburger-menu-overlay",
+      menuContent: ".hamburger-menu-content",
+      menuItems: ".hamburger-menu-nav-item",
+      themeToggle: ".theme-toggle-container.hamburger",
       mainContent: 'main, [role="main"]',
-      focusableElements: 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      focusableElements:
+        'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
     },
     // Classes
     classes: {
-      visible: 'visible',
-      menuOpen: 'menu-is-open'
+      visible: "visible",
+      menuOpen: "menu-is-open",
     },
     // ARIA attributes
     aria: {
-      expanded: 'aria-expanded',
-      hidden: 'aria-hidden',
-      current: 'aria-current',
-      modal: 'aria-modal',
-      label: 'aria-label',
-      controls: 'aria-controls',
-      hasPopup: 'aria-haspopup'
+      expanded: "aria-expanded",
+      hidden: "aria-hidden",
+      current: "aria-current",
+      modal: "aria-modal",
+      label: "aria-label",
+      controls: "aria-controls",
+      hasPopup: "aria-haspopup",
     },
     // Animation timing
     animation: {
       duration: 300, // ms
-      easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+      easing: "cubic-bezier(0.4, 0, 0.2, 1)",
     },
     // Debug mode
     debug: true,
-    logPrefix: '[Hamburger Menu]'
+    logPrefix: "[Hamburger Menu]",
   };
 
   // State
@@ -49,7 +50,7 @@
     firstFocusableElement: null,
     lastFocusableElement: null,
     previouslyFocusedElement: null,
-    focusableElements: []
+    focusableElements: [],
   };
 
   // DOM Elements
@@ -78,7 +79,7 @@
    * Initialize the hamburger menu
    */
   const init = () => {
-    log('Initializing...');
+    log("Initializing...");
 
     // Get all required elements
     try {
@@ -86,16 +87,21 @@
       elements.closeBtn = getElement(CONFIG.selectors.closeBtn);
       elements.menuOverlay = getElement(CONFIG.selectors.menuOverlay);
       elements.menuContent = getElement(CONFIG.selectors.menuContent);
-      elements.menuItems = getAllElements(CONFIG.selectors.menuItems, elements.menuContent);
+      elements.menuItems = getAllElements(
+        CONFIG.selectors.menuItems,
+        elements.menuContent
+      );
       elements.mainContent = getElement(CONFIG.selectors.mainContent);
 
       // Check for required elements
       const missingElements = Object.entries(elements)
-        .filter(([key, el]) => !el && key !== 'mainContent') // mainContent is optional
+        .filter(([key, el]) => !el && key !== "mainContent") // mainContent is optional
         .map(([key]) => key);
 
       if (missingElements.length > 0) {
-        throw new Error(`Missing required elements: ${missingElements.join(', ')}`);
+        throw new Error(
+          `Missing required elements: ${missingElements.join(", ")}`
+        );
       }
 
       // Set up ARIA attributes
@@ -107,9 +113,9 @@
       // Load theme toggle if container exists
       loadThemeToggle();
 
-      log('Initialization complete');
+      log("Initialization complete");
     } catch (err) {
-      error('Initialization failed:', err);
+      error("Initialization failed:", err);
     }
   };
 
@@ -118,25 +124,25 @@
    */
   const initAria = () => {
     const { hamburgerBtn, closeBtn, menuOverlay, menuContent } = elements;
-    const menuId = 'main-navigation';
+    const menuId = "main-navigation";
 
     // Set up hamburger button
     hamburgerBtn.setAttribute(CONFIG.aria.controls, menuId);
-    hamburgerBtn.setAttribute(CONFIG.aria.expanded, 'false');
-    hamburgerBtn.setAttribute(CONFIG.aria.hasPopup, 'menu');
-    hamburgerBtn.setAttribute('aria-label', 'Open main menu');
+    hamburgerBtn.setAttribute(CONFIG.aria.expanded, "false");
+    hamburgerBtn.setAttribute(CONFIG.aria.hasPopup, "menu");
+    hamburgerBtn.setAttribute("aria-label", "Open main menu");
 
     // Set up close button
-    closeBtn.setAttribute(CONFIG.aria.label, 'Close menu');
+    closeBtn.setAttribute(CONFIG.aria.label, "Close menu");
 
     // Set up menu overlay and content
-    menuOverlay.setAttribute('role', 'dialog');
-    menuOverlay.setAttribute('aria-modal', 'true');
-    menuOverlay.setAttribute('aria-hidden', 'true');
-    menuOverlay.setAttribute('aria-label', 'Main navigation');
-    
-    menuContent.setAttribute('role', 'navigation');
-    menuContent.setAttribute('aria-label', 'Main menu');
+    menuOverlay.setAttribute("role", "dialog");
+    menuOverlay.setAttribute("aria-modal", "true");
+    menuOverlay.setAttribute("aria-hidden", "true");
+    menuOverlay.setAttribute("aria-label", "Main navigation");
+
+    menuContent.setAttribute("role", "navigation");
+    menuContent.setAttribute("aria-label", "Main menu");
     menuContent.id = menuId;
   };
 
@@ -147,23 +153,23 @@
     const { hamburgerBtn, closeBtn, menuOverlay, menuItems } = elements;
 
     // Toggle menu when hamburger button is clicked
-    hamburgerBtn.addEventListener('click', onHamburgerClick);
-    hamburgerBtn.addEventListener('keydown', onHamburgerKeyDown);
+    hamburgerBtn.addEventListener("click", onHamburgerClick);
+    hamburgerBtn.addEventListener("keydown", onHamburgerKeyDown);
 
     // Close menu when close button is clicked
-    closeBtn.addEventListener('click', onCloseClick);
-    closeBtn.addEventListener('keydown', onCloseKeyDown);
+    closeBtn.addEventListener("click", onCloseClick);
+    closeBtn.addEventListener("keydown", onCloseKeyDown);
 
     // Close menu when clicking outside
-    menuOverlay.addEventListener('click', onClickOutside);
+    menuOverlay.addEventListener("click", onClickOutside);
 
     // Handle keyboard navigation within menu
-    menuItems.forEach(item => {
-      item.addEventListener('keydown', onMenuItemKeyDown);
+    menuItems.forEach((item) => {
+      item.addEventListener("keydown", onMenuItemKeyDown);
     });
 
     // Handle keyboard events for the menu
-    document.addEventListener('keydown', onDocumentKeyDown);
+    document.addEventListener("keydown", onDocumentKeyDown);
   };
 
   /**
@@ -172,7 +178,7 @@
    */
   const toggleMenu = (show) => {
     // If show is not specified, toggle the current state
-    const shouldShow = typeof show === 'boolean' ? show : !state.isOpen;
+    const shouldShow = typeof show === "boolean" ? show : !state.isOpen;
 
     // If already in the desired state, do nothing
     if (shouldShow === state.isOpen) {
@@ -184,7 +190,7 @@
       return;
     }
 
-    log(`Toggling menu: ${shouldShow ? 'show' : 'hide'}`);
+    log(`Toggling menu: ${shouldShow ? "show" : "hide"}`);
     state.isAnimating = true;
 
     // Update state
@@ -202,7 +208,7 @@
       // Show menu
       menuContent.classList.add(visible);
       closeBtn.classList.add(visible);
-      menuOverlay.setAttribute('aria-hidden', 'false');
+      menuOverlay.setAttribute("aria-hidden", "false");
       document.body.classList.add(CONFIG.classes.menuOpen);
 
       // Set focus to the first focusable element in the menu
@@ -214,7 +220,7 @@
       // Hide menu
       menuContent.classList.remove(visible);
       closeBtn.classList.remove(visible);
-      menuOverlay.setAttribute('aria-hidden', 'true');
+      menuOverlay.setAttribute("aria-hidden", "true");
       document.body.classList.remove(CONFIG.classes.menuOpen);
 
       // Return focus to the previously focused element
@@ -235,7 +241,7 @@
     const { isOpen } = state;
 
     hamburgerBtn.setAttribute(CONFIG.aria.expanded, isOpen.toString());
-    menuOverlay.setAttribute('aria-hidden', (!isOpen).toString());
+    menuOverlay.setAttribute("aria-hidden", (!isOpen).toString());
   };
 
   /**
@@ -243,18 +249,19 @@
    */
   const trapFocus = () => {
     const { menuContent } = elements;
-    
+
     // Get all focusable elements in the menu
     state.focusableElements = Array.from(
       menuContent.querySelectorAll(CONFIG.selectors.focusableElements)
-    ).filter(el => {
+    ).filter((el) => {
       // Filter out elements with tabindex="-1" and disabled elements
-      return el.getAttribute('tabindex') !== '-1' && !el.disabled;
+      return el.getAttribute("tabindex") !== "-1" && !el.disabled;
     });
 
     // Update first and last focusable elements
     state.firstFocusableElement = state.focusableElements[0];
-    state.lastFocusableElement = state.focusableElements[state.focusableElements.length - 1];
+    state.lastFocusableElement =
+      state.focusableElements[state.focusableElements.length - 1];
 
     // Set focus to the first focusable element
     if (state.firstFocusableElement) {
@@ -277,12 +284,12 @@
     }
 
     // Handle Tab key
-    if (key === 'Tab') {
+    if (key === "Tab") {
       // If shift + tab on first element, move to last element
       if (shiftKey && activeElement === firstFocusableElement) {
         e.preventDefault();
         lastFocusableElement.focus();
-      } 
+      }
       // If tab on last element, move to first element
       else if (!shiftKey && activeElement === lastFocusableElement) {
         e.preventDefault();
@@ -290,7 +297,7 @@
       }
     }
     // Handle Escape key
-    else if (key === 'Escape') {
+    else if (key === "Escape") {
       e.preventDefault();
       toggleMenu(false);
       elements.hamburgerBtn.focus();
@@ -304,10 +311,10 @@
     const { menuItems } = elements;
     const currentPath = window.location.pathname;
 
-    menuItems.forEach(item => {
-      const href = item.getAttribute('href');
+    menuItems.forEach((item) => {
+      const href = item.getAttribute("href");
       if (href && currentPath.endsWith(href)) {
-        item.setAttribute(CONFIG.aria.current, 'page');
+        item.setAttribute(CONFIG.aria.current, "page");
       } else {
         item.removeAttribute(CONFIG.aria.current);
       }
@@ -323,10 +330,10 @@
   };
 
   const onHamburgerKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggleMenu(true);
-    } else if (e.key === 'Escape' && state.isOpen) {
+    } else if (e.key === "Escape" && state.isOpen) {
       toggleMenu(false);
     }
   };
@@ -339,7 +346,7 @@
   };
 
   const onCloseKeyDown = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       e.preventDefault();
       toggleMenu(false);
       elements.hamburgerBtn.focus();
@@ -350,14 +357,14 @@
     const { menuContent } = elements;
     const isClickInsideMenu = menuContent.contains(e.target);
     const isHamburgerButton = e.target.closest(CONFIG.selectors.hamburgerBtn);
-    
+
     if (!isClickInsideMenu && !isHamburgerButton && state.isOpen) {
       toggleMenu(false);
     }
   };
 
   const onMenuItemKeyDown = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       e.preventDefault();
       toggleMenu(false);
       elements.hamburgerBtn.focus();
@@ -366,9 +373,9 @@
 
   const onDocumentKeyDown = (e) => {
     if (!state.isOpen) return;
-    
+
     // Handle keyboard navigation when menu is open
-    if (e.key === 'Tab' || e.key === 'Escape') {
+    if (e.key === "Tab" || e.key === "Escape") {
       handleMenuNavigation(e);
     }
   };
@@ -378,30 +385,30 @@
    */
   const loadThemeToggle = () => {
     const themeToggleContainer = getElement(CONFIG.selectors.themeToggle);
-    
+
     if (!themeToggleContainer) {
-      log('No theme toggle container found');
+      log("No theme toggle container found");
       return;
     }
 
-    log('Loading theme toggle...');
-    
+    log("Loading theme toggle...");
+
     // Use root-relative path to ensure it works from any page
-    fetch('/common/darktoggle.html')
-      .then(response => {
+    fetch("/common/darktoggle.html")
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.text();
       })
-      .then(html => {
+      .then((html) => {
         themeToggleContainer.innerHTML = html;
-        log('Theme toggle loaded');
-        
+        log("Theme toggle loaded");
+
         // Initialize any scripts in the loaded content
-        const scripts = themeToggleContainer.getElementsByTagName('script');
-        Array.from(scripts).forEach(script => {
-          const newScript = document.createElement('script');
+        const scripts = themeToggleContainer.getElementsByTagName("script");
+        Array.from(scripts).forEach((script) => {
+          const newScript = document.createElement("script");
           if (script.src) {
             newScript.src = script.src;
           } else {
@@ -410,14 +417,14 @@
           document.body.appendChild(newScript);
         });
       })
-      .catch(err => {
-        error('Error loading theme toggle:', err);
+      .catch((err) => {
+        error("Error loading theme toggle:", err);
       });
   };
 
   // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
       init();
       updateActiveMenuItem();
     });
@@ -435,6 +442,6 @@
     toggle: toggleMenu,
     show: () => toggleMenu(true),
     hide: () => toggleMenu(false),
-    updateActiveMenuItem
+    updateActiveMenuItem,
   };
 })();
