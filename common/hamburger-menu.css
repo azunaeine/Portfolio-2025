@@ -250,7 +250,7 @@
 }
 
 /* Responsive Styles */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .nav-items {
     display: flex;
   }
