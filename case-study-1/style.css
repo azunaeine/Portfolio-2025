@@ -205,6 +205,9 @@ body {
   background: white;
 }
 
+.fa-envelope {
+  transform: translateY(4px);
+}
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
