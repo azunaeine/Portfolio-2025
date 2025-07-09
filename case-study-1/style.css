@@ -209,6 +209,9 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
+.hero-content h1 {
+  color: black !important;
+}
 
 .hero h1 {
   color: black;
@@ -393,6 +396,9 @@ body {
   top: 0.15em;
   font-weight: bold;
 }
+body[data-theme="dark"] .key-achievements li:before {
+  color: #ffffff;
+}
 
 /* User Feedback */
 .user-feedback {
@@ -418,6 +424,9 @@ body {
   line-height: 1;
   top: 0.15em;
   font-weight: bold;
+}
+body[data-theme="dark"] .user-feedback li:before {
+  color: #ffffff;
 }
 
 /* Responsive adjustments */
@@ -661,6 +670,9 @@ body {
 .design-system {
   background: #ffffff;
   padding: 6rem 0;
+}
+section.design-system * {
+  color: black !important;
 }
 
 .design-system .container {
