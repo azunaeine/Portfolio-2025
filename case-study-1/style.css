@@ -264,7 +264,7 @@ body[data-theme="dark"] {
   background: white;
   padding: 2.5rem;
   margin: 2rem auto;
-  max-width: 1310px;
+  max-width: 1350px;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
@@ -387,7 +387,6 @@ body[data-theme="dark"] .section {
 
 .result-item h3 {
   color: #000000;
-  font-size: 1.5rem;
   margin-bottom: 1.25rem;
   font-weight: 600;
 }
