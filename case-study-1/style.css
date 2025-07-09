@@ -49,7 +49,16 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: #ffffff;
+  background-color: #f8f9f7; /* Light off-white background */
+  min-height: 100vh; /* Ensure full viewport height */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dark mode background */
+body[data-theme="dark"] {
+  background-color: #121212;
 }
 
 .overview {
@@ -253,8 +262,17 @@ body {
 /* Sections */
 .section {
   background: white;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 1310px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode section background */
+body[data-theme="dark"] .section {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .section h2 {
