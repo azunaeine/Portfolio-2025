@@ -259,8 +259,27 @@ body[data-theme="dark"] .fa-envelope::before {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
+footer {
+  position: absolute;
+  left: 0;
+  transform: translateY(0.5rem);
+  background-color: var(--footer-bg);
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.7rem 1rem;
+  margin-top: 2rem;
+  color: var(--footer-text);
+}
+
 body[data-theme="dark"] .fa-solid:not(.fa-envelope) {
   background-color: #ffffff;
+}
+
+body[data-theme="dark"] footer {
+  background-color: #1e1e1e;
 }
 
 /* Dark mode section background */
