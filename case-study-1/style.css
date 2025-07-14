@@ -5,7 +5,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 i.fa-bars {
-  color: #ffffff;
+  color: #000000;
 }
 .btn-hamburger-menu {
   border-radius: 0.875rem !important;
@@ -267,6 +267,10 @@ body[data-theme="dark"] {
   max-width: 1350px;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+body[data-theme="dark"] .fa-solid {
+  background-color: #ffffff !important; /* Black icon in dark mode */
 }
 
 /* Dark mode section background */
