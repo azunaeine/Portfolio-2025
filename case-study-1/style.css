@@ -56,6 +56,10 @@ body {
   padding: 0;
 }
 
+body[data-theme="dark"] .fa-bars {
+  color: #000000 !important;
+}
+
 /* Dark mode background */
 body[data-theme="dark"] {
   background-color: #121212;
@@ -63,6 +67,10 @@ body[data-theme="dark"] {
 
 .overview {
   border: black solid 2px;
+}
+
+body[data-theme="dark"] i.fa-solid.fa-xmark {
+  color: #000000 !important;
 }
 
 /* Nav bar styles */
