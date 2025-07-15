@@ -341,6 +341,7 @@ body[data-theme="dark"] .section {
   padding: 2.5rem;
   border-radius: 4px;
   line-height: 2rem;
+  margin-right: 2rem;
 }
 
 /* Research Section */
@@ -348,6 +349,7 @@ body[data-theme="dark"] .section {
   background: var(--light-gray);
   padding: 1.5rem;
   border-radius: 4px;
+  margin-right: 4rem;
 }
 
 /* Research Findings List */
@@ -355,9 +357,11 @@ body[data-theme="dark"] .section {
   list-style-type: none;
   padding-left: 0;
   margin: 1em 0;
+  font-size: 11px;
+  margin-right: 2rem;
 }
 
-.research-findings-list li {
+.problem .research-findings-list li {
   position: relative;
   padding-left: 1.5em;
   margin-bottom: 1em;
@@ -382,6 +386,11 @@ body[data-theme="dark"] .section {
   background: var(--light-gray);
   padding: 1.5rem;
   border-radius: 4px;
+  margin-right: 2rem;
+}
+
+.takeaway-item p {
+  margin-right: 2rem;
 }
 
 /* Results Section */
