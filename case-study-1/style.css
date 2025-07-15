@@ -142,16 +142,6 @@ body[data-theme="dark"] .fa-envelope::before {
   height: 400px;
 }
 
-.fa-envelope {
-  background-color: white;
-}
-
-.carousel-section .carousel-item img {
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
 /* Carousel Styles */
 .carousel {
   margin: 2rem 0;
@@ -379,6 +369,10 @@ body[data-theme="dark"] .section {
 
 .research-findings-list li strong {
   color: #000000; /* Darker color for the heading text */
+}
+
+.research-findings-list li {
+  font-size: 16px;
 }
 
 /* Solution Section */
