@@ -337,42 +337,41 @@ body[data-theme="dark"] .section {
 /* Research Section */
 .research-findings {
   background: var(--light-gray);
-  padding: 1.5rem;
+  padding: 2rem; /* Increased padding */
   border-radius: 4px;
-  margin-right: 4rem;
+  margin: 2rem 4rem 2rem 2rem; /* Consistent margins */
 }
 
 /* Research Findings List */
 .research-findings-list {
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 1.5rem; /* Add left padding to the list */
   margin: 1em 0;
-  font-size: 11px;
-  margin-right: 2rem;
+  font-size: 16px; /* Moved from li selector */
 }
 
-.problem .research-findings-list li {
+.research-findings-list li {
   position: relative;
-  padding-left: 1.5em;
-  margin-bottom: 1em;
+  padding-left: 2rem; /* Increased left padding for bullet space */
+  margin-bottom: 1.2em; /* Slightly more space between items */
   line-height: 1.6;
 }
 
 .research-findings-list li:before {
   content: "•";
   position: absolute;
-  left: 0;
-  color: #000000; /* Blue bullet point color */
+  left: 0.5rem; /* Position bullet within the padding */
+  top: 0.2em; /* Better vertical alignment */
+  color: #000000;
   font-weight: bold;
   font-size: 1.2em;
 }
 
+/* Make sure strong text has proper spacing */
 .research-findings-list li strong {
-  color: #000000; /* Darker color for the heading text */
-}
-
-.research-findings-list li {
-  font-size: 16px;
+  color: #000000;
+  display: inline-block; /* Ensure consistent line height */
+  margin-right: 0.3rem;
 }
 
 /* Solution Section */
