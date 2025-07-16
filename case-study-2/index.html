@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../theme.css" />
+    <link rel="stylesheet" href="../common/common-case-study.styles.css" />
+    <link rel="stylesheet" href="../common/hamburger-menu.css" />
+    <link rel="stylesheet" href="../common/darkmode-toggle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // update the year to the current year
+      const yearSpan = document.querySelector("span.year");
+      if (yearSpan) {
+        yearSpan.innerHTML = new Date().getFullYear();
+      }
+    </script>
+    <title>Recipe Sharing</title>
+  </head>
+  <body data-theme="light">
+    <!-- Hamburger menu will be loaded here -->
+    <nav class="nav-bar">
+      <div class="panel-fade-in"></div>
+      <a class="s-icon" href="../index.html">
+        <img src="../images/logo.svg" alt="logo" class="logo">
+      </a>
+      <!-- Hamburger menu button will be added by hamburger-menu.html -->
+
+      <div class="nav-items">
+        <a class="nav-item" href="../index.html">Home</a>
+        <a class="nav-item" href="../about/index.html">About</a>
+        <a href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing" 
+           class="nav-item" 
+           target="_blank">Resume</a>
+        <div class="theme-toggle-container">
+          <button
+            class="theme-toggle"
+            id="mainThemeToggle"
+            aria-label="Toggle dark mode"
+          ></button>
+        </div>
+      </div>
+    </nav>
+    <div class="case-study">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Recipe Sharing</h1>
+        </div>
+      </section>
+
+      <!-- Screenshots Section -->
+      <section class="screenshots-section">
+        <div class="screenshots-container">
+          <div class="screenshot-wrapper">
+            <div class="screenshot-item">
+              <img src="../images/Add.png" alt="App Screen 1">
+            </div>
+            <div class="screenshot-item">
+              <img src="../images/Home.png" alt="App Screen 2">
+            </div>
+            <div class="screenshot-item featured">
+              <img src="../images/Share.png" alt="App Screen 3">
+            </div>
+            <div class="screenshot-item">
+              <img src="../images/scan.png" alt="App Screen 4">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Color Section -->
+      <section class="color-section">
+        <div class="color-section-content">
+          <!-- Content can be added here if needed -->
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="project-info">
+            <div class="info-item">
+              <span class="label">Role:</span>
+              <span class="value">UX Designer & Researcher</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Duration:</span>
+              <span class="value">4 months</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Tools:</span>
+              <span class="value">Figma, Adobe Illustrator, Figjam</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Team:</span>
+              <span class="value">Chico, Ziyun, Mila, Meshach, and Azuna</span>
+            </div>
+            <div>
+              <a target="_blank" href="https://www.figma.com/proto/VIivfOcwKWvpAguWkwu0Gp/recipe-sharing?page-id=&node-id=922-9158&p=f&viewport=493%2C694%2C0.07&t=hAzXQ7njYKet6MIV-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=667%3A6897"><button class="btn-view">View Prototype</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="section overview">
+        <h2>Project Overview</h2>
+        <p class="description">
+          This project addressed the challenge of maintaining family connections across generations. We aimed to develop a digital service that helped grandparents share family recipes in accessible formats, allowing grandchildren to learn, cook, and build deeper relationships. The goal was to strengthen emotional bonds and preserve cultural traditions in a meaningful, interactive way.
+        </p>
+      </section>
+
+      <!-- Problem Statement -->
+      <section class="section problem">
+        <h2>The Problem</h2>
+        <div class="problem-grid">
+          <div class="problem-item">
+            <h3>Goals</h3>
+            <ul>
+              <li> A user-friendly, clean interface designed to be convenient and intuitive, even for tech-savvy users.</li>
+              <li>The content will highlight capturing meaningful family moments and sharing cherished family traditions.</li>
+              <li>Interactive, gamified experiences designed to engage both older and younger generations.</li>
+            </ul>
+          </div>
+          <div class="problem-item">
+            <h3>User Pain Points</h3>
+            <ul>
+              <li>Parents struggle to balance work and family time, feeling disconnected due to busy schedules, digital distractions, and ineffective family apps.</li>
+              <li>Many families struggle with open communication, especially on sensitive topics, as smartphone distractions widen the gap and hinder children's communication skills.</li>
+              <li>Generational gaps in values, technology use, and daily habits create barriers to connection and understanding between younger and older adults.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section class="section research">
+        <h2>Research</h2>
+        <div class="research-content">
+          <div class="research-methods">
+            <h3>Methods Used</h3>
+            <ul class="research-methods-list">
+              <li>User Interviews</li>
+              <li>Competitor Analysis</li>
+              <li>User Testing</li>
+              <li>Surveys</li>
+              <li>Personas</li>
+              <li>User Flow</li>
+            </ul>
+          </div>
+          <div class="research-findings">
+            <h3>Key Findings</h3>
+            <ul class="research-findings-list">
+              <li><strong>Tag-Team Parenting:</strong> Parents face increasing challenges balancing work and childcare due to lower income, limited time, and rising childcare costs (average increase of 5.3% in 2024), especially as return-to-office policies resume.</li>
+              <li><strong>Diverse Family Dynamics:</strong> Families across different sexes, genders, races, ages, and family structures experience unique parenting and communication challenges.</li>
+              <li><strong>Generational Gaps:</strong> Age and generational differences contribute significantly to communication breakdowns within families.</li>
+              <li><strong>Screen Time and Bonding:</strong> Excessive screen use is reducing valuable family bonding time, making meaningful connection more difficult.</li>
+              <li><strong>Fathers’ Work-Life Struggles:</strong> 67% of fathers feel guilty about missing key moments in their children's lives due to work, despite growing efforts to promote equal parenting roles.</li>
+              <li><strong>Paternity Leave Progress: </strong> Paternity leave increased by 250% among Canadian companies in Quebec to encourage greater father involvement.</li>
+              <li><strong>Underdeveloped Support:</strong> Marriage counseling services, especially in Asian communities, remain limited and need further development.</li>
+              <li><strong>Parenting with Technology:</strong> Tools like smartphone babysitting are playing a growing role in raising children.</li>
+              <li><strong>Digital Impact:</strong> Technology is shaping family relationships and influencing parenting and family management.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class=" section early-prototype">
+        <h2> Early Prototype</h2>
+        <div class="early-prototype-content">
+          <img src="../images/ingredient.png" alt="Screenshot showing ingredients interface">
+          <img src="../images/Listening.png" alt="Screenshot showing voice listening feature">
+          <img src="../images/recipe-name.png" alt="Screenshot showing recipe name input">
+          <img src="../images/Add-new.png" alt="Screenshot of recipe view">
+        </div>
+        <div class="info-box">
+          <p>This prototype showcases the initial concept for the recipe-sharing mobile application. It features a minimalist design with simple colours. The main purpose of this prototype was to test functionality and identify areas for improvement to help us refine and develop a polished final version.</p>
+        </div>
+      </section>
+
+      <!-- Solution -->
+      <section class="section solution">
+        <h2>The Solution</h2>
+        <div class="solution-grid">
+          <div class="solution-item">
+            <h3>Design Decisions</h3>
+            <p>
+              We used a decision matrix to select our final design, focusing on engagement and feasibility.
+              Our research showed that generational gaps often come from a lack of shared interests, so we prioritized creating an engaging, shared experience. Feasibility was also crucial to meet our project timeline.
+              
+              We were inspired by Nainai’s Recipe, a 3D cooking game that connects players through family recipes. While this concept aligned well with our goal of connecting generations through food, we recognized that 3D animation was beyond our team’s capabilities and timeline.
+            </p>
+          </div>
+          <div class="solution-item">
+            <h3>Design System</h3>
+            <p>
+              The design system uses a warm, earthy colour palette with brown (#86674B) buttons placed on soft off-white (#F9FAFC) backgrounds, supported by soft green accents (#DCF1AA) and vibrant orange-red highlights (#E8571B). Bright orange (#FFAD3A) is used for playful and secondary highlights, while black (#000000) is used for text and also to add colour and depth to certain elements within the mobile application. Typography blends SF Pro Display and Darker Grotesque to create variety and visual interest. The primary title style uses SF Pro Display Semibold at 35px, while secondary titles use Darker Grotesque Bold at 24px. Body text is set in SF Pro Display Semibold at 15px, 18px, 20px, and 22px, depending on the section and visual hierarchy. This combination of colours, typefaces, and sizing builds a cohesive, accessible, and engaging visual language across the design.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design System Section -->
+      <section class="design-system">
+        <div class="container">
+          <h2 class="section-title">Design System</h2>
+          
+          <!-- Color Palette -->
+          <div class="design-section">
+            <h3 class="design-subtitle">Color Palette</h3>
+            <div class="color-palette">
+              <div class="color-swatch">
+                <div class="color-box" style="background-color: #86674B;"></div>
+                <span class="color-hex">#86674B</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-box" style="background-color: #F9FAFC; border: 1px solid #eee;"></div>
+                <span class="color-hex">#F9FAFC</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-box" style="background-color: #000000;"></div>
+                <span class="color-hex">#000000</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-box" style="background-color: #DCF1AA;"></div>
+                <span class="color-hex">#DCF1AA</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-box" style="background-color: #E8571B;"></div>
+                <span class="color-hex">#E8571B</span>
+              </div>
+              <div class="color-swatch">
+                <div class="color-box" style="background-color: #FFAD3A;"></div>
+                <span class="color-hex">#FFAD3A</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- Typography -->
+          <div class="design-section">
+            <h3 class="design-subtitle">Typography</h3>
+            <div class="typography-examples">
+              <div class="type-example">
+                <h1 class="heading-1">Heading 1</h1>
+                <p class="type-spec"> SF Pro Display Semibold 35px</p>
+              </div>
+              <div class="type-example">
+                <h2 class="heading-2">Heading 2</h2>
+                <p class="type-spec"> Darker Grotesque Bold 24px</p>
+              </div>
+              <div class="type-example">
+                <p class="body-text">Body Text</p>
+                <p class="type-spec">SF Pro Display Semibold 15px, 18px, 20px, 22px</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- UI Components -->
+          <div class="design-section">
+            <h3 class="design-subtitle">UI Components</h3>
+            <div class="ui-components">
+              <div class="component">
+                <img src="../images/component.png" alt="Screenshot showing ingredients interface">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="section results">
+        <h2>Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <h3>Key Achievements</h3>
+            <ul class="key-achievements">
+              <li>Incorporated personalized recommendations to enhance user engagement and discovery of new recipes.</li>
+              <li>Improved user experience by minimizing distractions and making it easier to access family members' recipes.</li>
+              <li>Implemented user feedback to ensure the design better meets user needs and expectations.</li>
+            </ul>
+          </div>
+          <div class="result-item">
+            <h3>User Feedback</h3>
+            <ul class="user-feedback">
+              <li>The voice input process offers a detailed and thoughtful flow, providing users with clear steps to follow.</li>
+              <li>The AI-generated recipe page invites exploration, and the "4 servings" icon draws attention in a way that encourages interaction.</li>
+              <li>The button content sparks curiosity, creating opportunities for users to engage with the interface.</li>
+              <li>The voice recording step introduces an interactive element, adding variety and engagement to the experience.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Takeaways -->
+      <section class="section takeaways">
+        <h2>Key Takeaways</h2>
+        <div class="takeaway-list">
+          <div class="takeaway-item">
+            <h3>What Worked Well</h3>
+            <p>We successfully enhanced both the appearance and functionality of the homepage. In addition, we introduced accessibility features to the mobile application and made significant improvements to its navigation.</p>
+          </div>
+          <div class="takeaway-item">
+            <h3>Lessons Learned</h3>
+            <p>Communication challenges sometimes led to misalignment and delays, as information wasn’t always shared clearly or on time. Establishing clearer expectations, regular check-ins, and faster feedback loops could have improved collaboration and helped the team stay more connected throughout the process.
+</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <a href="https://www.linkedin.com/in/azunaekundayo/" target="_blank">
+        <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+      </a>
+      <a href="https://github.com/azunaeine" target="_blank">
+        <div class="icon"><i class="fa-brands fa-github"></i></div>
+      </a>
+      <a href="https://twitter.com/xxxazuna" target="_blank">
+        <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+      </a>
+      <a href="mailto:azunaeine@gmail.com" target="_blank">
+        <div class="icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+      </a>
+      <div class="copyrighttext">
+        &copy; Azuna Ekundayo <span class="year">2022</span>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NLSS6TZ2NF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-NLSS6TZ2NF");
+    </script>
+    <script>
+      // Initialize w3-include-html
+      function includeHTML() {
+        var z, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (let i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }      
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
+          }
+        }
+      }
+      window.onload = includeHTML;
+    </script>
+    <script>
+      // update the year to the current year
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearSpan = document.querySelector("span.year");
+        if (yearSpan) {
+          yearSpan.innerHTML = new Date().getFullYear();
+        }
+      });
+    </script>
+    <!-- Load hamburger menu -->
+    <script>
+      // Hamburger menu functions
+      function showMenu() {
+        const hamburgerMenuContent = document.querySelector(".hamburger-menu-content");
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        const body = document.body;
+        
+        hamburgerMenuContent.classList.add("visible");
+        btnCloseMenu.classList.add("visible");
+        body.classList.add("menu-is-open");
+      }
+
+      function hideMenu() {
+        const hamburgerMenuContent = document.querySelector(".hamburger-menu-content");
+        const btnCloseMenu = document.querySelector(".btn-close-menu");
+        const body = document.body;
+        
+        hamburgerMenuContent.classList.remove("visible");
+        btnCloseMenu.classList.remove("visible");
+        body.classList.remove("menu-is-open");
+      }
+    </script>
+
+
+    <!-- Hamburger Menu will be loaded here by load-menu.js -->
+    <div id="hamburger-menu-container"></div>
+    <script src="../common/load-menu.js"></script>
+  </body>
+</html>
