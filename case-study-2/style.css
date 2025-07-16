@@ -337,7 +337,6 @@ body[data-theme="dark"] .section {
 /* Research Section */
 .research-findings {
   background: var(--light-gray);
-  padding: 2rem; /* Increased padding */
   border-radius: 4px;
   margin: 2rem 4rem 2rem 2rem; /* Consistent margins */
 }
