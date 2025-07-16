@@ -13,7 +13,7 @@ i.fa-bars {
 
 /* Hero section - keep green background in dark mode */
 .hero {
-  background: #dcf1aa; /* Original green background */
+  background: #e5ecf1; /* Original green background */
   color: #333; /* Dark text for better contrast on light green */
   padding: 1rem;
   margin-bottom: 2rem;
@@ -574,7 +574,7 @@ body[data-theme="dark"] .user-feedback li:before {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  background: white;
+  background: #fde3c0;
   padding: 1rem;
 }
 
