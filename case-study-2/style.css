@@ -573,7 +573,7 @@ body[data-theme="dark"] .user-feedback li:before {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  background: #fde3c0;
+  background: #ffe3c0;
   padding: 1rem;
 }
 
