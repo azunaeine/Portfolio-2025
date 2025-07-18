@@ -13,7 +13,7 @@ i.fa-bars {
 
 /* Hero section - keep green background in dark mode */
 .hero {
-  background: #e5ecf1; /* Original green background */
+  background: #e9e2ff; /* Original green background */
   color: #333; /* Dark text for better contrast on light green */
   padding: 1rem;
   margin-bottom: 2rem;
@@ -501,6 +501,88 @@ body[data-theme="dark"] .user-feedback li:before {
   color: var(--text-color);
   line-height: 1.6;
   font-size: 1rem;
+}
+
+/* Screenshot Section */
+.screenshot-section {
+  padding: 3rem 0;
+  background-color: #f3f3f3;
+  margin: 2rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.screenshot-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.centered-screenshot {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+}
+
+.centered-screenshot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 1200px) {
+  .screenshot-container {
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .screenshot-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .screenshot-section {
+    padding: 1.5rem 0;
+  }
+  
+  .screenshot-container {
+    padding: 0 1.25rem;
+  }
+  
+  .centered-screenshot {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshot-section {
+    padding: 1rem 0;
+    margin: 1.5rem 0;
+  }
+  
+  .screenshot-container {
+    padding: 0 1rem;
+  }
+  
+  .centered-screenshot {
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .centered-screenshot:hover {
+    transform: none; /* Remove hover effect on mobile */
+  }
 }
 
 /* Screenshots Section */
