@@ -470,20 +470,47 @@ body[data-theme="dark"] .user-feedback li:before {
 
 .early-prototype-content {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 1rem;
+  max-width: 1400px;
+  padding: 0 1.5rem;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #000000;
+  flex-shrink: 0;
+  margin: 0 5px;
 }
 
 .early-prototype-content img {
-  max-width: 220px;
+  width: 18%;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1;
+  min-width: 0; /* Allows images to shrink below their intrinsic width */
+}
+
+.early-prototype-content img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.early-prototype-content img:hover {
+  transform: scale(1.03);
 }
 
 .info-box {
