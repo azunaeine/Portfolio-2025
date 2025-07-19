@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Azuna Ekundayo</title>
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="../theme.css" />
+    <link rel="stylesheet" href="../common/common-styles.css" />
+    <link rel="stylesheet" href="../common/hamburger-menu.css" />
+    <link rel="stylesheet" href="../common/darkmode-toggle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <script
+      src="https://kit.fontawesome.com/b85921a939.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body data-theme="light">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+      <div class="panel-fade-in"></div>
+      <a class="s-icon" href="../index.html">
+        <img src="../images/logo.svg" alt="logo" class="logo" />
+      </a>
+
+      <div class="nav-items">
+        <a class="nav-item" href="../index.html">Home</a>
+        <a class="nav-item active" href="index.html">About</a>
+        <a
+          href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
+          class="nav-item"
+          target="_blank"
+          >Resume</a
+        >
+        <div class="theme-toggle-container">
+          <button
+            class="theme-toggle"
+            id="aboutThemeToggle"
+            aria-label="Toggle dark mode"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="btn-hamburger-menu" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="hamburger-menu-overlay" aria-hidden="true" tabindex="-1">
+      <div class="hamburger-menu-content">
+        <button class="btn-close-menu" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <nav class="hamburger-menu-nav" aria-label="Main navigation">
+          <ul class="hamburger-menu-items">
+            <li>
+              <a href="../index.html" class="hamburger-menu-nav-item">Home</a>
+            </li>
+            <li>
+              <a href="index.html" class="hamburger-menu-nav-item active"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
+                class="hamburger-menu-nav-item"
+                target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="theme-toggle-container hamburger">
+          <button
+            class="theme-toggle"
+            id="mobileThemeToggle"
+            aria-label="Toggle dark mode"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <main class="about-container">
+      <!-- Hero Section -->
+      <section class="about-hero">
+        <h1>About Me</h1>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Hello! I'm Azuna Ekundayo, a passionate product designer with a
+              keen eye for creating intuitive and beautiful digital experiences.
+              With a background in design and development, I bridge the gap
+              between aesthetics and functionality.
+            </p>
+            <p>
+              My approach combines user-centered design principles with a deep
+              understanding of technical constraints, allowing me to create
+              solutions that are both visually appealing and highly functional.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="../images/profile-placeholder.jpg"
+              alt="Azuna Ekundayo"
+              onerror="this.src='../images/placeholder.png'"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Design</h3>
+            <ul>
+              <li>User Research</li>
+              <li>Wireframing & Prototyping</li>
+              <li>UI/UX Design</li>
+              <li>Interaction Design</li>
+              <li>Design Systems</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools</h3>
+            <ul>
+              <li>Figma & Sketch</li>
+              <li>Adobe Creative Suite</li>
+              <li>HTML/CSS/JavaScript</li>
+              <li>React</li>
+              <li>Framer</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>Collaboration</li>
+              <li>Problem Solving</li>
+              <li>Communication</li>
+              <li>Project Management</li>
+              <li>User Advocacy</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="experience-section">
+        <h2>Professional Experience</h2>
+        <div class="experience-grid">
+          <div class="experience-card">
+            <h3>Product Designer</h3>
+            <p class="company">Tech Innovations Inc.</p>
+            <p class="duration">2021 - Present</p>
+            <ul>
+              <li>
+                Led the redesign of the company's flagship product, resulting in
+                a 40% increase in user engagement
+              </li>
+              <li>
+                Conducted user research and usability testing to inform design
+                decisions
+              </li>
+              <li>
+                Collaborated with cross-functional teams to implement design
+                solutions
+              </li>
+            </ul>
+          </div>
+          <div class="experience-card">
+            <h3>UX Designer</h3>
+            <p class="company">Digital Solutions LLC</p>
+            <p class="duration">2019 - 2021</p>
+            <ul>
+              <li>
+                Designed and prototyped new features for web and mobile
+                applications
+              </li>
+              <li>
+                Created and maintained design systems and component libraries
+              </li>
+              <li>
+                Worked closely with developers to ensure design implementation
+                quality
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="education-section">
+        <h2>Education</h2>
+        <div class="education-grid">
+          <div class="education-card">
+            <h3>Master of Design</h3>
+            <p class="institution">University of Design</p>
+            <p class="duration">2017 - 2019</p>
+            <p>Specialized in Interaction Design and User Experience</p>
+          </div>
+          <div class="education-card">
+            <h3>Bachelor of Fine Arts</h3>
+            <p class="institution">State University</p>
+            <p class="duration">2013 - 2017</p>
+            <p>Major in Graphic Design, Minor in Computer Science</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <a href="https://www.linkedin.com/in/azunaekundayo/" target="_blank">
+        <div class="icon"><i class="fa-brands fa-linkedin"></i></div>
+      </a>
+      <a href="https://github.com/azunaeine" target="_blank">
+        <div class="icon"><i class="fa-brands fa-github"></i></div>
+      </a>
+      <a href="https://twitter.com/xxxazuna" target="_blank">
+        <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+      </a>
+      <a href="mailto:azunaeine@gmail.com">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+      </a>
+      <div class="copyrighttext">
+        &copy; Azuna Ekundayo <span class="year">2022</span>
+      </div>
+    </footer>
+
+    <script>
+      // Update the year to the current year
+      document.addEventListener("DOMContentLoaded", function () {
+        const yearSpan = document.querySelector("span.year");
+        const currentYear = new Date().getFullYear();
+        if (yearSpan) {
+          yearSpan.textContent = currentYear;
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById("aboutThemeToggle");
+        const mobileThemeToggle = document.getElementById("mobileThemeToggle");
+        const prefersDarkScheme = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        );
+        const currentTheme = localStorage.getItem("theme");
+
+        if (
+          currentTheme === "dark" ||
+          (!currentTheme && prefersDarkScheme.matches)
+        ) {
+          document.body.setAttribute("data-theme", "dark");
+          if (themeToggle) themeToggle.setAttribute("aria-pressed", "true");
+          if (mobileThemeToggle)
+            mobileThemeToggle.setAttribute("aria-pressed", "true");
+        }
+
+        const toggleTheme = function () {
+          const isDark = document.body.getAttribute("data-theme") === "dark";
+          document.body.setAttribute("data-theme", isDark ? "light" : "dark");
+          localStorage.setItem("theme", isDark ? "light" : "dark");
+          if (themeToggle) themeToggle.setAttribute("aria-pressed", !isDark);
+          if (mobileThemeToggle)
+            mobileThemeToggle.setAttribute("aria-pressed", !isDark);
+        };
+
+        if (themeToggle) {
+          themeToggle.addEventListener("click", toggleTheme);
+        }
+
+        if (mobileThemeToggle) {
+          mobileThemeToggle.addEventListener("click", toggleTheme);
+        }
+      });
+    </script>
+
+    <!-- Hamburger Menu JavaScript -->
+    <script src="../common/hamburger-menu.js"></script>
+  </body>
+</html>
