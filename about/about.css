@@ -53,11 +53,6 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.about-image:hover {
-  transform: translateY(-5px);
 }
 
 .about-image img {
@@ -65,6 +60,10 @@
   height: auto;
   display: block;
   border-radius: 12px;
+}
+
+.fa-envelope {
+  align-self: end;
 }
 
 /* Section Headers */
