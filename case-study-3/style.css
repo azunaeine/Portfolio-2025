@@ -480,6 +480,7 @@ body[data-theme="dark"] .user-feedback li:before {
   gap: 10px;
 }
 
+/* Base arrow style - points right by default */
 .arrow {
   width: 0;
   height: 0;
@@ -488,6 +489,45 @@ body[data-theme="dark"] .user-feedback li:before {
   border-left: 12px solid #000000;
   flex-shrink: 0;
   margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile - arrows point down */
+@media (max-width: 768px) {
+  .early-prototype-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #000000;
+    border-bottom: none;
+    margin: 10px 0;
+    transform: rotate(0);
+  }
+  
+  .early-prototype-content img {
+    width: 80%;
+    max-width: 280px;
+  }
+}
+
+/* Tablet and up - arrows point right */
+@media (min-width: 769px) {
+  .early-prototype-content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  
+  .arrow {
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #000000;
+    margin: 0 5px;
+  }
 }
 
 .early-prototype-content img {
