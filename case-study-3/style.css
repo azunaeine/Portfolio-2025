@@ -529,7 +529,7 @@ body[data-theme="dark"] .user-feedback li:before {
 }
 
 .info-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -554,7 +554,7 @@ body[data-theme="dark"] .user-feedback li:before {
 
 /* Sticker corner effect */
 .info-box::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -887,6 +887,15 @@ section.design-system * {
   font-size: 0.9rem;
   color: #666;
   font-weight: 500;
+}
+
+@media screen and (min-width: 1024px) {
+  .project-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+  }
 }
 
 /* Responsive adjustments for color palette */
