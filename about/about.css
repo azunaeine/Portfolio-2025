@@ -64,12 +64,21 @@ h6 {
 }
 
 @media screen and (min-width: 768px) {
-  .button {
-    display: block;
-    margin-left: 2em;
-    margin-right: auto;
+  .contact-flex {
     position: relative;
-    bottom: 4em;
+  }
+
+  .button {
+    margin: 2rem 0 0 0; /* Reset margins except top */
+    align-self: flex-start; /* Align with the left edge of contact-flex */
+  }
+
+  .gmail {
+    font-size: 1.7em;
+  }
+
+  .number {
+    font-size: 1.7em !important;
   }
 }
 
@@ -85,8 +94,6 @@ h6 {
   text-align: center;
   width: 213px;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
   border: solid 1px black;
 }
 
