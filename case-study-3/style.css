@@ -514,20 +514,60 @@ body[data-theme="dark"] .user-feedback li:before {
 }
 
 .info-box {
-  background: var(--light-gray);
-  padding: 1.5rem;
-  border-radius: 4px;
+  background: #ffffff;
+  padding: 1.8rem 2rem;
+  border-radius: 12px;
   margin: 0 auto 2rem;
   max-width: 1000px;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: #000000;
+}
+
+.info-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
 }
 
 .info-box p {
   margin: 0;
-  color: var(--text-color);
-  line-height: 1.6;
-  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  font-size: 1.02rem;
+  position: relative;
+  padding-left: 10px;
+}
+
+/* Sticker corner effect */
+.info-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 0 30px 30px;
+  border-color: transparent transparent #f8f9fa transparent;
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.05);
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.info-box:hover::after {
+  border-width: 0 0 35px 35px;
 }
 
 /* Screenshot Section */
