@@ -498,7 +498,7 @@ body[data-theme="dark"] .user-feedback li:before {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .arrow {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
@@ -507,7 +507,7 @@ body[data-theme="dark"] .user-feedback li:before {
     margin: 10px 0;
     transform: rotate(0);
   }
-  
+
   .early-prototype-content img {
     width: 80%;
     max-width: 280px;
@@ -521,7 +521,7 @@ body[data-theme="dark"] .user-feedback li:before {
     flex-wrap: nowrap;
     justify-content: center;
   }
-  
+
   .arrow {
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
@@ -1252,4 +1252,10 @@ body[data-theme="dark"] .content-box,
 body[data-theme="dark"] .info-box,
 body[data-theme="dark"] .card {
   color: #000000;
+}
+
+@media screen and (min-width: 1440px) {
+  .key-achievements li {
+    margin-top: 15px;
+  }
 }
