@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+@media (width: 768px) {
+  .nav-bar {
+    gap: 19px !important;
+  }
+}
+
 /* About Page Styles */
 .about-container {
   max-width: 1200px;
