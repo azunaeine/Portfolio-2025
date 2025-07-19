@@ -188,11 +188,11 @@ body[data-theme="light"] .panel-fade-in {
 @media (min-width: 769px) and (max-width: 1024px) {
   .twitter-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 390px;
   }
   .only-image {
     padding: 2rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 }
 
