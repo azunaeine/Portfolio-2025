@@ -173,6 +173,10 @@ h6 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2.5rem;
+  justify-content: center; /* centers the grid items */
+  max-width: 1200px; /* optional: limits total grid width */
+  margin-left: auto; /* centers the grid container itself */
+  margin-right: auto;
 }
 
 .skill-category {
