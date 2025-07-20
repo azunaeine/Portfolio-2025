@@ -709,21 +709,22 @@ a {
   max-width: 280px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Sleep Tracker button */
-.nav-button.prev {
+.nav-button.sleep {
   background-color: #e5ecf1;
-  box-shadow: 0 4px 15px -3px rgba(101, 144, 173, 0.3), 
-              0 4px 6px -4px rgba(101, 144, 173, 0.3);
+  box-shadow: 0 4px 15px -3px rgba(101, 144, 173, 0.3),
+    0 4px 6px -4px rgba(101, 144, 173, 0.3);
 }
 
 /* Thesis Project button */
-.nav-button.next {
+.nav-button.thesis {
   background-color: #e9e2ff;
-  box-shadow: 0 4px 15px -3px rgba(158, 133, 224, 0.3), 
-              0 4px 6px -4px rgba(158, 133, 224, 0.3);
+  box-shadow: 0 4px 15px -3px rgba(158, 133, 224, 0.3),
+    0 4px 6px -4px rgba(158, 133, 224, 0.3);
 }
 
 .nav-button-content {
@@ -747,7 +748,7 @@ a {
   transition: all 0.3s ease;
 }
 
-.nav-button.prev {
+.nav-button.sleep {
   margin-right: auto;
   text-align: left;
   padding-left: 1rem;
@@ -768,12 +769,12 @@ a {
   z-index: 1;
 }
 
-.nav-button.prev i {
+.nav-button.sleep i {
   margin-right: 1rem;
   margin-left: 0;
 }
 
-.nav-button.next i {
+.nav-button.thesis i {
   margin-left: 1rem;
   margin-right: 0;
   order: 1;
@@ -804,23 +805,23 @@ a {
     padding: 0 1.5rem;
     margin: 3rem auto 2rem;
   }
-  
+
   .nav-button {
     max-width: 100%;
     justify-content: space-between;
     padding: 1rem;
   }
-  
-  .nav-button.prev,
-  .nav-button.next {
+
+  .nav-button.sleep,
+  .nav-button.thesis {
     margin: 0;
     text-align: left;
   }
-  
+
   .nav-button.next {
     flex-direction: row-reverse;
   }
-  
+
   .nav-button.next i {
     order: 0;
   }
