@@ -192,14 +192,6 @@ ul {
   padding: 1rem;
 }
 
-.maze,
-.freshf,
-.boldy,
-.levitate {
-  color: white;
-  font-weight: 700;
-}
-
 .icon {
   color: white;
 }
