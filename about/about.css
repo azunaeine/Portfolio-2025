@@ -369,7 +369,6 @@ footer {
 .institution {
   color: var(--accent-color);
   font-weight: 600;
-  margin: 0.8rem 0;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -386,13 +385,21 @@ footer {
   content: "🎓";
 }
 
+/* Mobile and tablet styles */
 .duration {
   color: var(--text-muted);
   font-size: 0.95rem;
-  margin: 0.5rem 0 1.5rem;
   display: flex;
   align-items: center;
   gap: 6px;
+  margin-top: 11px;
+}
+
+/* Desktop - reset the margin */
+@media (min-width: 1440px) {
+  .duration {
+    margin-top: 0;
+  }
 }
 
 .duration::before {
@@ -402,7 +409,6 @@ footer {
 
 .experience-card ul {
   padding-left: 1.2rem;
-  margin: 1.5rem 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -428,12 +434,17 @@ footer {
 
 /* Education Card Specific */
 .education-card p:last-child {
-  margin-top: 1rem;
-  padding: 0.8rem 1rem;
   background: var(--card-bg-secondary);
   border-radius: 8px;
   border-left: 3px solid var(--accent-color);
-  color: var(--text-color);
+  margin-top: 11px;
+}
+
+/* Reset margin on desktop */
+@media (min-width: 1440px) {
+  .education-card p:last-child {
+    margin-top: 0;
+  }
 }
 
 /* Responsive Design */
