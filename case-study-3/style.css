@@ -125,6 +125,15 @@ body[data-theme="dark"] .fa-envelope::before {
   margin: 0 auto;
 }
 
+.nav-button.sleep {
+  justify-content: flex-end;
+}
+
+.nav-button.recipe {
+  gap: 16px;
+  justify-content: left !important;
+}
+
 .carousel-control {
   position: absolute;
   top: 50%;
