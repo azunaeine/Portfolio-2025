@@ -2,12 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-@media (width: 768px) {
-  .nav-bar {
-    gap: 19px !important;
-  }
+  font-family: "Poppins", sans-serif;
 }
 
 /* About Page Styles */
@@ -54,6 +49,16 @@ h6 {
 .about-text p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+}
+
+.redbeam-link {
+  color: #e81515;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.redbeam-link:hover {
+  text-decoration: underline;
 }
 
 .contact-info p {
@@ -464,6 +469,15 @@ footer {
   .button:hover {
     transform: scale(1.1);
   }
+
+  .nav-bar {
+    gap: 19px !important;
+  }
+
+  .contact-info {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 /* Dark Mode Adjustments */
@@ -480,9 +494,8 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 768px) {
-  .contact-info {
-    display: flex;
-    gap: 1rem;
+@media (min-width: 1440px) {
+  .about-text p {
+    line-height: 2.5rem;
   }
 }
