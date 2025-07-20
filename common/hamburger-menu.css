@@ -19,7 +19,7 @@
   display: none;
   color: var(--text-color);
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
@@ -245,7 +245,6 @@
 /* Active state for current page */
 .hamburger-menu-nav-item[aria-current="page"] {
   color: var(--secondary-color);
-  font-weight: 600;
 }
 .nav-items {
   display: none;
