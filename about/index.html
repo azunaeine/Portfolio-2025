@@ -47,47 +47,8 @@
         </div>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button class="btn-hamburger-menu" aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <!-- Mobile Menu Button - Will be loaded by load-menu.js -->
     </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="hamburger-menu-overlay" aria-hidden="true" tabindex="-1">
-      <div class="hamburger-menu-content">
-        <button class="btn-close-menu" aria-label="Close menu">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <nav class="hamburger-menu-nav" aria-label="Main navigation">
-          <ul class="hamburger-menu-items">
-            <li>
-              <a href="../index.html" class="hamburger-menu-nav-item">Home</a>
-            </li>
-            <li>
-              <a href="index.html" class="hamburger-menu-nav-item active"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://drive.google.com/file/d/16bY4s6tKqhDAAIivHch_uu_qOF9HH3pt/view?usp=sharing"
-                class="hamburger-menu-nav-item"
-                target="_blank"
-                >Resume</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <div class="theme-toggle-container hamburger">
-          <button
-            class="theme-toggle"
-            id="mobileThemeToggle"
-            aria-label="Toggle dark mode"
-          ></button>
-        </div>
-      </div>
-    </div>
 
     <main class="about-container">
       <!-- Hero Section -->
@@ -416,7 +377,8 @@
       }
     </script>
 
-    <!-- Hamburger Menu JavaScript -->
-    <script src="../common/hamburger-menu.js"></script>
+    <!-- Hamburger Menu will be loaded here by load-menu.js -->
+    <div id="hamburger-menu-container"></div>
+    <script src="../common/load-menu.js"></script>
   </body>
 </html>
