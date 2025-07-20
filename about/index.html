@@ -301,6 +301,15 @@
         }
       });
     </script>
+    <script>
+      function takeUsDown() {
+        // scroll down to the element with id "case-studies"
+        // 1. grab the element
+        const myContainer = document.querySelector(".skill-grid");
+        // 2. scrollIntoView({bahavior:"smooth"})
+        myContainer.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
 
     <!-- Hamburger Menu JavaScript -->
     <script src="../common/hamburger-menu.js"></script>

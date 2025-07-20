@@ -69,15 +69,20 @@ h6 {
   }
 
   .button {
-    margin: 2rem 0 0 0; /* Reset margins except top */
+    margin: 0.5rem 0 0 0; /* Reduced top margin to move button up */
     align-self: flex-start; /* Align with the left edge of contact-flex */
   }
 
   .gmail {
     font-size: 1.7em;
+    align-self: center;
   }
 
   .number {
+    font-size: 1.7em !important;
+  }
+
+  .contact-info p {
     font-size: 1.7em !important;
   }
 }
@@ -95,6 +100,7 @@ h6 {
   width: 213px;
   display: block;
   border: solid 1px black;
+  margin-top: 1rem;
 }
 
 .contact-flex {
@@ -103,8 +109,7 @@ h6 {
   gap: 1rem;
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 3em;
-  margin-top: 3em;
+  margin-top: -3em;
   width: fit-content;
 }
 
@@ -434,6 +439,10 @@ footer {
     padding-right: 2rem;
   }
 
+  .contact-flex {
+    margin-top: -5em;
+  }
+
   .about-image {
     margin-top: 1rem;
   }
@@ -441,6 +450,15 @@ footer {
   .experience-grid,
   .education-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .button {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -456,4 +474,11 @@ footer {
 [data-theme="dark"] .experience-card:hover,
 [data-theme="dark"] .education-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .contact-info {
+    display: flex;
+    gap: 1rem;
+  }
 }
