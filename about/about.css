@@ -433,7 +433,6 @@ footer {
   background: var(--card-bg-secondary);
   border-radius: 8px;
   border-left: 3px solid var(--accent-color);
-  font-style: italic;
   color: var(--text-color);
 }
 
