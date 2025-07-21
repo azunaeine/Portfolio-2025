@@ -304,6 +304,30 @@ footer {
   margin-top: -0.625rem;
 }
 
+.fa-bars {
+  font-size: 1.563rem;
+  color: var(--icon-text);
+  background: var(--icon-bg);
+  width: 2.813rem;
+  border-radius: 0.875rem;
+  text-align: center;
+  height: 2.813rem;
+  box-shadow: 0 0.188rem 1.063rem 0 rgba(0, 0, 0, 0.5);
+  padding: 0.625rem;
+}
+
+.fa-xmark {
+  font-size: 1.563rem;
+  color: var(--icon-text);
+  background: var(--icon-bg);
+  width: 2.813rem;
+  border-radius: 0.875rem;
+  text-align: center;
+  height: 2.813rem;
+  box-shadow: 0 0.188rem 1.063rem 0 rgba(0, 0, 0, 0.5);
+  padding: 0.625rem;
+}
+
 /* Experience & Education Cards */
 .experience-grid,
 .education-grid {
