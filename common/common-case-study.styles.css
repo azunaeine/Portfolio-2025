@@ -662,7 +662,7 @@ a {
 }
 
 .nav-button:hover i.fa-arrow-left {
-  transform: translateX(-5px); /* Move left away from text */
+  transform: translateX(-5px);
 }
 
 @media (max-width: 768px) {
