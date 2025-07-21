@@ -130,7 +130,7 @@ body[data-theme="dark"] .fa-envelope::before {
 }
 
 .nav-button.recipe {
-  gap: 13px;
+  gap: 1rem;
 }
 
 .fa-envelope {
