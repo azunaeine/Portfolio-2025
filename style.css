@@ -1017,7 +1017,7 @@ body[data-theme="dark"] .fa-envelope::before {
   .main-button {
     padding-right: 1.813rem;
     padding-left: 1.813rem;
-    border-radius: 1.25rem;
+    border-radius: 16px;
     box-shadow: 0 0.188rem 1.063rem 0 rgba(0, 0, 0, 0.5);
     transition-duration: 350ms, 350ms;
     color: var(--button-text);
