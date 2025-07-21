@@ -126,12 +126,11 @@ body[data-theme="dark"] .fa-envelope::before {
 }
 
 .nav-button.sleep {
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .nav-button.recipe {
   gap: 16px;
-  justify-content: left !important;
 }
 
 .fa-envelope {

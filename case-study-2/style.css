@@ -39,6 +39,10 @@ i.fa-bars {
   transform: scale(0.95);
 }
 
+.nav-button.thesis {
+  justify-content: center;
+}
+
 * {
   margin: 0;
   padding: 0;

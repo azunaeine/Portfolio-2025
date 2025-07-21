@@ -985,6 +985,14 @@ section.design-system * {
   transform: rotate(90deg);
 }
 
+.nav-button.sleep {
+  justify-content: center;
+}
+
+.nav-button.thesis {
+  justify-content: center;
+}
+
 .btn-close-menu:hover {
   transform: rotate(90deg);
 }
@@ -1053,23 +1061,6 @@ body[data-theme="dark"] .card {
   transition: all 0.3s ease;
   max-width: 300px;
 }
-
-.nav-button.thesis {
-  background-color: #e9e2ff;
-  color: #333;
-  box-shadow: 0 4px 15px -3px rgba(158, 133, 224, 0.3),
-    0 4px 6px -4px rgba(158, 133, 224, 0.3);
-  margin-right: auto;
-}
-
-/* .nav-button.sleep {
-  background-color: #e5ecf1;
-  color: #333;
-  box-shadow: 0 4px 15px -3px rgba(101, 144, 173, 0.3),
-             0 4px 6px -4px rgba(101, 144, 173, 0.3);
-  margin-left: auto;
-  flex-direction: row-reverse;
-} */
 
 .nav-button i {
   font-size: 1rem;
