@@ -657,11 +657,6 @@ a {
   transform: translateX(5px);
 }
 
-.nav-button.prev:hover i {
-  transform: translateX(-5px);
-}
-
-/* Responsive styles */
 @media (max-width: 768px) {
   .case-study-navigation {
     flex-direction: column;

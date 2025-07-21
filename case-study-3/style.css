@@ -134,32 +134,6 @@ body[data-theme="dark"] .fa-envelope::before {
   justify-content: left !important;
 }
 
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s;
-}
-
-.carousel-control:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.carousel-control.prev {
-  left: 1rem;
-}
-
-.carousel-control.next {
-  right: 1rem;
-}
-
 .fa-envelope {
   transform: translateY(4px);
 }
