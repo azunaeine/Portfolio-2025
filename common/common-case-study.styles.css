@@ -657,6 +657,14 @@ a {
   transform: translateX(5px);
 }
 
+.nav-button i.fa-arrow-left {
+  transition: transform 0.3s ease;
+}
+
+.nav-button:hover i.fa-arrow-left {
+  transform: translateX(-5px); /* Move left away from text */
+}
+
 @media (max-width: 768px) {
   .case-study-navigation {
     flex-direction: column;
