@@ -129,6 +129,14 @@ body[data-theme="dark"] .problem-grid .problem-item li {
   list-style-type: none;
 }
 
+body[data-theme="dark"] .research-methods-list li::before {
+  color: #ffffff;
+}
+
+body[data-theme="dark"] .research-findings-list li::before {
+  color: #ffffff;
+}
+
 body[data-theme="dark"] .problem-grid .problem-item li:before {
   content: "•";
   color: #ffffff;
