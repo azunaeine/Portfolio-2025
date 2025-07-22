@@ -286,6 +286,10 @@ body[data-theme="dark"] .section {
   min-height: 0; /* Reset any minimum height */
 }
 
+.research-content h3 {
+  margin-left: 0.1rem;
+}
+
 /* Problem Section */
 .problem-item {
   background: var(--light-gray);
