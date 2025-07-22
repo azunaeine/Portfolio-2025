@@ -145,7 +145,6 @@ body[data-theme="dark"] .result h4 {
 
 .takeaway-item h4 {
   font-size: 18.72px;
-  margin: 0px 0px 20px;
 }
 
 .takeaways .solution-item h3 {
@@ -1271,10 +1270,6 @@ body[data-theme="dark"] .card {
 @media screen and (min-width: 1440px) {
   .key-achievements li {
     margin-top: 15px;
-  }
-
-  .result-item h4 {
-    margin: 0px 0px 20px;
   }
 
   .takeaway-item h4 {
