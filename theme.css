@@ -79,8 +79,12 @@ body[data-theme="dark"] .info-item .value {
   color: #ffffff !important;
 }
 
-/* Light mode bullet points */
-.problem-item li {
+body[data-theme="dark"] .research-methods-list li {
+  color: #ffffff;
+}
+
+/* Problem Grid Section - Light Mode */
+.problem-grid .problem-item li {
   position: relative;
   padding-left: 1.8rem;
   margin-bottom: 1rem;
@@ -88,29 +92,30 @@ body[data-theme="dark"] .info-item .value {
   color: var(--text-color);
 }
 
-.problem-item li:before {
+.problem-grid .problem-item li:before {
   content: "•";
   color: #000000;
   position: absolute;
   left: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
-  width: 1.5rem;
-  text-align: center;
-  margin-left: -0.3rem;
+  width: 1.2rem;
+  text-align: left;
+  margin-left: 0;
 }
 
-/* Dark mode styles for goals and pain points */
+/* Problem Grid Section - Dark Mode */
 body[data-theme="dark"] .problem-grid {
   color: #e0e0e0;
   gap: 1.5rem;
 }
 
-body[data-theme="dark"] .problem-item h3 {
+body[data-theme="dark"] .problem-grid .problem-item h3 {
   color: #ffffff;
+  margin-left: 0;
 }
 
-body[data-theme="dark"] .problem-item {
+body[data-theme="dark"] .problem-grid .problem-item {
   background-color: #1e1e1e;
   border: 1px solid #333;
   border-radius: 8px;
@@ -118,39 +123,23 @@ body[data-theme="dark"] .problem-item {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-body[data-theme="dark"] .problem-item li {
+body[data-theme="dark"] .problem-grid .problem-item li {
   color: #e0e0e0;
   padding-left: 1.5rem;
   position: relative;
+  list-style-type: none;
 }
 
-body[data-theme="dark"] .problem-item li:before,
-body[data-theme="dark"] ul li::before,
-body[data-theme="dark"] .content-box ul li::before,
-body[data-theme="dark"] .info-box ul li::before,
-body[data-theme="dark"] .section ul li::before,
-body[data-theme="dark"] .card ul li::before {
+body[data-theme="dark"] .problem-grid .problem-item li:before {
   content: "•";
-  color: #ffffff !important;
+  color: #ffffff;
   position: absolute;
   left: 0;
-  font-size: 1rem; /* Reduced from 1.5rem */
+  font-size: 1rem;
   line-height: 1.5;
-  width: 1rem; /* Reduced from 1.5rem */
+  width: 1rem;
   text-align: left;
   margin-left: 0;
-}
-
-/* Ensure all list items in dark mode have white text and bullets */
-body[data-theme="dark"] ul,
-body[data-theme="dark"] ol,
-body[data-theme="dark"] li {
-  color: #ffffff !important;
-}
-
-/* Target all list markers in dark mode */
-body[data-theme="dark"] ::marker {
-  color: #ffffff !important;
 }
 
 /* Responsive adjustments for dark mode */
