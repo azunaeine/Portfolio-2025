@@ -187,6 +187,15 @@ ul {
   padding: 0;
 }
 
+/* Make bullet points white in dark mode */
+body[data-theme="dark"] ul {
+  color: white;
+}
+
+body[data-theme="dark"] ul li::marker {
+  color: white;
+}
+
 .disc {
   list-style-type: disc;
   padding: 1rem;

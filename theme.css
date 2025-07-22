@@ -124,16 +124,33 @@ body[data-theme="dark"] .problem-item li {
   position: relative;
 }
 
-body[data-theme="dark"] .problem-item li:before {
+body[data-theme="dark"] .problem-item li:before,
+body[data-theme="dark"] ul li::before,
+body[data-theme="dark"] .content-box ul li::before,
+body[data-theme="dark"] .info-box ul li::before,
+body[data-theme="dark"] .section ul li::before,
+body[data-theme="dark"] .card ul li::before {
   content: "•";
-  color: #ffffff;
+  color: #ffffff !important;
   position: absolute;
   left: 0;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  width: 1.5rem;
-  text-align: center;
-  margin-left: -0.5rem;
+  font-size: 1rem; /* Reduced from 1.5rem */
+  line-height: 1.5;
+  width: 1rem; /* Reduced from 1.5rem */
+  text-align: left;
+  margin-left: 0;
+}
+
+/* Ensure all list items in dark mode have white text and bullets */
+body[data-theme="dark"] ul,
+body[data-theme="dark"] ol,
+body[data-theme="dark"] li {
+  color: #ffffff !important;
+}
+
+/* Target all list markers in dark mode */
+body[data-theme="dark"] ::marker {
+  color: #ffffff !important;
 }
 
 /* Responsive adjustments for dark mode */
