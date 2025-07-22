@@ -83,25 +83,30 @@ body[data-theme="dark"] .info-item .value {
   color: #ffffff !important;
 } */
 
-/* Problem Grid Section - Light Mode */
-.problem-grid .problem-item li {
-  position: relative;
+/* Problem Grid Section - Bullet Points */
+.problem-grid ul {
   padding-left: 1.8rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  color: var(--text-color);
+  margin: 0;
+  list-style: none;
 }
 
-.problem-grid .problem-item li:before {
-  content: "•";
-  color: #000000;
-  position: absolute;
-  left: 0;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  width: 1.2rem;
+.problem-grid li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin-bottom: 0.75em;
+  line-height: 1.6;
   text-align: left;
-  margin-left: 0;
+}
+
+.problem-grid li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  top: 0.1em;
+  color: #000000;
+  font-size: 1.2em;
+  line-height: 1.6;
+  transform: translateY(0.1em);
 }
 
 /* Problem Grid Section - Dark Mode */
