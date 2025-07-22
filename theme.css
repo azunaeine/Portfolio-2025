@@ -38,11 +38,11 @@ body[data-theme="dark"] .problem-item h3 {
 }
 
 body[data-theme="dark"] .research-findings h3 {
-  margin-left: 3.2rem; /* or any value you prefer */
+  margin-left: 1.6rem; /* or any value you prefer */
 }
 
 body[data-theme="dark"] .research-methods h3 {
-  margin-left: 2.6rem; /* or any value you prefer */
+  margin-left: 1.6rem; /* or any value you prefer */
 }
 
 body[data-theme="dark"] .result-item h3 {
