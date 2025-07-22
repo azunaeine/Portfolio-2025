@@ -297,7 +297,6 @@ body[data-theme="dark"] .section {
   left: 0; /* Position bullet within the padding */
   color: #000000;
   font-weight: bold;
-  font-size: 1.2em;
 }
 
 /* Make sure strong text has proper spacing */
@@ -358,8 +357,8 @@ body[data-theme="dark"] .section {
   content: "●";
   position: absolute;
   left: 0;
+  top: 5px;
   color: #000000;
-  font-size: 1.5rem;
   line-height: 1;
   font-weight: bold;
 }

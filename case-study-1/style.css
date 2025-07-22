@@ -293,7 +293,6 @@ body[data-theme="dark"] .section {
   left: 0; /* Position bullet within the padding */
   color: #000000;
   font-weight: bold;
-  font-size: 1.2em;
 }
 
 /* Make sure strong text has proper spacing */
@@ -355,9 +354,9 @@ body[data-theme="dark"] .section {
   position: absolute;
   left: 0;
   color: #000000;
-  font-size: 1.5rem;
   line-height: 1;
   font-weight: bold;
+  top: 5px;
 }
 body[data-theme="dark"] .key-achievements li:before {
   color: #ffffff;
@@ -383,9 +382,9 @@ body[data-theme="dark"] .key-achievements li:before {
   position: absolute;
   left: 0;
   color: #000000;
-  font-size: 1.5rem;
   line-height: 1;
   font-weight: bold;
+  top: 5px;
 }
 body[data-theme="dark"] .user-feedback li:before {
   color: #ffffff;
