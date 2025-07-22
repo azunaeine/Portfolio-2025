@@ -449,13 +449,6 @@ footer {
   border-left: 3px solid var(--accent-color);
 }
 
-.experience-card li::before {
-  content: "→";
-  color: var(--accent-color);
-  margin-right: 8px;
-  font-weight: bold;
-}
-
 /* Education Card Specific */
 .education-card p:last-child {
   background: var(--card-bg-secondary);
