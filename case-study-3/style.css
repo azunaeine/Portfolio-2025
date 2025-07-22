@@ -1272,4 +1272,12 @@ body[data-theme="dark"] .card {
   .key-achievements li {
     margin-top: 15px;
   }
+
+  .result-item h4 {
+    margin: 0px 0px 20px;
+  }
+
+  .takeaway-item h4 {
+    margin: 0px 0px 20px;
+  }
 }
