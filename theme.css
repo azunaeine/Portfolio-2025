@@ -79,9 +79,9 @@ body[data-theme="dark"] .info-item .value {
   color: #ffffff !important;
 }
 
-body[data-theme="dark"] .research-methods-list li {
-  color: #ffffff;
-}
+/* body[data-theme="dark"] .research-methods-list li {
+  color: #ffffff !important;
+} */
 
 /* Problem Grid Section - Light Mode */
 .problem-grid .problem-item li {
