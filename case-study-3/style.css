@@ -401,6 +401,10 @@ body[data-theme="dark"] .key-achievements li:before {
   color: #ffffff;
 }
 
+body[data-theme="dark"] .result-item h4 {
+  margin-left: 1.4rem;
+}
+
 /* User Feedback */
 .user-feedback {
   list-style: none;
