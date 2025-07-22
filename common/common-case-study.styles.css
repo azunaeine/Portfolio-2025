@@ -585,6 +585,10 @@ a {
     0 4px 6px -4px rgba(158, 133, 224, 0.3);
 }
 
+.research-findings h3 {
+  margin-left: 2.3rem;
+}
+
 .nav-button-content {
   display: flex;
   flex-direction: column;
