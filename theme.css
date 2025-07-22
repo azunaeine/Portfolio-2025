@@ -33,6 +33,26 @@ body[data-theme="dark"] .nav-bar {
   background-color: #121212;
 }
 
+body[data-theme="dark"] .research-findings h3 {
+  margin-left: 3.2rem; /* or any value you prefer */
+}
+
+body[data-theme="dark"] .research-methods h3 {
+  margin-left: 2.6rem; /* or any value you prefer */
+}
+
+body[data-theme="dark"] .result-item h3 {
+  margin-left: 1.7rem; /* or any value you prefer */
+}
+
+body[data-theme="dark"] .problem-item h3 {
+  margin-left: 0.7rem; /* or any value you prefer */
+}
+
+body[data-theme="dark"] .gmail {
+  color: #ffffff;
+}
+
 /* Text elements in dark mode */
 body[data-theme="dark"] p,
 body[data-theme="dark"] h1,
