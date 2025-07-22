@@ -33,6 +33,10 @@ body[data-theme="dark"] .nav-bar {
   background-color: #121212;
 }
 
+body[data-theme="dark"] .problem-item h3 {
+  margin-left: 1.5rem;
+}
+
 body[data-theme="dark"] .research-findings h3 {
   margin-left: 3.2rem; /* or any value you prefer */
 }
@@ -43,10 +47,6 @@ body[data-theme="dark"] .research-methods h3 {
 
 body[data-theme="dark"] .result-item h3 {
   margin-left: 1.7rem; /* or any value you prefer */
-}
-
-body[data-theme="dark"] .problem-item h3 {
-  margin-left: 0.7rem; /* or any value you prefer */
 }
 
 body[data-theme="dark"] .gmail {
@@ -77,6 +77,74 @@ body[data-theme="dark"] .info-item,
 body[data-theme="dark"] .info-item .label,
 body[data-theme="dark"] .info-item .value {
   color: #ffffff !important;
+}
+
+/* Light mode bullet points */
+.problem-item li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.problem-item li:before {
+  content: "•";
+  color: #000000;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  width: 1.5rem;
+  text-align: center;
+  margin-left: -0.3rem;
+}
+
+/* Dark mode styles for goals and pain points */
+body[data-theme="dark"] .problem-grid {
+  color: #e0e0e0;
+  gap: 1.5rem;
+}
+
+body[data-theme="dark"] .problem-item h3 {
+  color: #ffffff;
+}
+
+body[data-theme="dark"] .problem-item {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme="dark"] .problem-item li {
+  color: #e0e0e0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+body[data-theme="dark"] .problem-item li:before {
+  content: "•";
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  width: 1.5rem;
+  text-align: center;
+  margin-left: -0.5rem;
+}
+
+/* Responsive adjustments for dark mode */
+@media (max-width: 768px) {
+  body[data-theme="dark"] .problem-item {
+    padding: 1.25rem;
+  }
+
+  body[data-theme="dark"] .problem-item li {
+    padding-left: 1.5rem;
+  }
 }
 
 /* Update box styles in dark mode */
