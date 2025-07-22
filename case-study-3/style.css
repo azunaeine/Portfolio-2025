@@ -129,7 +129,7 @@ body[data-theme="dark"] .fa-envelope::before {
   justify-content: center;
 }
 
-.solution-item h3 {
+.results .solution-item h3 {
   font-size: 24px;
 }
 
@@ -141,6 +141,10 @@ body[data-theme="dark"] .fa-envelope::before {
 .takeaway-item h4 {
   font-size: 18.72px;
   margin: 0 0 20px;
+}
+
+.takeaways .solution-item h3 {
+  font-size: 24px;
 }
 
 .nav-button.recipe {
