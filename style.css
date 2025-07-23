@@ -1113,4 +1113,8 @@ body[data-theme="dark"] .fa-envelope::before {
   body {
     padding: 4em;
   }
+
+  .only-image {
+    margin-top: 1.5rem;
+  }
 }
