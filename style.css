@@ -1,5 +1,5 @@
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
   margin: 0;
 }
@@ -170,7 +170,7 @@ body[data-theme="light"] .panel-fade-in {
   }
   .only-image {
     padding: 1.5rem;
-    margin: 1.5rem 0;
+    margin-top: 1rem;
   }
 
   /* Show hamburger menu button on mobile */
