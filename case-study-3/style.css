@@ -397,6 +397,7 @@ body[data-theme="dark"] .results-item h4 {
   font-weight: bold;
   top: 5px;
 }
+
 body[data-theme="dark"] .key-achievements li:before {
   color: #ffffff;
 }
