@@ -405,6 +405,23 @@ body[data-theme="dark"] .result-item h4 {
   margin-left: 1.4rem;
 }
 
+/* Arrow styles for dark mode */
+body[data-theme="dark"] .early-prototype-content .arrow {
+  border-left-color: #ffffff;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Mobile - arrows point down in dark mode */
+@media (max-width: 768px) {
+  body[data-theme="dark"] .early-prototype-content .arrow {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #ffffff;
+    border-bottom: none;
+  }
+}
+
 /* User Feedback */
 .user-feedback {
   list-style: none;
