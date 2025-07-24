@@ -526,3 +526,8 @@ footer {
     line-height: 2.5rem;
   }
 }
+
+section {
+  opacity: 1;
+  transform: translateY(0);
+}

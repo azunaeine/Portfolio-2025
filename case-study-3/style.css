@@ -113,7 +113,7 @@ body[data-theme="dark"] .fa-envelope::before {
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   position: relative;
 }
 
