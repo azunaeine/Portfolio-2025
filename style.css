@@ -429,6 +429,7 @@ footer {
   position: absolute;
   border: 2px solid black;
   animation: float 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
 body[data-theme="dark"] .shape {
