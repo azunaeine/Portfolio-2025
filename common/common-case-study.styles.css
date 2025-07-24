@@ -11,6 +11,19 @@
   z-index: 9999;
 }
 
+/* Scroll Animation Styles */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+section.within-viewport {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .loader_icon {
   height: 0;
   width: 0;
