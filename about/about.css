@@ -445,7 +445,7 @@ footer {
   border-radius: 8px;
   position: relative;
   transition: all 0.2s ease;
-  line-height: 1.6;
+  line-height: 2.2;
   border-left: 3px solid var(--accent-color);
 }
 
